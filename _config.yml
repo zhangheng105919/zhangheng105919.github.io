@@ -90,7 +90,7 @@
 #}
 
 # 以下四个配置项为空时jekyll-github-metadata会帮你生成
-title: wu-kan
+title: music
 description: | # 不知道怎么写介绍，放个音乐吧
   <iframe
     src="https://music.163.com/outchain/player?type=0&id=155059595&auto=0&height=32"
@@ -101,7 +101,7 @@ description: | # 不知道怎么写介绍，放个音乐吧
     marginwidth="0"
     marginheight="0"
   ></iframe>
-url: https://zhangheng105919.github.io # https://wu-kan.github.io
+url: https://zhangheng105919.github.io 
 baseurl: "" # 假如你的博客是建在某个目录下的，请在这里加上目录名，并且下面配置的所有链接里的`/assets`前也要加，即`/your_baseurl/assets`。这一项结尾不要有'/'。
 
 markdown: kramdown
