@@ -1,0 +1,542 @@
+I"�5<h1 id="软件使用">软件使用</h1>
+
+<h2 id="虚拟机-vmware">虚拟机 VMware</h2>
+
+<blockquote>
+  <p>官网：<a href="https://www.vmware.com/cn.html">VMware</a></p>
+</blockquote>
+
+<h3 id="workstation-pro">Workstation Pro</h3>
+
+<p>借助 VMware Workstation Pro，您可以同时将多个操作系统作为虚拟机系统（包括 Windows 虚拟机）在单台 Windows 或 Linux PC 上运行</p>
+
+<p>VMware Workstation Pro 是将多个操作系统作为虚拟机 (VM) 在单台 Linux 或 Windows PC 上运行的行业标准。为任何设备、平台或云环境构建、测试或演示软件的 IT 专业人员、开发人员和企业都可以信赖 Workstation Pro。</p>
+
+<p>目前最新的 VMware Workstation Pro 已经更新到 15 版本了。</p>
+
+<p>但要注意，老旧电脑，建议安装 VMware  10 版本，因为配置太低。</p>
+
+<blockquote>
+  <p>Windows 系统下载： <a href="https://www.vmware.com/cn/products/workstation-pro.html">VMware Workstation Pro</a></p>
+</blockquote>
+
+<h3 id="fusion">Fusion</h3>
+
+<p>适用于 Mac 的简单强大的虚拟机</p>
+
+<p>借助 VMware Fusion，Mac 用户能够在 Mac 上并行运行 Windows 和数百个其他操作系统与 Mac 应用，而不必重新启动。Fusion 对家庭用户而言，足够简便；而对 IT 专业人员、开发人员和企业而言，功能足够强大。</p>
+
+<blockquote>
+  <p>MAC 系统下载： <a href="https://www.vmware.com/cn/products/fusion.html">VMware Fusion</a></p>
+</blockquote>
+
+<hr />
+
+<h2 id="php-环境">PHP 环境</h2>
+
+<p>php 环境目前相对比较多：</p>
+
+<ul>
+  <li>WampServer
+    <ul>
+      <li><a href="http://www.wampserver.com">Wamp 官网</a></li>
+      <li><a href="https://sourceforge.net/projects/wampserver/">Wamp 其他下载点</a></li>
+    </ul>
+  </li>
+  <li>XAMPP
+    <ul>
+      <li><a href="https://www.apachefriends.org/index.html">XAMPP 官网</a></li>
+      <li><a href="http://www.xampps.com">XAMPP 中文网</a></li>
+    </ul>
+  </li>
+  <li>phpstudy
+    <ul>
+      <li><a href="http://phpstudy.php.cn">官网</a></li>
+    </ul>
+  </li>
+  <li>MAMP
+    <ul>
+      <li><a href="https://www.mamp.info">官网</a> (付费，MAC使用)</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="python-环境">Python 环境</h2>
+
+<p>支持 Windows / Linux / Mac OS ：<a href="https://www.python.org/">官网</a></p>
+
+<hr />
+
+<h2 id="脑图">脑图</h2>
+
+<ul>
+  <li><a href="https://www.xmind.net">Xmind</a></li>
+  <li><a href="http://naotu.baidu.com">百度脑图</a></li>
+  <li><a href="https://www.processon.com">ProcessOn</a></li>
+</ul>
+
+<hr />
+
+<h2 id="文档">文档</h2>
+
+<ul>
+  <li><a href="https://www.typora.io">Markdown - Typora</a></li>
+  <li><a href="http://note.youdao.com">有道云笔记</a></li>
+  <li><a href="https://leanote.com">蚂蚁笔记</a></li>
+</ul>
+
+<hr />
+
+<h2 id="编辑器">编辑器</h2>
+
+<ul>
+  <li>php
+    <ul>
+      <li><a href="https://www.jetbrains.com/phpstorm/">PHPStrom</a></li>
+      <li><a href="http://www.sublimetext.com/3">Sublime 3</a></li>
+      <li><a href="https://atom.io/">Atom</a></li>
+      <li><a href="http://www.pc6.com/softview/SoftView_88637.html">GVIM</a></li>
+      <li><a href="http://www.zend.com/en/products/studio/downloads">Zend Studio</a></li>
+      <li><a href="https://netbeans.org/">NetBeans</a></li>
+    </ul>
+  </li>
+  <li>Python
+    <ul>
+      <li><a href="https://www.jetbrains.com/pycharm/download/">Pycharm</a></li>
+      <li><a href="http://www.sublimetext.com/3">Sublime 3</a></li>
+      <li><a href="http://www.pydev.org/download.html">Eclipse with PyDev</a></li>
+      <li><a href="https://komodo-edit.en.softonic.com/">Komodo Edit</a></li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="翻译">翻译</h2>
+
+<ul>
+  <li>在线翻译
+    <ul>
+      <li><a href="https://fanyi.baidu.com">百度翻译</a></li>
+      <li><a href="https://translate.google.cn">Google 翻译</a></li>
+    </ul>
+  </li>
+  <li>翻译软件
+    <ul>
+      <li><a href="http://www.youdao.com">有道</a></li>
+      <li><a href="https://cn.bing.com/dict/">必应</a></li>
+      <li><a href="http://cp.iciba.com">金山词霸</a></li>
+    </ul>
+  </li>
+  <li>翻译插件
+    <ul>
+      <li><a href="http://fanyi.youdao.com/web2/">有道网页翻译</a></li>
+      <li><a href="https://fanyi.baidu.com">百度翻译插件</a></li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="浏览器">浏览器</h2>
+
+<p><strong>网页浏览器</strong>（英语：web browser），常被简称为<strong>浏览器</strong>，是一种用于检索并展示<a href="https://zh.wikipedia.org/wiki/%E5%85%A8%E7%90%83%E8%B3%87%E8%A8%8A%E7%B6%B2">万维网</a>信息资源的<a href="https://zh.wikipedia.org/wiki/%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F">应用程序</a>。这些信息资源可为网页、图片、影音或其他内容，它们由<a href="https://zh.wikipedia.org/wiki/%E7%B5%B1%E4%B8%80%E8%B3%87%E6%BA%90%E6%A8%99%E8%AA%8C%E7%AC%A6">统一资源标志符</a>标志。信息资源中的<a href="https://zh.wikipedia.org/wiki/%E8%B6%85%E9%80%A3%E7%B5%90">超链接</a>可使用户方便地浏览相关信息。</p>
+
+<p>网页浏览器虽然主要用于使用万维网，但也可用于获取<a href="https://zh.wikipedia.org/wiki/%E4%B8%93%E7%94%A8%E7%BD%91%E7%BB%9C">专用网络</a>中<a href="https://zh.wikipedia.org/wiki/%E7%B6%B2%E9%A0%81%E4%BC%BA%E6%9C%8D%E5%99%A8">网页服务器</a>之信息或<a href="https://zh.wikipedia.org/wiki/%E6%AA%94%E6%A1%88%E7%B3%BB%E7%B5%B1">文件系统</a>内之文件。</p>
+
+<p>对于浏览器都不陌生，上网的必需品。
+这里主要给大家介绍的浏览器的内核，这是浏览器最核心的部分。</p>
+
+<p>浏览器内核：</p>
+
+<ul>
+  <li>Trident（IE内核）
+    <ul>
+      <li>IE 浏览器</li>
+      <li>猎豹浏览器</li>
+      <li>360安全浏览器（兼容模式）</li>
+      <li>傲游浏览器</li>
+      <li>2345 浏览器</li>
+      <li>等等</li>
+    </ul>
+  </li>
+  <li>Gecko（Firefox内核）
+    <ul>
+      <li>FireFox</li>
+      <li>Iceweasel</li>
+      <li>Netscape</li>
+    </ul>
+  </li>
+  <li>Webkit（Chrome内核，Safari内核）
+    <ul>
+      <li>Chrome</li>
+      <li>Safari</li>
+      <li>UC</li>
+      <li>搜狗</li>
+      <li>安卓默认浏览器</li>
+    </ul>
+  </li>
+  <li>Presto（Opera 内核）
+    <ul>
+      <li>Opera</li>
+      <li>Nokia 770</li>
+    </ul>
+  </li>
+  <li>Blink（Google + Opera）
+    <ul>
+      <li>chrome</li>
+      <li>360 极速浏览器（极速模式）</li>
+      <li>猎豹浏览器</li>
+      <li>搜狗浏览器</li>
+      <li>UC</li>
+      <li>等等</li>
+    </ul>
+  </li>
+  <li>Servo（Mozilla + Samsung）开发中</li>
+</ul>
+
+<hr />
+
+<h2 id="截图">截图</h2>
+
+<blockquote>
+  <p>别老用 【QQ】 或 【微信】截图了！！！</p>
+</blockquote>
+
+<ul>
+  <li><a href="http://www.pc6.com/softview/SoftView_14254.html">FastStone Capture</a> （随用随开，小巧实用）</li>
+  <li><a href="http://zh.snipaste.com/">Snipaste</a>（功能强大，推荐）</li>
+</ul>
+
+<hr />
+
+<h2 id="录屏">录屏</h2>
+
+<ul>
+  <li><a href="http://www.bandicam.cn/">Bandicam</a> 大众高清，占用空间小</li>
+  <li><a href="http://www.fraps.com/">Fraps</a> 超清，适合游戏，占用空间大</li>
+  <li><a href="http://www.pc6.com/softview/SoftView_14254.html">FSCapture</a> 简单，画质一般，小巧实用</li>
+</ul>
+
+<hr />
+
+<h2 id="命令行工具">命令行工具</h2>
+
+<ul>
+  <li><a href="https://cmder.net/">Cmder</a> （功能强大，实用系数高)</li>
+  <li><a href="https://git-scm.com">Git Bash</a>（版本库管理使用）</li>
+</ul>
+
+<hr />
+
+<h2 id="软件卸载">软件卸载</h2>
+
+<blockquote>
+  <p>软件卸载并非只是 右键删除就可以的。
+一般你删除的只是软件的快捷方式</p>
+</blockquote>
+
+<p>正确的卸载软件方式：</p>
+
+<ol>
+  <li>按住 <code>win + R</code></li>
+  <li>输入 <code>control</code></li>
+  <li>点选 <code>程序和功能</code></li>
+  <li>双击 要卸载的软件</li>
+  <li>根据提示 步骤进行卸载即可</li>
+</ol>
+
+<blockquote>
+  <p>Windows 环境下，想要卸载彻底，还需要清理注册表。
+这里推荐 <a href="https://www.ccleaner.com/ccleaner">CCleaner 清理工具</a></p>
+</blockquote>
+
+<hr />
+
+<h2 id="windows-基本快捷键操作">Windows 基本快捷键操作</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>快捷键</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Win + E</td>
+      <td>我的电脑</td>
+    </tr>
+    <tr>
+      <td>Win + R</td>
+      <td>运行框</td>
+    </tr>
+    <tr>
+      <td>Win + L</td>
+      <td>锁屏</td>
+    </tr>
+    <tr>
+      <td><strong>Win + D</strong></td>
+      <td><strong>显示 / 隐藏 桌面</strong></td>
+    </tr>
+    <tr>
+      <td>Win + T</td>
+      <td>快速切换任务栏</td>
+    </tr>
+    <tr>
+      <td>Win + 方向键</td>
+      <td>快速调整窗口</td>
+    </tr>
+    <tr>
+      <td>Win + 数字</td>
+      <td>快速打开任务栏程序，1 代表最左边</td>
+    </tr>
+    <tr>
+      <td>Alt + F4</td>
+      <td>关闭当前程序（包括关机）</td>
+    </tr>
+    <tr>
+      <td><strong>Alt + D</strong></td>
+      <td><strong>定位到地址栏</strong></td>
+    </tr>
+    <tr>
+      <td>Alt + 左键</td>
+      <td>查看上一个文件夹</td>
+    </tr>
+    <tr>
+      <td>Alt + 右键</td>
+      <td>查看下一个文件夹</td>
+    </tr>
+    <tr>
+      <td>Alt + 上键</td>
+      <td>查看父级文件夹</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + W</strong></td>
+      <td><strong>关闭当前窗口 （不包括关机）</strong></td>
+    </tr>
+    <tr>
+      <td>Ctrl + shift + N</td>
+      <td>新建文件夹</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="运行框命令">运行框命令</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>命令</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>cmd</td>
+      <td>命令提示符</td>
+    </tr>
+    <tr>
+      <td>regedit</td>
+      <td>注册表</td>
+    </tr>
+    <tr>
+      <td>control</td>
+      <td>控制面板</td>
+    </tr>
+    <tr>
+      <td>calc</td>
+      <td>计算器</td>
+    </tr>
+    <tr>
+      <td>notepad</td>
+      <td>记事本</td>
+    </tr>
+    <tr>
+      <td>mspaint</td>
+      <td>画图</td>
+    </tr>
+    <tr>
+      <td>dxdiag</td>
+      <td>系统硬件信息</td>
+    </tr>
+    <tr>
+      <td>msconfig</td>
+      <td>启动项</td>
+    </tr>
+    <tr>
+      <td>services.msc</td>
+      <td>服务</td>
+    </tr>
+    <tr>
+      <td>devmgmt.msc</td>
+      <td>设备管理器</td>
+    </tr>
+    <tr>
+      <td>ncpa.cpl</td>
+      <td>网卡配置</td>
+    </tr>
+    <tr>
+      <td>taskmgr</td>
+      <td>任务管理器</td>
+    </tr>
+    <tr>
+      <td>explorer</td>
+      <td>资源管理器</td>
+    </tr>
+    <tr>
+      <td>winver</td>
+      <td>显示 About Windows 窗口</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="浏览器快捷按键">浏览器快捷按键</h2>
+
+<blockquote>
+  <p>Chrome 常用 / 国产浏览器 基本支持</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th>快捷键</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ctrl + R</td>
+      <td>刷新</td>
+    </tr>
+    <tr>
+      <td>Alt + F4</td>
+      <td>关闭浏览器</td>
+    </tr>
+    <tr>
+      <td>Ctrl + W</td>
+      <td>关闭当前窗口</td>
+    </tr>
+    <tr>
+      <td>Ctrl + Shift + T</td>
+      <td>重新打开最后关闭的标签页，并跳转到该标签页</td>
+    </tr>
+    <tr>
+      <td>Ctrl + N</td>
+      <td>打开新窗口</td>
+    </tr>
+    <tr>
+      <td>Ctrl + T</td>
+      <td>打开新的标签页</td>
+    </tr>
+    <tr>
+      <td>Ctrl + F</td>
+      <td>本页面搜索</td>
+    </tr>
+    <tr>
+      <td>Ctrl + Tab</td>
+      <td>跳转到下一个标签页</td>
+    </tr>
+    <tr>
+      <td>Alt + 左方向键</td>
+      <td>历史记录上一页</td>
+    </tr>
+    <tr>
+      <td>Alt + 右方向键</td>
+      <td>历史记录下一页</td>
+    </tr>
+    <tr>
+      <td>Ctrl + Shift + B</td>
+      <td>显示 / 隐藏书签栏</td>
+    </tr>
+    <tr>
+      <td>Alt + D</td>
+      <td>跳转到地址栏</td>
+    </tr>
+    <tr>
+      <td>Ctrl + D</td>
+      <td>将当前网页保存为书签</td>
+    </tr>
+    <tr>
+      <td>Ctrl + +</td>
+      <td>放大网页上的所有内容</td>
+    </tr>
+    <tr>
+      <td>Ctrl + -</td>
+      <td>缩小网页上的所有内容</td>
+    </tr>
+    <tr>
+      <td>Ctrl + 0</td>
+      <td>将网页上的所有内容恢复到默认大小</td>
+    </tr>
+    <tr>
+      <td>Ctrl + 点击链接</td>
+      <td>在新的后台标签页中打开链接</td>
+    </tr>
+    <tr>
+      <td>F11</td>
+      <td>网页全屏</td>
+    </tr>
+    <tr>
+      <td>Ctrl + U</td>
+      <td>查看源码</td>
+    </tr>
+    <tr>
+      <td>Ctrl + Shift + I</td>
+      <td>打开调试工具</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="文件扩展名">文件扩展名</h2>
+
+<blockquote>
+  <p>绝大多数的文件名字格式：<code>文件名.扩展名</code></p>
+</blockquote>
+
+<h3 id="命名要求">命名要求</h3>
+
+<ul>
+  <li>文件名要求：(也适用于 文件夹)
+    <ul>
+      <li>不能包含以下字符：<code>/ \ | : ? * " &lt; &gt;</code></li>
+    </ul>
+  </li>
+  <li>扩展名要求:
+    <ul>
+      <li>不能包含以下字符：<code>/ \ | : ? * " &lt; &gt;</code></li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <p>文件 可以没有扩展名</p>
+
+  <p>文件夹名 不需要扩展名(后缀)</p>
+</blockquote>
+
+<h3 id="开启隐藏扩展名">开启/隐藏扩展名</h3>
+
+<blockquote>
+  <p>Win 7</p>
+</blockquote>
+
+<p><img src="./imgs/1551174938661.png" alt="1551174938661" /></p>
+
+<p><img src="./imgs/1551174945270.png" alt="1551174945270" /></p>
+
+<blockquote>
+  <p>Win 10</p>
+</blockquote>
+
+<p><img src="./imgs/1551174949480.png" alt="1551174949480" /></p>
+
+:ET

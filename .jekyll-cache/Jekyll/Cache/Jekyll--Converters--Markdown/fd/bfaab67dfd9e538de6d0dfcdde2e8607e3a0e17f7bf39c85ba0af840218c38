@@ -1,0 +1,1025 @@
+I"�y<h2 id="css创建">css创建</h2>
+<h3 id="一是外部样式"><strong>一是外部样式</strong></h3>
+<p>在head头通过,利用link标签导入外部的css文件,在项目中使用
+<code>&lt;link rel="stylesheet" href="地址.css"</code></p>
+
+<p><strong><em>在css中输入时body的背景是background不是什么bgcolor</em></strong></p>
+
+<h3 id="二是内部样式"><strong>二是内部样式</strong></h3>
+<p>在头部通过,在style标签当场写css样式,平时开发,测试</p>
+<pre><code>   	&lt;style&gt;
+   		p   {
+            color:red;
+   		}
+   	&lt;/style&gt;
+</code></pre>
+<h3 id="三是内联样式"><strong>三是内联样式</strong></h3>
+<p>直接在开始标签里面通过style属性当场写css,其中最后一个属性值的分号可以不写
+	&lt;开始标签  style=”属性名: 属性值;”</p>
+<h3 id="四是导入式"><strong>四是导入式</strong></h3>
+<p>在head头通过,style标签导入css文件,注意@import必须写在style里面的最前面
+<code>&lt;style&gt;@import url('css文件地址');&lt;/style&gt;</code>
+外部样式:先加载css再加载html
+import:先加载HTML,再加载css</p>
+
+<h2 id="html的四大通用属性">HTML的四大通用属性:</h2>
+<p>一是class给当前元素的取个小名
+二是id给当前元素取个身份证号
+三是style给当前元素赋值css样式
+四是title当鼠标悬停在元素上时,显示title元素</p>
+<pre><code>&lt;style&gt;
+.rong{
+font-size: 30px;
+}
+#he{
+color: green;
+}
+a{
+text-decoration: none; /* 取消下划线 */
+}
+
+li{
+list-style: none;  /* 将前面圆圈消除掉*/
+}
+&lt;/style&gt;
+</code></pre>
+
+<h2 id="基础选择器">基础选择器</h2>
+<p>1.标签选择器:影响范围是整个网页,由于影响太大,比较合适做css初始化(<strong>比如:a链接,li列表</strong>)
+格式:
+  标签名{
+  属性名:属性值;
+  }</p>
+
+<p>2.类选择器(class选择器)  一个标签可以有多个class名
+  多个标签可以有相同的class名,前面有个小数点 
+ .class名{
+   属性名:属性值;
+ }
+ <code>&lt;p class="bao rong "你好&lt;/p&gt;</code></p>
+
+<p>3.身份选择器(id选择器)  一个标签只能有一个id名
+   在css中多个标签使用相同的id,css有效果,但是js无法识别多个同名id,推荐id不要重复(唯一性)
+ #id名{
+   属性名:属性值;
+ }
+<code>&lt;p id="he "你好&lt;/p&gt;</code>
+<strong>* class和id选择器区分大小写</strong>*</p>
+
+<h2 id="关联选择器">关联选择器</h2>
+<p>祖辈后背关系或兄弟关系
+s1  s2{}   匹配s1后面所有s2的,所有的后辈
+s1&gt;s2      匹配s1后面的儿子倍的s2,利用class
+s1+s2      匹配s1后面的一个<strong><em>兄弟s2</em></strong>
+s1~s2      匹配s1后面的后面的所有<strong><em>兄弟</em></strong></p>
+<pre><code>&lt;style&gt;
+ul li{
+color: red;
+}
+ul &gt; li{
+font-size: 20px;
+}
+.mao + li{
+color: green;
+}
+.mao ~ li{
+color: blue;
+}
+&lt;/style&gt;
+</code></pre>
+<h2 id="组合选择器">组合选择器</h2>
+<p>给不同的元素赋予相同的样式(节省css代码),利用,隔开</p>
+<pre><code>.zheng, .mao, .la{ color: red; }
+&lt;ul&gt;
+        &lt;li class="zheng"&gt;证明: 1元 = 1分&lt;/li&gt;
+        &lt;li&gt;解&lt;/li&gt;
+        &lt;ol&gt;
+            &lt;li&gt;1元 = 100分&lt;/li&gt;
+            &lt;li&gt;    = 10分 * 10分&lt;/li&gt;
+            &lt;li class="mao"&gt;    = 1毛 * 1毛&lt;/li&gt;
+            &lt;li&gt;    = 0.1元 * 0.1元&lt;/li&gt;
+            &lt;li&gt;    = 0.01元&lt;/li&gt;
+            &lt;li&gt;    = 1分&lt;/li&gt;
+        &lt;/ol&gt;
+        &lt;li&gt;当场数学老师就哭了&lt;/li&gt;
+        &lt;p class="la"&gt;啦啦啦&lt;/p&gt;
+    &lt;/ul&gt;
+</code></pre>
+
+<h2 id="属性选择器">属性选择器</h2>
+<p>标签[属性]   匹配标签的所有属性的所有元素
+标签[属性=”值”]  匹配标签的属性等于这个值得所有元素
+标签[属性~=”值”]   value是以空格隔开的分词匹配s1中,attr为其中一个分词的所有元素,常用于class属性
+标签[属性*=”ab”]   匹配标签中属性里面是否有ab这2个字母 
+标签[属性^=”p”]     匹配标签的属性中已p开头的所有元素
+标签[属性$=’p’]      已p结尾的所有元素</p>
+<pre><code>&lt;input type="text" id="m" class="a b c" value="yaohaojian"&gt;
+.c[type] {}    同时匹配上述这个情况,class代表的是&lt;&gt;里面代码的整体意思,换做id,也同样可以
+</code></pre>
+
+<h2 id="伪类选择器">伪类选择器</h2>
+<p>1.高阶hover(隔山打牛)
+   s1:hover  s2{…}
+   s1:hover&gt;s2{…}
+   s1:hover+s2{…}
+   s1:hover~s2{…}</p>
+
+<pre><code>    .X li:hover{  x下面的li标签点击时显示的情况
+            color: white;
+            background: red;
+        }
+    .X:hover li{  点击x时li显示的情况
+            color: blue;
+            background: red;
+        }
+    
+    &lt;ul class="X"&gt;
+        &lt;li&gt;小米手机&lt;/li&gt;
+        &lt;li&gt;Redmi红米&lt;/li&gt;
+        &lt;li&gt;电视&lt;/li&gt;
+        &lt;li&gt;笔记本&lt;/li&gt;
+        &lt;li&gt;家电&lt;/li&gt;
+        &lt;li&gt;路由器&lt;/li&gt;
+        &lt;li&gt;智能硬件&lt;/li&gt;
+    &lt;/ul&gt;
+
+</code></pre>
+<p>2.focus:当s1获取到鼠标时,触发css,一般用在form中
+s1:focus{}</p>
+
+<pre><code>input{
+        width: 800px;
+        height: 50px;
+
+
+        border: 1px solid red;
+        outline: none;
+    }
+input:focus{
+        width: 1000px;
+        border: 1px solid blue;
+    }
+</code></pre>
+
+<p>3.child  先找到s1的父级,再找到父级里面的第一个子元素,最后看第一个子元素是不是s1(是,则触发css,如果不是则什么效果也没有)
+   s1:first-child{}   匹配的第一个元素是不是s1
+   s1:last-child{}
+   s1:nth-child(N){}</p>
+
+<pre><code>   	世界上最没用的一句话: 
+    &lt;ul class="A"&gt;
+        &lt;li&gt;警察: 不要跑&lt;/li&gt;
+        &lt;li&gt;神经病: 我没病&lt;/li&gt;
+        &lt;li&gt;酒鬼: 我没醉&lt;/li&gt;
+        &lt;li&gt;女人: 我不要&lt;/li&gt;
+        &lt;li&gt;男人: 我还行&lt;/li&gt;
+    &lt;/ul&gt;
+    世界上最没用的一句话: 
+    &lt;ul class="A"&gt;
+        &lt;p&gt;警察: 不要跑&lt;/p&gt;
+        &lt;li&gt;神经病: 我没病&lt;/li&gt;
+        &lt;li&gt;酒鬼: 我没醉&lt;/li&gt;
+        &lt;li&gt;女人: 我不要&lt;/li&gt;
+        &lt;li&gt;男人: 我还行&lt;/li&gt;
+    &lt;/ul&gt;
+    
+    .A li:first-child{
+            color: red;
+        }
+</code></pre>
+<p>4.of-type 先找到s1的父级,再找到父级里面的所有s1元素,最后匹配s1中的第一个
+   s1:first-of-type{}   匹配的永远是第一个s1
+   s1:last-of-type{}
+   s1:nth-of-type{N}  从1开始
+N的写法:一是数字 二是单词 odd奇数  even偶数  三是一元一次方程   2n   2n+1    3n+1等</p>
+<pre><code>	.A li:first-of-type{
+	        color: blue;
+	    }
+	.A li:nth-of-type(3){
+	        color: orange;
+	    }
+	.A li:nth-of-type(odd){
+	        color: lightgreen;
+	    }
+	.A li:nth-of-type(3n){
+	        color: deepskyblue;
+	    }
+
+
+	&lt;div class="s1"&gt;
+	    &lt;div class="s2"&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	就相当于一个盒子
+	.s1{
+	        width: 500px;
+	        height: 500px;
+	        background: pink;
+	    }
+	
+	.s2{
+	        width: 200px;
+	        height: 200px;
+	        background: skyblue;
+	    }
+</code></pre>
+<h2 id="伪对象选择器">伪对象选择器</h2>
+<p>1.伪对象:
+  s1::before{}   匹配s1里面的最前面
+  s1::after{}    匹配s1里面的最后面
+  before和after会配合content属性使用
+  场景使用:配合未来的浮动技术</p>
+
+<pre><code>世界上最没用的一句话: 
+&lt;ul class="A"&gt;  在第一个li前加一句话
+&lt;li&gt;警察: 不要跑&lt;/li&gt;
+&lt;li&gt;神经病: 我没病&lt;/li&gt;
+&lt;li&gt;酒鬼: 我没醉&lt;/li&gt;
+&lt;li&gt;女人: 我不要&lt;/li&gt;
+&lt;li&gt;男人: 我还行&lt;/li&gt;
+&lt;/ul&gt;
+
+.A::before{   不显示情况,鼠标点击的时候点不到
+content: '烟盒: 吸烟有害健康';
+}
+.A::after{
+content: '&lt;li&gt;服务员: 菜马上好&lt;/li&gt;';
+}
+
+::selection{   前面不加属性,单纯的就是这样,将一段文字选中后,显示的是下面的情况
+background: pink;
+color: blue;
+} 
+&lt;/style&gt;
+</code></pre>
+<h2 id="优先级">优先级</h2>
+<p>权重相同时,采用就近原则,css离标签越近, 优先级越高
+<code>li {color: red;}</code>
+<code>li {color: blue;}</code>
+权重不同时,采用权重最高的
+标签选择器: 1
+class选择器: 10
+id选择器: 100
+<strong>注意:</strong>1.权重不能越级的 (11个标签 不会 超过1个class)2.权重可以叠加
+最高权重:!important 写在属性值的后面, 分号前面最高权重也可以参与叠加</p>
+<pre><code>	li{ color: red; }  /* 权重: 1  */
+	.mi{ color: blue; }  /* 权重: 10 */
+	#smi{ color: green; } /* 权重: 100 */
+权重叠加:
+	/* 权重叠加 */
+    ins{ color: black; }  /* 权重: 1 */
+    u ins{ color: red; }  /* 权重: 2 */
+    b i u ins{ color: blue; } /* 权重: 4 */
+    div div h3 p strong em del b i u ins{ color: green; }   /* 权重: 11 */
+    u .ji{ color: gray; }   /* 权重: 1 + 10    */
+    .ji{ color: orange; }    /* 权重: 10       前面的标签叠加到11, 也无法超过一个class */
+    ins{ color: purple !important; } /* 权重: 最高 */
+    u ins{ color: pink !important; } /* 权重: 最高 + 1 */
+</code></pre>
+<h2 id="继承性">继承性</h2>
+<p>绝大多数的属性都可以被后辈继承只有小部分是无法继承,例如:a链接的color,h标签的font-size
+辨别是否被继承:调试器(F12), 查看标签对应的CSS, 找到 Inherited From 标签.在Inherited From 被删除的都是无法继承的属性.
+问题: 不能继承的属性, 但是又想改变这些属性?
+解决:  单独选择该标签, 单独赋予css</p>
+<pre><code>&lt;div&gt;
+        &lt;b&gt;老母鸡&lt;/b&gt;
+        &lt;a href=""&gt;小母鸡&lt;/a&gt;
+        &lt;h1&gt;黑母鸡&lt;/h1&gt;
+&lt;/div&gt;
+&lt;style&gt;
+        div{
+            width: 200px;
+            height: 200px;
+            background: pink;
+            color: red;
+            font-size: 30px;
+        }
+
+&lt;/style&gt;  
+</code></pre>
+
+<h2 id="字体颜色">字体颜色</h2>
+<ol>
+  <li>color  1. 字体颜色
+ 十六进制  2. #3或6个数字<br />
+3.rgb(r, g, b)   r,g,b 的数值范围: 0~255
+rgba(r, g, b, a)  a的数值范围: 0~1 可小数</li>
+</ol>
+
+<p>hsl(h, s, l)    <br />
+  h: 色调, 范围: 0~360
+  s: 饱和度, 范围: 0% ~ 100%
+  l: 亮度, 范围: 0% ~ 100% 
+hsla(h, s, l, a)
+  a: 透明度, 范围: 0~1 可小数</p>
+<ol>
+  <li>
+    <p>opacity 透明度     范围: 0~1   完全透明时, 无法选中</p>
+
+    <p>color: #9df;
+ color: #99ddff;
+ color: rgb(200,255,100);
+ color: rgba(0,255,0,0.5);
+ color: hsla(240, 30%, 50%, 1);
+ color: transparent;   /* rgba(0,0,0,0) */</p>
+
+    <p>b{
+         opacity: 0.5;
+         opacity: 0;
+     }</p>
+  </li>
+</ol>
+
+<h2 id="长度">长度</h2>
+<p>px 像素   (随着电脑的分辨率变化而变换)
+%  百分比 (相对于父级大小)
+em 倍数</p>
+<pre><code>p{
+/* 首行缩进 */
+text-indent: 2em;
+}
+</code></pre>
+<h2 id="字体">字体</h2>
+<pre><code>font-family: 楷体, "Lei", 微软雅黑, sans-serif, monospace;
+font-size: 20px;
+font-style: italic;
+font-weight: bolder;
+line-height: 50px;
+border: 1px solid red;
+margin: 0;
+</code></pre>
+<p>font-family:字体家族  通用字体: 浏览器自带的, 例如: serif, monospace 等
+font-size:字体大小   建议: 不要低于12px, 有的浏览器不支持12以下的字体常规: 14px 或 16px
+font-style:
+italic  倾斜
+normal  正常
+font-weight:  <br />
+bold    加粗
+normal  正常
+line-height     行高
+ 当行高与当前元素高度一致时, 有垂直居中效果   提示: 最好只做一行, 不建议做多行</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>简写: font: [weight</td>
+      <td>style]   size[/line-height]   family;</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>手册常用符号解析: []  可有可无</td>
+      <td>前后可颠倒顺序</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>大坑: 
+先有了详写, 再简写 (简写会重置所有的详写)
+建议: 先简写, 再用详写补充</p>
+
+<h2 id="背景">背景</h2>
+<p>background-color: 背景颜色
+background-image: 背景图片
+background-repeat: 背景重复
+background-position: 背景定位   center top  right  left bottom
+background-size: 背景大小  大小其实就是与宽度一样的.</p>
+
+<p>简写: 
+ background: [color | image | repeat | position[/size] ]</p>
+<pre><code>&lt;div class="left"&gt;&lt;/div&gt;
+&lt;div id="box"&gt;&lt;/div&gt;
+#box{ 
+background-color: pink; 
+background-image: url('./resource/1.gif'); 
+background-repeat: no-repeat;
+background-position: center  bottom; 
+background-position: 0px 0px;  
+background-size:800px; 
+background-size: 100%; 
+background:no-repeat 100px 100px/100px url('./resource/1.gif') red; 
+}  
+	
+</code></pre>
+<h2 id="边框">边框</h2>
+<p>方向: top  bottom  left  right
+属性: color  width   style</p>
+
+<p>单边
+  border-方向-属性
+  border-方向: [color] | [width] | style</p>
+
+<p>四边
+  border-属性: 
+  border: [color] | [width] | style</p>
+<pre><code>&lt;div id="box"&gt;&lt;/div&gt;
+#box{
+width: 200px;
+height: 200px;
+
+border-top-color: red;
+border-top-width: 10px;
+border-top-style: solid;
+
+border-bottom: green 10px solid;
+
+border-style: solid;
+border-color: blue;
+border-width: 10px;
+
+border: pink 10px solid;
+border: 10px yellow solid;
+border: solid 10px orange ;
+border: solid 10px  ;
+border: solid ;
+}
+
+&lt;!-- 使用 纯css 制作三角形 --&gt;
+&lt;div id="box2"&gt;&lt;/div&gt;
+#box2{
+width: 0px;
+height: 0px;
+border-top: transparent 10px solid;
+border-left: transparent 10px solid ;
+border-bottom: transparent 10px solid ;
+border-right: red 10px solid ;
+}
+</code></pre>
+<h2 id="圆角">圆角</h2>
+<p>1.圆角详写   border-上下-左右-radius    px或%
+2.圆角简写   border-radius
+以px为单位,最大的弧度是以小边
+以%为单位,最大的弧度是以大边</p>
+
+<p>border-top-left-radius:10%  <br />
+border-radius:10px
+宽度200 高度100  圆角100px    像个操场
+宽度200 高度200  圆角100      圆</p>
+
+<p>百分比可以用来看椭圆</p>
+
+<h2 id="表格边框合并">表格边框合并</h2>
+<p>表格边框合并   border-collapse:collapse;</p>
+<pre><code>   &lt;table border="1"  cellspacing="0" width="600" align="center"&gt;    表格居中
+   &lt;caption&gt;s93&lt;/caption&gt;
+        &lt;tr align="center"&gt;
+            &lt;td&gt;陈耀泽&lt;/td&gt;
+            &lt;td&gt;陈泊行&lt;/td&gt;
+            &lt;td&gt;程文磊&lt;/td&gt;
+            &lt;td&gt;程咬金&lt;/td&gt;
+        &lt;/tr&gt;
+    table{
+            border-collapse: collapse;
+        }  
+     td{
+            /* 文本水平居中 */
+            text-align: center;
+        }
+        
+table,td,th
+{
+    border:1px solid black;
+}
+table
+{
+    width:100%;
+}
+th
+{
+    height:50px;
+}
+tr
+{
+    height:50px;
+}
+</code></pre>
+<h2 id="轮廓">轮廓</h2>
+<p>outline:none   取消轮廓,用法和border一样</p>
+<pre><code>border: 1px solid transparent;
+border-bottom-color: black;
+outline: none;
+设置成一个下框,在上面输入值
+</code></pre>
+<h2 id="列表">列表</h2>
+<p>list-style:none  disc circle square  lower-roman</p>
+
+<pre><code>
+&lt;h2&gt;Outside:&lt;/h2&gt;
+&lt;ul style="list-style-position:outside;width:25%;"&gt;
+&lt;li style="border:1px solid #000000"&gt;Coffee&lt;/li&gt;
+&lt;li style="border:1px solid #000000;border-top:0"&gt;Tea&lt;/li&gt;
+&lt;li style="border:1px solid #000000;border-top:0"&gt;Coca-cola&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Inside:&lt;/h2&gt;
+&lt;ul style="list-style-position:inside;width:25%;"&gt;
+&lt;li style="border:1px solid #000000;"&gt;Coffee&lt;/li&gt;
+&lt;li style="border:1px solid #000000;border-top:0;"&gt;Tea&lt;/li&gt;
+&lt;li style="border:1px solid #000000;border-top:0;"&gt;Coca-cola&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<h2 id="溢出">溢出</h2>
+<p>溢出详写:
+overflow-x   hidden    隐藏内容
+overflow-y  visiable   显示内容<br />
+auto      通过滚动条显示内容
+溢出简写:overflow   hidden  auto  visiable   <br />
+margin:0 auto   在儿子里面写这句话,相当于在父级内部保持水平居中</p>
+
+<h2 id="文本">文本</h2>
+<p>text-indent   首行缩进
+text-decoration      none   underline  line-through    overline
+text-shadow   12px水平方向  13px 垂直方向  13px模糊度  red  阴影颜色</p>
+
+<p>text-overflow   ellipsis  省略号</p>
+<pre><code>一行文字溢出用 ... 代替, 需配合white-space 和 overflow 一起使用 white-space: nowrap; 
+overflow: hidden; 
+text-overflow: ellipsis; 
+</code></pre>
+<p>text-align  center   left   right
+vertical-align     top  middle  bottom</p>
+
+<p>垂直vertical-align默认是对外对齐的,如果需要对内对齐需要配合display:table-cell 当成td单元格看待,模仿td的valign属性</p>
+<pre><code>评论: &lt;textarea cols="30" rows="10"&gt;&lt;/textarea&gt;111
+textarea{
+            vertical-align: top;
+            vertical-align: middle;
+        }
+</code></pre>
+<pre><code>#box{
+width: 300px;
+height: 300px;
+background: pink;
+text-align: center;
+vertical-align: middle;
+display: table-cell;    
+}
+&lt;div id="box"&gt;
+        老母鸡 &lt;br&gt;
+        &lt;img src="./resource/2.jpg" width="100"&gt;
+&lt;/div&gt;
+</code></pre>
+<p>display:table-cell   将当前元素转换成td元素一般在垂直vertical-align中使用,在一个盒子中使用
+文本域的使用对于vertical-align这个是对外而言可以使用</p>
+
+<p>text-decoration: underline dotted pink  可以使用3个替代,后2个的前提是必须是下划线.颜色也只是针对下划线而言不是字体的颜色
+border-style的取值为solid  double dotted  dashed虚线  wavy  波浪线</p>
+
+<h2 id="鼠标">鼠标</h2>
+<p>cursor:
+pointer  小手
+move      移动坐标
+help     有个?
+wait      等待圈
+none       隐藏鼠标
+default    默认是箭头</p>
+
+<h2 id="字体图标">字体图标</h2>
+<p>1.字体图标极具有图片的形态,又具有字体的样式
+2.使用Unicode字体图标
+ 字体图标在线地址:http://www.iconfont.cn/
+ 方法一:使用Unicode字体图标
+ 一是导入iconfont.css<br />
+` <link rel="stylesheet" href="./resource/iconfont/iconfont.css" /><code>
+ 二是选取你需要的字体图标的Unicode代码
+ 选择需要用字体的标签,并为该标签赋予</code>class=”iconfont”<code>
+比如:</code>&lt;p class="iconfont"&gt;&lt;/p&gt;`</p>
+
+<p>方法二:使用font-class字体图标
+一是导入iconfont.css
+二是选取你需要的字体图标的class名
+三是选择需要用字体的标签,并为该标签赋予<code>class="iconfont class名"</code>
+<code>&lt;p class="icon-gouwuchekong iconfont"&gt;&lt;/p&gt;</code></p>
+
+<p>方法三是使用彩色symbol字体图标
+一是导入iconfont.js
+二是设置通用css
+三是选取你需要的字体图标#icon-####
+设置svg标签,并修改use的属性</p>
+<pre><code>   第一步: &lt;script src="./resource/iconfont/iconfont.js"&gt;&lt;/script&gt;
+    第二步:style里面
+    .abc {
+    width: 20em;
+    height: 20em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+    }
+    第三步:
+    &lt;svg  aria-hidden="true"&gt;&lt;use xlink:href="#icon-15tianwuliyoutuihuo"&gt;&lt;/use&gt;&lt;/svg&gt;
+    &lt;svg class="abc" aria-hidden="true"&gt;&lt;use xlink:href="#icon-fangdajing"&gt;&lt;/use&gt;&lt;/svg&gt;
+
+</code></pre>
+<h2 id="盒子模型">盒子模型</h2>
+<p>非IE盒子模型组成:  width/height + padding + border  (才是物理空间)
+IE盒子模型组成: width (就是物理空间, 包含padding+border),如果设置padding和border, 那么盒子内容会向内压缩
+(低版本IE, 例如: IE8, IE7, IE6 以及更早的IE )
+(高版本IE 参考非IE盒子模型)
+切换IE模型和非IE模型: 
+box-sizing:content-box 由ie转成非ie盒子模型
+box-sizing:border-box  转成ie盒子模型</p>
+
+<pre><code>.box{
+background: pink;
+width: 100px;
+height: 100px;
+padding: 10px;
+border: 10px solid pink;
+margin: 50px;
+box-sizing: border-box;
+}
+</code></pre>
+<h2 id="块级-内联元素">块级-内联元素</h2>
+<p>1.块级元素:block
+  比如div/h1/p/ul/li等
+  特点:独占一行   宽度默认为父级(浏览器)一致
+  高度默认与内容有关    宽度高度行高内外边距都可以手动控制  容纳性:容纳任何元素(除特殊性质的标签如h1和p)</p>
+
+<p>2.内联元素:inline
+span a biu del等
+特点:同在一行   宽度与高度随内容有关 宽度高度行高外边距内边距部分可以手动控制,宽度和高度修改没有用,行高不行,padding可以,但margin的竖直方向不行   容纳性:容纳内联元素(除特殊性质的标签比如a)</p>
+
+<h2 id="元素转换">元素转换</h2>
+<p>display:block      将当前元素转换为块级元素
+inline      将当前元素转换为内联元素
+inline-block  将当前元素转换为内联-块元素,inline在一行内,block是在可以使用高度宽度等
+none        隐藏当前元素(不占位)
+table        将当前元素转换为块级table元素
+table-cell  将当前元素转为td元素
+table-row    将当前元素转换为tr元素
+flex 常用移动端
+flex         将当前元素转为弹性盒子
+inline-flex   将当前元素转为内联弹性盒子
+2.隐藏元素
+visibility:hidden   隐藏当前元素(占位)
+visible  显示当前元素</p>
+
+<p>在flex中,弹性盒子的伸缩性有几个语句
+justify-content:space-between
+justify-content:space-around
+flex-direction:row-reverse
+flex-direction:column;</p>
+
+<h2 id="内外边距">内外边距</h2>
+<p>margin-left: auto; 
+margin-right: auto;   同时出现时,可在父级内部实现水平居中
+一般只能左右,上下不行,因为上下距离不确定.
+在父级设置overflow:hidden  将父级元素形成BFC区域
+子级设置padding时可以观看有什么效果</p>
+
+<p>margin: 10px               上下左右均为10px
+margin: 10px 20px          上下10   左右20
+margin: 10px 20px 30px     上10   左右20   下30
+margin: 10px20px30px40px上10  右20  下30  左40
+详写: padding-方向: px  同上</p>
+
+<p>要让图片居中对齐, 可以使用 margin: auto; 并将它放到块元素中</p>
+
+<pre><code>img {
+    display: block;
+    margin: auto;
+}
+</code></pre>
+
+<pre><code>#die{
+width: 800px;
+height: 500px;
+background: pink;
+overflow: hidden;  /* 将 #die 元素形成BFC区域 */
+}
+#son{
+width: 200px;
+height: 200px;
+background: lightgreen;
+margin-top: 50px;
+padding: 10px;
+padding: 10px 20px;
+}
+&lt;div id="die"&gt;
+&lt;div id="son"&gt;儿子&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code>#big{
+width: 800px;
+height: 500px;
+background: purple;
+vertical-align: middle;
+display: table-cell;
+color: white;
+text-align: center;
+}
+#small{
+width: 200px;
+height: 200px;
+background: lightgreen;
+/* margin-left: auto; */
+/* margin-right: auto; */
+margin: 0 auto;
+}
+&lt;div id="big"&gt;
+老母鸡
+&lt;div id="small"&gt;&lt;/div&gt;
+&lt;/div&gt; 
+</code></pre>
+<h2 id="定位">定位</h2>
+<p>多种元素重叠时,使用定位
+属性 :<br />
+position:relation相对定位
+absolution   绝对定位
+fixed    固定路径</p>
+
+<p>1.相对定位
+ 位置:保留原来的位置
+ 原点:基本本身的四个角作为原点</p>
+
+<p>2.绝对路径
+ 位置:不保留原来的位置
+ 原点:基于第一页的四个角作为原点,当你放大的时候,它是随着你的第一页而改变的</p>
+
+<p>3.固定定位
+位置:不保留原来的位置
+原点:基于可视窗口的四个角作为原点</p>
+
+<p>4.流
+ body 属于普通文档流
+ position  属于定位流,脱离普通文档流,悬停在文档上方
+ 技巧: 如何后辈元素基于祖辈元素的四个角作为原点?
+实现方式:祖辈元素: 任意定位 (推荐用相对, 原因不破坏原有排版)后辈元素: 绝对定位</p>
+
+<h2 id="定位优先级">定位优先级</h2>
+<p>z-index:数字   越大优先级越高</p>
+<pre><code>&lt;div class="box box1"&gt;&lt;/div&gt;
+&lt;div class="box box2"&gt;&lt;/div&gt;
+&lt;div class="box box3"&gt;&lt;/div&gt;
+&lt;style&gt;
+.box{
+width: 100px;
+height: 100px;
+position: absolute;
+}
+.box1{
+background: pink;
+left: 100px;
+top: 100px;
+z-index: 1;
+}
+.box2{
+background: skyblue;
+left: 130px;
+top: 130px;
+z-index: 2;
+z-index: 9999999;
+}
+.box3{
+background: lightgreen;
+left: 160px;
+top: 160px;
+z-index: 3;
+}
+&lt;/style&gt;
+</code></pre>
+
+<h2 id="盒子阴影">盒子阴影</h2>
+<p>box-shadow:水平位移  垂直位移  模糊度  [阴影面积]  阴影颜色  [内阴影]
+模糊度:不能为负数
+阴影面积:默认与元素一样大,可以写负数
+内阴影:inset</p>
+<pre><code>&lt;div id="box"&gt;&lt;/div&gt;
+&lt;style&gt;
+        #box{ 
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            /* box-shadow: 10px 20px 30px #ccc; */
+
+            transition: box-shadow 0.5s;
+        }
+        #box:hover{
+            box-shadow: 0 15px 30px rgba(0,0,0,.1);
+        }
+    &lt;/style&gt;
+
+</code></pre>
+<h2 id="浮动">浮动</h2>
+<ol>
+  <li>浮动:将竖排变成横排,内容环绕.</li>
+  <li>格式
+float:left | right | none</li>
+  <li>特性
+元素一旦浮动,就不保留原来的位置,导致后面的盒子元素上挤,产生重叠效果</li>
+  <li>清除浮动
+目的:不会发生重叠效果
+格式:clear:left  | right  | both
+注意:浮动元素后面的兄弟帮忙清除浮动元素的浮动
+清除浮动的方式1(原理):
+在浮动元素的后面,添加空元素,并赋予clear属性(由于出现空元 素,在w3c标准中,认为这是一个无意义的标签,所以尽可能不要使用该方法)
+清除浮动的方式2: (BFC) 
+给浮动元素的父级添加overflow:hidden,形成BFC区域,清除子元素的浮动
+清除浮动的方式3(推荐:兼容性最好的):
+利用伪对象选择器+原理
+    <pre><code>父级::after{
+content:'';
+display:block;
+clear:both;
+}
+</code></pre>
+    <p>注:BFC是一个独立的区域,外界不能影响BFC内部,BFC内部也不会影响BFC外部</p>
+  </li>
+</ol>
+
+<p>内容环绕:
+浮动元素周边是文字,图片等内联元素,产生环绕效果,而不是重叠效果
+写一个通用的清除浮动,以后谁需要给子元素消除浮动,那么就给父级添加class=”clearfix”</p>
+<pre><code>.clearfix::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+</code></pre>
+<pre><code>&lt;p&gt;&lt;span&gt;黄&lt;/span&gt;渤，1974年8月26日出生于山东青岛&lt;/p&gt;
+span{
+            font-size: 70px;
+            float: left;
+            width:1.2em;
+            font-size:400%;
+            font-family:algerian,courier;
+            line-height:80%;
+        }
+</code></pre>
+<h2 id="尺寸">尺寸</h2>
+<p>width		固定宽度
+height		固定高度
+min-width	最小宽度
+max-width	最大宽度
+min-height	最小高度
+max-height	最大高度</p>
+<pre><code>body{
+margin: 0;
+min-width: 1226px;
+}
+</code></pre>
+
+<h2 id="平滑过渡">平滑过渡</h2>
+<p>transition:过渡的属性  持续时间  [速率]  [延迟时间]
+过渡的属性
+单一属性过渡:
+transition:过渡的属性  持续时间  [速率]  [延迟时间]
+多个属性过渡
+transition:过渡的属性  持续时间  [速率]  [延迟时间],  过渡的属性  持续时间  [速率]  [延迟时间],…
+过渡所有属性(有多少发生改变,就过渡多少属性)
+transition:all  持续时间  [速率]  [延迟时间];</p>
+<ol>
+  <li>速度
+ ease			默认 逐渐变慢
+ linear			匀速
+ ease-in			加速
+ ease-out		减速
+ ease-in-out		先加速,再减速
+ cubic-bezier()	自定义速度,建议通过F12调试</li>
+  <li>延迟
+单位:s或ms
+过渡不会立刻触发,而是等待延迟时间过了,才会触发过渡</li>
+  <li>重点
+过渡只能过渡能够加减的属性,例如:width height color opacity等
+以下属性是无法过渡的 例如: display visibility</li>
+</ol>
+
+<h2 id="变形">变形</h2>
+<p>transform:
+none		不变形(默认)
+rotate	旋转	单位:deg 角度
+skew	扭曲  单位:deg 角度(90度会扭成一条线)
+scale		中心缩放  单位:基数
+基数 = 1 不缩放,基数 &gt; 1 放大,基数 &lt; 1 缩小,可负数
+translate 位移  单位:px或%,相对于自身开始位移
+小盒子在大盒子垂直居中可以,不可以水平居中
+小盒子在大盒子内实现水平垂直居中(利用定位+变形)</p>
+<pre><code>img:nth-of-type(1):hover{
+transform: rotate(30deg);
+transform: rotate(-30deg);
+transform: rotateX(30deg);
+transform: rotateY(30deg);
+transform: rotateZ(30deg);
+transform: rotate3d(10,20,30,60deg);
+}
+img:nth-of-type(2):hover{
+transform: skew(30deg);
+transform: skew(90deg);
+transform: skew(180deg);
+transform: skew(270deg);
+transform: skewY(30deg);
+}
+img:nth-of-type(3):hover{
+/* transform: scale(1); */
+/* transform: scale(2); */
+/* transform: scale(1.5); */
+/* transform: scale(0.5); */
+/* transform: scale(0); */
+transform: scale(-1);
+}
+img:nth-of-type(4):hover{
+transform: translate(0px, 0px);
+transform: translate(30px, 0px);
+transform: translate(30px, -30px);
+transform: translateX(30px);
+transform: translateY(30px);
+transform: translateY(-50%);
+}
+#box{
+width: 234px;
+height: 300px;
+border: 1px solid ;
+margin: 30px auto;
+transition: all .3s;
+}
+#box:hover{
+box-shadow: 0 15px 30px rgba(0,0,0,.1);
+transform: translateY(-2px);
+}
+
+</code></pre>
+
+<pre><code>#big{
+width: 800px;
+height: 800px;
+background: pink;
+/* 小盒子在大盒子垂直居中, 不能水平居中 */
+/* display: table-cell; */
+/* vertical-align: middle; */
+position: relative;
+}
+#small{
+width: 200px;
+height: 200px;
+background: skyblue;
+/* 小盒子在大盒子内实现 水平垂直居中 (利用定位+变形) */
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+&lt;div id="big"&gt; 
+&lt;div id="small"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h2 id="css初始化">Css初始化</h2>
+<p>原因:由于各大浏览器对属性默认值不是完全相同,导致相同css代码在不同浏览器中显示是,会呈现不同的效果,为了避免这种情况,做了css初始化,来统一显示效果</p>
+<pre><code>&lt;style&gt;
+body,ul,ol,dl,li,p,img,h1,h2,h3,h4,h5,h6{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        body{
+            background: #fff;
+            font-size: 16px;
+            font-family: 微软雅黑, 黑体, sans-serif, monospace;
+            color: #000;
+        }
+        input{
+            outline: none;
+        }
+    &lt;/style&gt;
+
+</code></pre>
+<h2 id="css命名规范">Css命名规范</h2>
+<p>要求1:
+选择器名较长时,单词间隔请用 - 减号隔开,不要用下划线隔开
+原因1:有的浏览器不识别
+原因2:能有效的区分JS
+要求2:id名要求唯一性
+原因:JS无法准确获取重复的id
+要求3:
+选择器名取名要有意义(不会查词典,不要使用中文式英语,拼音)</p>
+
+<h2 id="filter">filter</h2>
+<pre><code>&lt;style&gt;
+img{
+width: 100%;
+height: 100%;
+position: fixed;
+left: 0;
+top: 0;
+/* 高斯模糊 */
+filter: blur(10px);
+/* 高亮 */
+filter: brightness(250%)
+/* 黑白 */
+filter: grayscale(100%);
+}
+&lt;/style&gt;
+</code></pre>
+
+:ET

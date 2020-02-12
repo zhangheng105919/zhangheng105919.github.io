@@ -1,0 +1,1309 @@
+I"��
+<h1 id="一数组对象">一.数组对象</h1>
+<h2 id="1数组属性">1.数组属性</h2>
+<p>constructor     返回创建数组对象的原型函数
+length          设置或返回数组元素的个数
+prototype       可以有能力向数组对象添加属性或方法</p>
+
+<h3 id="1constructor">1.constructor</h3>
+<p>格式:函数名.constructor
+ 数组constructor属性的返回function Arry(){[native code]}
+ 数字constructor属性的返回function Number{[native code]}
+ 字符串constructor属性的返回function String{[native code]}</p>
+
+<h3 id="2prototype">2.prototype</h3>
+<p>语法:Array.prototype.name=value
+Array.prototype 单独不能引用数组, Array() 对象可以
+在js对象中,prototype是一个全局属性.</p>
+<pre><code>
+&lt;p id="demo"&gt;点击按钮创建数组，并调用新建的 ucase() 方法, 最后显示结果。&lt;/p&gt;
+
+&lt;button onclick="myFunction()"&gt;点我&lt;/button&gt;
+
+&lt;script&gt;
+Array.prototype.myUcase=function()
+{
+    for (i=0;i&lt;this.length;i++)
+    {
+        this[i]=this[i].toUpperCase();
+    }
+}
+
+function myFunction()
+{
+	var fruits = ["Banana", "Orange", "Apple", "Mango"];
+	fruits.myUcase();
+	var x=document.getElementById("demo");
+	x.innerHTML=fruits;
+}
+&lt;/script&gt;
+
+</code></pre>
+<h2 id="2数组对象方法">2.数组对象方法</h2>
+<h3 id="1concat">1.concat()</h3>
+<p>连接2个或更多的数组,并返回结果
+语法:array1.concat(array2,array3,arrayx)
+参数:可以是具体的值,也可以是数组对象,可以是任意多个</p>
+
+<h3 id="2copywithin">2.copyWithin()</h3>
+<p>从数组的指定位置拷贝元素到数组的另一个指定位置中
+语法:array.copyWithin(target,start,end)
+   target:必须的,赋值到指定目标索引位置
+   start:可选的,元素赋值的起始位置
+   end:可选的,停止赋值的索引的位置,如果为负数,表示倒数.</p>
+<pre><code>var fruits = ["Banana", "Orange", "Apple", "Mango", "Kiwi", "Papaya"];
+document.getElementById("demo").innerHTML = fruits.copyWithin(2,0,3);
+结果:Banana,Orange,Banana,Orange,Apple,Papaya
+
+</code></pre>
+
+<h3 id="3entries">3.entries()</h3>
+<p>返回数组的可迭代对象
+语法:array.entries()   无参数
+entries() 方法返回一个数组的迭代对象，该对象包含数组的键值对 (key/value)</p>
+<pre><code>&lt;p id="demo1"&gt;&lt;/p&gt;
+&lt;p id="demo2"&gt;&lt;/p&gt;
+&lt;p id="demo3"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意:&lt;/strong&gt; IE11 及其更早的浏览器版本不支持 entries 方法。&lt;/p&gt;
+
+&lt;script&gt;
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var x = fruits.entries();
+
+document.getElementById("demo1").innerHTML = x.next().value;
+document.getElementById("demo2").innerHTML = x.next().value;
+document.getElementById("demo3").innerHTML = x.next().value;
+&lt;/script&gt;
+
+结果:
+0,Banana
+1,Orange
+2,Apple
+</code></pre>
+<h3 id="4every">4.every()</h3>
+<p>检测数值元素的每个元素是否都符合条件
+如果数组中检测到有一个元素不满足,则整个表达式返回false,且剩余的元素不会再进行检测,如果所有的元素满足条件,则返回true,<strong>注意</strong>every()不会对空数组进行检测,不会改变原始数组.</p>
+<pre><code>&lt;p&gt;点击按钮检测数组的所有元素是否都大于 18 :&lt;/p&gt;
+&lt;button onclick="myFunction()"&gt;点我&lt;/button&gt;
+&lt;p id="demo"&gt;&lt;/p&gt;
+&lt;script&gt;
+var ages = [32, 33, 16, 40];
+function checkAdult(age) {
+    return age &gt;= 18;
+}
+function myFunction() {
+    document.getElementById("demo").innerHTML = ages.every(checkAdult);
+}
+&lt;/script&gt;
+
+结果:false
+</code></pre>
+<h3 id="5fill">5.fill()</h3>
+<p>将用于一个固定值替换数组的元素
+语法:array.fill(value,start,end)</p>
+<pre><code>&lt;p&gt;点击按钮使用 “Runoob” 填充所有数组元素。&lt;/p&gt;
+
+&lt;button onclick="myFunction()"&gt;点我&lt;/button&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;注意:&lt;/strong&gt; IE 11 及更早版本不支持 fill() 方法。&lt;/p&gt;
+
+&lt;script&gt;
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+
+function myFunction() {  
+    document.getElementById("demo").innerHTML = fruits.fill("Runoob");
+}
+	document.getElementById("demo").innerHTML = fruits.fill("Runoob",2,4);
+&lt;/script&gt;
+结果:全是Runoob
+</code></pre>
+<h3 id="6filter">6.filter()</h3>
+<p>检测数值元素,并返回符合条件所有元素的数组.
+filter() 方法创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素,不会对空数组进行检测,不会改变原始数组.</p>
+<pre><code>&lt;p&gt;点击按钮获取数组中大于 18 的所有元素。&lt;/p&gt;
+&lt;button onclick="myFunction()"&gt;点我&lt;/button&gt;
+&lt;p id="demo"&gt;&lt;/p&gt;
+&lt;script&gt;
+var ages = [32, 33, 16, 40];
+function checkAdult(age) {
+    return age &gt;= 18;
+}
+function myFunction() {
+    document.getElementById("demo").innerHTML = ages.filter(checkAdult);
+}
+&lt;/script&gt;
+</code></pre>
+<h3 id="7find">7.find()</h3>
+<p>返回符合传入测试(函数)条件的数组元素
+find() 方法返回通过测试（函数内判断）的数组的第一个元素的值。
+find() 方法为数组中的每个元素都调用一次函数执行：当数组中的元素在测试条件时返回 true 时, find() 返回符合条件的元素，之后的值不会再调用执行函数,如果没有符合条件的元素返回 undefined ,find() 对于空数组，函数是不会执行的,find() 并没有改变数组的原始值。</p>
+<pre><code>&lt;p&gt;点击按钮获取数组中年龄大于 18 的第一个元素。&lt;/p&gt;
+
+&lt;button onclick="myFunction()"&gt;点我&lt;/button&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;注意:&lt;/strong&gt; IE 11 及更早版本不支持 find() 方法。&lt;/p&gt;
+
+&lt;script&gt;
+var ages = [3, 10, 18, 20];
+
+function checkAdult(age) {
+    return age &gt;= 18;
+}
+
+function myFunction() {
+    document.getElementById("demo").innerHTML = ages.find(checkAdult);
+}
+&lt;/script&gt;
+结果:18
+
+好题:
+2.&lt;p&gt;点击按钮返回符合大于输入框中指定数字的数组元素。&lt;/p&gt;
+&lt;p&gt;最小年龄: &lt;input type="number" id="ageToCheck" value="18"&gt;&lt;/p&gt;
+&lt;button onclick="myFunction()"&gt;点我&lt;/button&gt;
+
+&lt;p&gt;值: &lt;span id="demo"&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;注意:&lt;/strong&gt; IE 11 及更早版本不支持 findIndex() 方法。&lt;/p&gt;
+
+&lt;script&gt;
+var ages = [4, 12, 16, 20];
+
+function checkAdult(age) {
+    return age &gt;= document.getElementById("ageToCheck").value;
+}
+
+function myFunction() {
+    document.getElementById("demo").innerHTML = ages.find(checkAdult);
+}
+&lt;/script&gt;
+
+</code></pre>
+
+<h3 id="8findindex">8.findIndex()</h3>
+<p>返回符合传入测试条件的数组元素索引
+同上,只不过输入的元组的索引位置</p>
+
+<h3 id="9foreach">9.forEach()</h3>
+<p>数组每个元素都执行一次回调函数
+语法:array.forEach(function(currentValue, index, arr), thisValue)
+currentValue 	必需。当前元素
+index 	可选。当前元素的索引值。
+arr 	可选。当前元素所属的数组对象。</p>
+<pre><code>&lt;p&gt;点击按钮列出数组的每个元素。&lt;/p&gt;
+&lt;button onclick="numbers.forEach(myFunction)"&gt;点我&lt;/button&gt;
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+demoP = document.getElementById("demo");
+var numbers = [4, 9, 16, 25];
+
+function myFunction(item, index) {
+    demoP.innerHTML = demoP.innerHTML + "index[" + index + "]: " + item + "&lt;br&gt;"; 
+}
+&lt;/script&gt;
+
+结果:
+index[0]: 4
+index[1]: 9
+index[2]: 16
+index[3]: 25
+
+
+&lt;p&gt;点击按钮计算数组所有元素相加的总和。&lt;/p&gt;
+&lt;button onclick="numbers.forEach(myFunction)"&gt;点我&lt;/button&gt;
+
+&lt;p&gt;数组元素总和：&lt;span id="demo"&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;script&gt;
+var sum = 0;
+var numbers = [65, 44, 12, 4];
+
+function myFunction(item) {
+    sum += item;
+    demo.innerHTML = sum;
+}
+&lt;/script&gt;
+
+结果:125
+
+
+
+&lt;p&gt;点击按钮将数组中的所有值乘以特定数字。&lt;/p&gt;
+&lt;p&gt;乘以: &lt;input type="number" id="multiplyWith" value="10"&gt;&lt;/p&gt;
+&lt;button onclick="numbers.forEach(myFunction)"&gt;点我&lt;/button&gt;
+
+&lt;p&gt;计算后的值: &lt;span id="demo"&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;script&gt;
+var numbers = [65, 44, 12, 4];
+
+function myFunction(item,index,arr) {
+    arr[index] = item * document.getElementById("multiplyWith").value;
+    demo.innerHTML = numbers;
+}
+&lt;/script&gt;
+
+结果:计算后的值: 650,440,120,40
+
+</code></pre>
+
+<h3 id="10from">10.from()</h3>
+<p>通过给定的对象中创建一个数组
+Array.from(object, mapFunction, thisValue)
+object 	必需，要转换为数组的对象。
+mapFunction 	可选，数组中每个元素要调用的函数。
+thisValue 	可选，映射函数(mapFunction)中的 this 对象。</p>
+<pre><code>&lt;h1&gt;Array.from()&lt;/h1&gt;
+
+&lt;p&gt;从字符串中生成一个数组:&lt;/p&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;注意:&lt;/strong&gt; IE11 及其更早的浏览器版本不支持 from 方法。&lt;/p&gt;
+
+&lt;script&gt;
+var myArr = Array.from("RUNOOB");
+if(myArr instanceof Array) {
+    document.getElementById("demo").innerHTML = myArr[0];
+} else {
+	document.getElementById("demo").innerHTML = "该对象不是数组！";
+}
+
+&lt;/script&gt;
+
+R
+
+
+
+var setObj = new Set(["a", "b", "c"]);
+var objArr = Array.from(setObj);
+objArr[1] == "b";  // true
+
+
+var arr = Array.from([1, 2, 3], x =&gt; x * 10);
+// arr[0] == 10;
+// arr[1] == 20;
+// arr[2] == 30;
+
+</code></pre>
+
+<h3 id="11include">11.include()</h3>
+<p>判断一个数组是否包含一个指定的值</p>
+<pre><code>[1, 2, 3].includes(2);     // true
+[1, 2, 3].includes(4);     // false
+[1, 2, 3].includes(3, 3);  // false
+[1, 2, 3].includes(3, -1); // true
+[1, 2, NaN].includes(NaN); // true
+</code></pre>
+<p>语法:arr.includes(searchElement, fromIndex)
+searchElement 	必须。需要查找的元素值。
+fromIndex 	可选。从该索引处开始查找 searchElement。如果为负值，则按升序从 array.length + fromIndex 的索引开始搜索。默认为 0。
+如果fromIndex 大于等于数组长度 ，则返回 false 。该数组不会被搜索:
+如果 fromIndex 为负值，计算出的索引将作为开始搜索searchElement的位置。如果计算出的索引小于 0，则整个数组都会被搜索。</p>
+
+<h3 id="12indexof">12.indexOf()</h3>
+<p>搜索数组中的元素,并返回它所在的位置
+语法:array.indexOf(item,start)
+item 	必须。查找的元素。
+start 	可选的整数参数。规定在数组中开始检索的位置。它的合法取值是 0 到 stringObject.length - 1。如省略该参数，则将从字符串的首字符开始检索。</p>
+<pre><code>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var a = fruits.indexOf("Apple");
+结果:a=2
+</code></pre>
+<h3 id="13isarray">13.isArray()</h3>
+<p>判断是否为数组,如果对象是数组返回 true，否则返回 false</p>
+<pre><code>&lt;script&gt;
+function myFunction() {
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    var x = document.getElementById("demo");
+    x.innerHTML = Array.isArray(fruits);
+}
+&lt;/script&gt;
+</code></pre>
+<h3 id="14join">14.join()</h3>
+<p>把数组的所有元素放入一个字符串,返回的是个字符串</p>
+<pre><code>&lt;p id="demo"&gt;点击按钮将数组作为字符串输出。&lt;/p&gt;
+&lt;button onclick="myFunction()"&gt;点我&lt;/button&gt;
+&lt;script&gt;
+function myFunction(){
+	var fruits = ["Banana", "Orange", "Apple", "Mango"];
+	var x=document.getElementById("demo");
+	x.innerHTML=fruits.join();
+}
+&lt;/script&gt;
+结果:Banana,Orange,Apple,Mango
+</code></pre>
+<p>语法:array.join(separator)
+separator 	可选。指定要使用的分隔符。如果省略该参数，则使用逗号作为分隔符。</p>
+
+<h3 id="15keys">15.keys()</h3>
+<p>返回数组的可迭代对象，包含原始数组的键(key)。如果对象是数组返回 true，否则返回 false。</p>
+<pre><code>&lt;h1&gt;Array keys()&lt;/h1&gt;
+
+&lt;p&gt;从数组中创建一个可迭代的对象，该对象包含数组的键。&lt;/p&gt;
+
+&lt;p id="demo1"&gt;&lt;/p&gt;
+&lt;p id="demo2"&gt;&lt;/p&gt;
+&lt;p id="demo3"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意:&lt;/strong&gt; IE11 及其更早的浏览器版本不支持 keys 方法。&lt;/p&gt;
+
+&lt;script&gt;
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var x = fruits.keys();
+
+document.getElementById("demo1").innerHTML = x.next().value;
+document.getElementById("demo2").innerHTML = x.next().value;
+document.getElementById("demo3").innerHTML = x.next().value;
+&lt;/script&gt;
+
+结果:
+0
+1
+2
+</code></pre>
+<h3 id="16lastindexof">16.lastIndexOf()</h3>
+<p>搜索数组中的元素,并返回它最后出现的位置
+语法:array.lastIndexOf(item,start)
+item 	必需。规定需检索的字符串值。
+start 	可选的整数参数。规定在字符串中开始检索的位置。它的合法取值是 0 到 stringObject.length - 1。如省略该参数，则将从字符串的最后一个字符处开始检索。</p>
+
+<pre><code>不写start,默认从索引0开始
+从数组中的第四个位置查找字符串 "Apple"出现的位置：
+var fruits=["Banana","Orange","Apple","Mango","Banana","Orange","Apple"];
+var a = fruits.lastIndexOf("Apple",4); 
+结果为2
+</code></pre>
+
+<h3 id="17map">17.map()</h3>
+<p>通过指定函数处理数组的每个元素，并返回处理后的数组。map() 方法返回一个新数组，数组中的元素为原始数组元素调用函数处理后的值。map() 方法按照原始数组元素顺序依次处理元素。map() 不会对空数组进行检测。map() 不会改变原始数组。 
+语法:array.map(function(currentValue,index,arr), thisValue)
+currentValue 	必须。当前元素的值
+index 	可选。当前元素的索引值
+arr 	可选。当前元素属于的数组对象
+thisValue   可选。对象作为该执行回调时使用，传递给函数，用作 “this” 的值。
+如果省略了 thisValue，或者传入 null、undefined，那么回调函数的 this 为全局对象。</p>
+<pre><code>&lt;p&gt;点击按钮获取数组元素的平方根。&lt;/p&gt;
+&lt;button onclick="myFunction()"&gt;点我&lt;/button&gt;
+&lt;p id="demo"&gt;&lt;/p&gt;
+&lt;script&gt;
+var numbers = [4, 9, 16, 25];
+function myFunction() {
+    x = document.getElementById("demo")
+    x.innerHTML = numbers.map(Math.sqrt);
+}
+&lt;/script&gt;
+结果:2,3,4,5
+
+&lt;p&gt;点击按钮将数组中的每个元素乘于输入框指定的值，并返回新数组。&lt;/p&gt;
+&lt;p&gt;最小年龄: &lt;input type="number" id="multiplyWith" value="10"&gt;&lt;/p&gt;
+&lt;button onclick="myFunction()"&gt;点我&lt;/button&gt;
+&lt;p&gt;新数组: &lt;span id="demo"&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;script&gt;
+var numbers = [65, 44, 12, 4];
+function multiplyArrayElement(num) {
+    return num * document.getElementById("multiplyWith").value;
+}
+function myFunction() {
+    document.getElementById("demo").innerHTML = numbers.map(multiplyArrayElement);
+}
+&lt;/script&gt;
+
+结果:新数组: 650,440,120,40
+</code></pre>
+<h3 id="18pop">18.pop()</h3>
+<p>删除数组的最后一个元素并返回删除的元素</p>
+<h3 id="19push">19.push()</h3>
+<p>向数组的末尾添加一个或更多元素，并返回新的长度。
+语法:array.push(item1, item2, …, itemX)</p>
+
+<h3 id="20reduce">20.reduce()</h3>
+<p>将数组元素计算为一个值（从左到右）。
+语法:array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
+total 	必需。初始值, 或者计算结束后的返回值。
+currentValue 	必需。当前元素
+currentIndex 	可选。当前元素的索引
+arr 	可选。当前元素所属的数组对象。</p>
+<pre><code>&lt;p&gt;点击按钮计算数组元素相加后的总和。&lt;/p&gt;
+&lt;button onclick="myFunction()"&gt;点我&lt;/button&gt;
+
+&lt;p&gt;数组元素总和: &lt;span id="demo"&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;script&gt;
+var numbers = [65, 44, 12, 4];
+
+function getSum(total, num) {
+    return total + num;
+}
+function myFunction(item) {
+    document.getElementById("demo").innerHTML = numbers.reduce(getSum);
+}
+&lt;/script&gt;
+结果:125
+
+
+ document.getElementById("demo").innerHTML = numbers.reduce(getSum, 0);
+ 对数组元素进行四舍五入并计算总和,为整数
+</code></pre>
+
+<h3 id="21reduceright">21.reduceRight()</h3>
+<p>将数组元素计算为一个值（从右到左）。</p>
+<pre><code>&lt;p&gt;点击按钮从右到左，由最后一个元素开始减去每个数组的元素。&lt;/p&gt;
+&lt;button onclick="myFunction()"&gt;点我&lt;/button&gt;
+
+&lt;p&gt;计算后的值: &lt;span id="demo"&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;script&gt;
+var numbers = [2, 45, 30, 100];
+
+function getSum(total, num) {
+    return total - num;
+}
+function myFunction(item) {
+    document.getElementById("demo").innerHTML = numbers.reduceRight(getSum);
+}
+&lt;/script&gt;
+结果:23
+</code></pre>
+<h3 id="22reverse">22.reverse()</h3>
+<p>反转数组的元素顺序。</p>
+<h3 id="23shift">23.shift()</h3>
+<p>删除并返回数组的第一个元素。</p>
+<pre><code>&lt;p id="demo"&gt;单击按钮删除数组的第一个元素。&lt;/p&gt;
+&lt;p id="demo2"&gt;&lt;/p&gt;
+&lt;button onclick="myFunction()"&gt;点我&lt;/button&gt;
+&lt;script&gt;
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+function myFunction(){
+	var delell = fruits.shift();
+	var x=document.getElementById("demo");
+	x.innerHTML= '删除后数组为：' +  fruits;
+	document.getElementById("demo2").innerHTML= '删除的元素是：' +  delell;
+}
+&lt;/script&gt;
+结果:
+删除后数组为：Orange,Apple,Mango
+删除的元素是：Banana
+
+</code></pre>
+<h3 id="24slice">24.slice()</h3>
+<p>选取数组的的一部分，并返回一个新数组。</p>
+<pre><code>function myFunction(){
+	var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+	var citrus = fruits.slice(1,3);
+	var x=document.getElementById("demo");
+	x.innerHTML=citrus;
+}
+结果:
+Orange,Lemon
+
+
+var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+var myBest = fruits.slice(-3,-1); 
+结果:Lemon,Apple
+
+
+var str="www.runoob.com!";
+document.write(str.slice(4)+"&lt;br&gt;"); // 从第 5 个字符开始截取到末尾
+document.write(str.slice(4,10)); // 从第 5 个字符开始截取到第10个字符
+</code></pre>
+<h3 id="25some">25.some()</h3>
+<p>检测数组元素中是否有元素符合指定条件。
+语法:array.some(function(currentValue,index,arr),thisValue)
+currentValue 	必须。当前元素的值
+index 	可选。当前元素的索引值
+arr 	可选。当前元素属于的数组对象
+thisValue   可选。对象作为该执行回调时使用，传递给函数，用作 “this” 的值。
+如果省略了 thisValue ，”this” 的值为 “undefined”</p>
+<pre><code>&lt;p&gt;点击按钮检测数组中是否有元素大于 18。&lt;/p&gt;
+&lt;button onclick="myFunction()"&gt;点我&lt;/button&gt;
+&lt;p id="demo"&gt;&lt;/p&gt;
+&lt;script&gt;
+var ages = [3, 10, 18, 20];
+function checkAdult(age) {
+    return age &gt;= 18;
+}
+function myFunction() {
+    document.getElementById("demo").innerHTML = ages.some(checkAdult);
+}
+&lt;/script&gt;
+
+</code></pre>
+<h3 id="26sort">26.sort()</h3>
+<p>对数组的元素进行排序。</p>
+
+<pre><code>var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.sort();    #Apple,Banana,Mango,Orange
+
+
+var points = [40,100,1,5,25,10];
+points.sort(function(a,b){return a-b});
+1,5,10,25,40,100
+
+var points = [40,100,1,5,25,10];
+points.sort(function(a,b){return b-a});
+100,40,25,10,5,1
+</code></pre>
+<h3 id="27splice">27.splice()</h3>
+<p>从数组中添加或删除元素。
+语法:array.splice(index,howmany,item1,…..,itemX)
+index 	必需。规定从何处添加/删除元素。
+该参数是开始插入和（或）删除的数组元素的下标，必须是数字。
+howmany 	可选。规定应该删除多少元素。必须是数字，但可以是 “0”。
+如果未规定此参数，则删除从 index 开始到原数组结尾的所有元素。
+item1, …, itemX 	可选。要添加到数组的新元素</p>
+<pre><code>var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.splice(2,1,"Lemon","Kiwi"); 
+结果:Banana,Orange,Lemon,Kiwi,Mango
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.splice(2,2);
+结果:Banana,Orange
+</code></pre>
+
+<h3 id="28tostring">28.toString()</h3>
+<p>把数组转换为字符串，并返回结果。</p>
+<pre><code>var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.toString(); 
+结果:Banana,Orange,Apple,Mango
+</code></pre>
+<h3 id="29unshift">29.unshift()</h3>
+<p>向数组的开头添加一个或更多元素，并返回新的长度。</p>
+<pre><code>var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.unshift("Lemon","Pineapple"); 
+结果:Lemon,Pineapple,Banana,Orange,Apple,Mango
+</code></pre>
+<h3 id="30valueof">30.valueOf()</h3>
+<p>返回数组对象的原始值。</p>
+<pre><code>var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var v=fruits.valueOf(); 
+结果:Banana,Orange,Apple,Mango
+</code></pre>
+
+<h1 id="二boolean对象">二.Boolean对象</h1>
+<h2 id="1对象属性">1.对象属性</h2>
+<h3 id="1constructor-1">1.constructor</h3>
+<p>返回对创建此对象的 Boolean 函数的引用</p>
+<pre><code>
+&lt;p id="demo"&gt;单击按钮创建一个boolean对象，显示它的constructor属性。&lt;/p&gt;
+&lt;button onclick="myFunction()"&gt;点我&lt;/button&gt;
+&lt;script&gt;
+function myFunction(){
+	var myvar=new Boolean(1);
+	var x=document.getElementById("demo");
+	x.innerHTML=myvar.constructor;
+}
+&lt;/script&gt;
+结果:function Boolean() { [native code] }
+</code></pre>
+
+<h3 id="2prototype-1">2.prototype</h3>
+<p>使您有能力向对象添加属性和方法。</p>
+
+<pre><code>&lt;script&gt;
+Boolean.prototype.myColor=function(){
+	if (this.valueOf()==true){
+		this.color="green";
+	}
+	else{
+		this.color="red";
+	}
+}	
+function myFunction(){
+	var a = new Boolean(1);
+	a.myColor();
+	var x=document.getElementById("demo");
+	x.innerHTML=a.color;
+}
+&lt;/script&gt;
+结果:green
+</code></pre>
+<h2 id="2boolen对象方法">2.boolen对象方法</h2>
+<h3 id="1tostring">1.toString()</h3>
+<p>把布尔值转换为字符串，并返回结果。</p>
+
+<pre><code>var bool = new Boolean(1);
+var myvar = bool.toString(); 
+结果:true
+</code></pre>
+<h3 id="2valueof">2.valueOf()</h3>
+<p>返回 Boolean 对象的原始值。</p>
+<pre><code>var bool = new Boolean(0);
+var myvar = bool.valueOf(); 
+结果:false
+</code></pre>
+<h1 id="三date对象">三.date对象</h1>
+<h2 id="1date对象属性">1.date对象属性</h2>
+<h3 id="1constructor-2">1.constructor</h3>
+<p>返回对创建此对象的 Date 函数的引用。</p>
+<h3 id="2prototype-2">2.prototype</h3>
+<p>使您有能力向对象添加属性和方法。</p>
+
+<h2 id="2date对象方法">2.date对象方法</h2>
+<h3 id="1getdate">1.getDate()</h3>
+<p>从 Date 对象返回一个月中的某一天 (1 ~ 31)。</p>
+<pre><code>var d = new Date("July 21, 1983 01:15:00");
+var n = d.getDate();    #21
+</code></pre>
+<h3 id="2getday">2.getDay()</h3>
+<p>从 Date 对象返回一周中的某一天 (0 ~ 6)。</p>
+<pre><code>var d = new Date();
+var n = d.getDay(); 
+</code></pre>
+<h3 id="3getfullyear">3.getFullYear()</h3>
+<p>从 Date 对象以四位数字返回年份。</p>
+<pre><code>var d = new Date();
+var n = d.getFullYear(); #2019
+</code></pre>
+
+<h3 id="4gethours">4.getHours()</h3>
+<p>返回 Date 对象的小时 (0 ~ 23)。</p>
+<pre><code>var d = new Date();
+var n = d.getHours(); 
+</code></pre>
+<h3 id="5getmilliseconds">5.getMilliseconds()</h3>
+<p>返回 Date 对象的毫秒(0 ~ 999)。</p>
+<pre><code>var d = new Date();
+var n = d.getMilliseconds(); 
+</code></pre>
+
+<h3 id="6getminutes">6.getMinutes()</h3>
+<p>返回 Date 对象的分钟 (0 ~ 59)。</p>
+<h3 id="7getmonth">7.getMonth()</h3>
+<p>从 Date 对象返回月份 (0 ~ 11)。</p>
+<h3 id="8getseconds">8.getSeconds()</h3>
+<p>返回 Date 对象的秒数 (0 ~ 59)。</p>
+<h3 id="9gettime">9.getTime()</h3>
+<p>返回 1970 年 1 月 1 日至今的毫秒数。</p>
+<h3 id="10gettimezoneoffset">10.getTimezoneOffset()</h3>
+<p>返回本地时间与格林威治标准时间 (GMT) 的分钟差,以分钟为单位。
+<strong><em>协调世界时，又称世界统一时间，世界标准时间，国际协调时间，简称UTC</em></strong></p>
+<h3 id="11getutcdate">11.getUTCDate()</h3>
+<p>根据世界时从 Date 对象返回月中的一天 (1 ~ 31)。</p>
+<h3 id="12getutcday">12.getUTCDay()</h3>
+<p>根据世界时从 Date 对象返回周中的一天 (0 ~ 6)。</p>
+
+<h3 id="13getutcfullyear">13.getUTCFullYear()</h3>
+<p>根据世界时从 Date 对象返回四位数的年份。</p>
+<h3 id="14getutchours">14.getUTCHours()</h3>
+<p>根据世界时返回 Date 对象的小时 (0 ~ 23)。</p>
+<h3 id="15getutcmilliseconds">15.getUTCMilliseconds()</h3>
+<p>根据世界时返回 Date 对象的毫秒(0 ~ 999)。</p>
+<h3 id="16getutcminutes">16.getUTCMinutes()</h3>
+<p>根据世界时返回 Date 对象的分钟 (0 ~ 59)。</p>
+<h3 id="17getutcmonth">17.getUTCMonth()</h3>
+<p>根据世界时从 Date 对象返回月份 (0 ~ 11)。</p>
+<h3 id="18getutcseconds">18.getUTCSeconds()</h3>
+<p>根据世界时返回 Date 对象的秒钟 (0 ~ 59)。</p>
+<h3 id="19parse">19.parse()</h3>
+<p>返回1970年1月1日午夜到指定日期（字符串）的毫秒数。</p>
+<pre><code>var d = Date.parse("March 21, 2012"); 
+</code></pre>
+<h3 id="20setdate">20.setDate()</h3>
+<p>设置 Date 对象中月的某一天 (1 ~ 31)。就是设置今天是几号
+语法:Date.setDate(day) 
+day 	必需。表示一个月中的一天的一个数值（1 ~ 31）: 0 为上一个月的最后一天,-1 为上一个月最后一天之前的一天,如果当月有 31 天:32 为下个月的第一天,如果当月有 30 天:32 为下一个月的第二天</p>
+
+<h3 id="21setfullyear">21.setFullYear()</h3>
+<p>设置 Date 对象中的年份（四位数字）。</p>
+<h3 id="22sethours">22.setHours()</h3>
+<p>设置 Date 对象中的小时 (0 ~ 23)。</p>
+<h3 id="23setmilliseconds">23.setMilliseconds()</h3>
+<p>设置 Date 对象中的毫秒 (0 ~ 999)。</p>
+<h3 id="24setminutes">24.setMinutes()</h3>
+<p>设置 Date 对象中的分钟 (0 ~ 59)。</p>
+<h3 id="25setmonth">25.setMonth()</h3>
+<p>设置 Date 对象中月份 (0 ~ 11)。</p>
+<h3 id="26setseconds">26.setSeconds()</h3>
+<p>设置 Date 对象中的秒钟 (0 ~ 59)。</p>
+<h3 id="27settime">27.setTime()</h3>
+<p>setTime() 方法以毫秒设置 Date 对象。</p>
+<h3 id="28setutcdate">28.setUTCDate()</h3>
+<p>根据世界时设置 Date 对象中月份的一天 (1 ~ 31)。</p>
+<h3 id="29setutcfullyear">29.setUTCFullYear()</h3>
+<p>根据世界时设置 Date 对象中的年份（四位数字）。</p>
+<h3 id="30setutchours">30.setUTCHours()</h3>
+<p>根据世界时设置 Date 对象中的小时 (0 ~ 23)。</p>
+<h3 id="31setutcmilliseconds">31.setUTCMilliseconds()</h3>
+<p>根据世界时设置 Date 对象中的毫秒 (0 ~ 999)。</p>
+<h3 id="32setutcminutes">32.setUTCMinutes()</h3>
+<p>根据世界时设置 Date 对象中的分钟 (0 ~ 59)。</p>
+<h3 id="33setutcmonth">33.setUTCMonth()</h3>
+<p>根据世界时设置 Date 对象中的月份 (0 ~ 11)。</p>
+<h3 id="34setutcseconds">34.setUTCSeconds()</h3>
+<p>setUTCSeconds() 方法用于根据世界时 (UTC) 设置指定时间的秒字段。</p>
+
+<h3 id="35todatestring">35.toDateString()</h3>
+<p>把 Date 对象的日期部分转换为字符串。</p>
+
+<h3 id="36toisostring">36.toISOString()</h3>
+<p>使用 ISO 标准返回字符串的日期格式。</p>
+<pre><code>var d=new Date();
+var n=d.toISOString();   #2019-12-21T10:27:34.729Z 
+</code></pre>
+<h3 id="37tojson">37.toJSON()</h3>
+<p>以 JSON 数据格式返回日期字符串。toJSON() 方法可以将 Date 对象转换为字符串，并格式化为 JSON 数据格式。JSON 数据用同样的格式就像x ISO-8601 标准: YYYY-MM-DDTHH:mm:ss.sssZ</p>
+<pre><code>var d=new Date();
+var n=d.toJSON();   #2019-12-21T10:28:25.769Z 
+</code></pre>
+
+<h3 id="38tolocaledatestring">38.toLocaleDateString()</h3>
+<p>根据本地时间格式，把 Date 对象的日期部分转换为字符串。</p>
+<pre><code>var d=new Date();
+var n=d.toLocaleDateString();    #2019/12/21 
+</code></pre>
+<h3 id="39tolocaletimestring">39.toLocaleTimeString()</h3>
+<p>根据本地时间格式，把 Date 对象的时间部分转换为字符串。</p>
+<pre><code>var d=new Date();
+var n=d.toLocaleTimeString();   #下午6:31:08
+</code></pre>
+<h3 id="40tolocalestring">40.toLocaleString()</h3>
+<p>据本地时间格式，把 Date 对象转换为字符串。</p>
+<pre><code>var d=new Date();
+var n=d.toLocaleString();   #2019/12/21 下午6:32:09
+</code></pre>
+<h3 id="41tostring">41.toString()</h3>
+<p>把 Date 对象转换为字符串。</p>
+<pre><code>Sat Dec 21 2019 18:32:42 GMT+0800 (中国标准时间)
+</code></pre>
+<h3 id="42totimestring">42.toTimeString()</h3>
+<p>把 Date 对象的时间部分转换为字符串。</p>
+<pre><code>18:33:17 GMT+0800 (中国标准时间) 
+</code></pre>
+<h3 id="43toutcstring">43.toUTCString()</h3>
+<p>根据世界时，把 Date 对象转换为字符串。</p>
+<pre><code>Sat, 21 Dec 2019 10:34:10 GMT
+</code></pre>
+<h3 id="44utc">44.UTC()</h3>
+<p>根据世界时返回 1970 年 1 月 1 日 到指定日期的毫秒数。</p>
+<pre><code>var d=Date.UTC(2012,02,30);  #1333065600000 
+</code></pre>
+<h3 id="45valueof">45.valueOf()</h3>
+<p>返回 Date 对象的原始值。原始值返回1970年1月1日午夜以来的毫秒数！</p>
+
+<h1 id="四math对象">四.math对象</h1>
+<h2 id="1math对象属性">1.math对象属性</h2>
+<h3 id="1e">1.E</h3>
+<p>返回算术常量 e，即自然对数的底数（约等于2.718）。</p>
+<pre><code>Math.E;     #2.718281828459045 
+</code></pre>
+<h3 id="2ln2">2.LN2</h3>
+<p>返回 2 的自然对数（约等于0.693）。</p>
+<pre><code>Math.LN2;    #0.6931471805599453 
+</code></pre>
+<h3 id="3ln10">3.LN10</h3>
+<p>返回 10 的自然对数（约等于2.302）。</p>
+<h3 id="4log2e">4.LOG2E</h3>
+<p>返回以 2 为底的 e 的对数（约等于 1.4426950408889634）。</p>
+<h3 id="5log10e">5.LOG10E</h3>
+<p>返回以 10 为底的 e 的对数（约等于0.434）。</p>
+<h3 id="6pi">6.PI</h3>
+<p>返回圆周率（约等于3.14159）。</p>
+<h3 id="7sqrt1_2">7.SQRT1_2</h3>
+<p>返回 2 的平方根的倒数（约等于 0.707）。</p>
+<h3 id="8sqrt2">8.SQRT2</h3>
+<p>返回 2 的平方根（约等于 1.414）。</p>
+
+<h2 id="2math对象方法">2.math对象方法</h2>
+<h3 id="1absx">1.abs(x)</h3>
+<p>返回 x 的绝对值。</p>
+<pre><code>Math.abs(-7.25); 
+</code></pre>
+<h3 id="2acosx">2.acos(x)</h3>
+<p>返回 x 的反余弦值,返回的值是 0 到 PI 之间的弧度值,如果参数 x 超过了 -1.0 ~ 1.0 的范围，那么浏览器将返回 NaN,如果参数 x 取值 -1，那么将返回 PI.</p>
+<h3 id="3asinx">3.asin(x)</h3>
+<p>返回 x 的反正弦值。如果参数 x 超过了 -1.0 ~ 1.0 的范围，那么浏览器将返回 NaN。如果参数 x 取值 1，那么将返回 PI/2。</p>
+<h3 id="4atanx">4.atan(x)</h3>
+<p>以介于 -PI/2 与 PI/2 弧度之间的数值来返回 x 的反正切值。</p>
+<h3 id="5atan2yx">5.atan2(y,x)</h3>
+<p>返回从 x 轴到点 (x,y) 的角度（介于 -PI/2 与 PI/2 弧度之间）,atan2() 返回从原点(0,0) 到 (x,y) 点的线段与 x 轴正方向之间的平面角度(弧度值)，也就是 Math.atan2(y,x)。</p>
+<h3 id="6ceilx">6.ceil(x)</h3>
+<p>对数进行上舍入。Math.ceil(1.4) #2</p>
+<h3 id="7cosx">7.cos(x)</h3>
+<p>返回数的余弦, cos() 返回的是 -1.0 到 1.0 之间的数</p>
+<h3 id="8expx">8.exp(x)</h3>
+<p>返回 E^x 的指数。</p>
+<pre><code>Math.exp(1);   #2.718281828459045 
+</code></pre>
+<h3 id="9floorx">9.floor(x)</h3>
+<p>对 x 进行下舍入。 1.6成1</p>
+<h3 id="10logx">10.log(x)</h3>
+<p>返回数的自然对数（底为e）。</p>
+<h3 id="11maxxyzn">11.max(x,y,z,…,n)</h3>
+<p>返回 x,y,z,…,n 中的最高值。</p>
+<pre><code>Math.max(5,10);   10
+</code></pre>
+<h3 id="12minxyzn">12.min(x,y,z,…,n)</h3>
+<p>返回 x,y,z,…,n中的最低值。</p>
+<h3 id="13powxy">13.pow(x,y)</h3>
+<p>返回 x 的 y 次幂。</p>
+<pre><code>Math.pow(4,3);    64
+</code></pre>
+<h3 id="14random">14.random()</h3>
+<p>返回 0 ~ 1 之间的随机数。</p>
+<h3 id="15roundx">15.round(x)</h3>
+<p>四舍五入。</p>
+<h3 id="16sinx">16.sin(x)</h3>
+<p>返回数的正弦。</p>
+<h3 id="17sqrtx">17.sqrt(x)</h3>
+<p>返回数的平方根。</p>
+<pre><code>Math.sqrt(9);   #3
+</code></pre>
+<h3 id="18tanx">18.tan(x)</h3>
+<p>返回角的正切。</p>
+
+<h1 id="五number对象">五.number对象</h1>
+<h2 id="1number对象属性">1.number对象属性</h2>
+<h3 id="1constructor-3">1.constructor</h3>
+<p>返回对创建此对象的 Number 函数的引用。</p>
+<h3 id="2max_value">2.MAX_VALUE</h3>
+<p>可表示的最大的数。</p>
+<pre><code>var x = 100;
+x.MAX_VALUE;   #underfined
+
+Number.MAX_VALUE; 
+1.7976931348623157e+308
+
+</code></pre>
+<h3 id="3min_value">3.MIN_VALUE</h3>
+<p>可表示的最小的数。</p>
+<h3 id="4negative_infinity">4.NEGATIVE_INFINITY</h3>
+<p>负无穷大，溢出时返回该值。</p>
+<pre><code>Number.NEGATIVE_INFINITY;   #-infinity
+var x = 100;
+x.NEGATIVE_INFINITY;   #underfined
+
+var n=(-Number.MAX_VALUE)*2;   #-infinity
+</code></pre>
+<h3 id="5nan">5.NaN</h3>
+<p>非数字值NaN ,代表非数字值的特殊值。该属性用于指示某个值不是数字,可以把 Number 对象设置为该值，来指示其不是数字值。
+语法:Number.NaN</p>
+
+<h3 id="6positive_infinity">6.POSITIVE_INFINITY</h3>
+<p>正无穷大，溢出时返回该值。</p>
+<pre><code>Number.POSITIVE_INFINITY;   #infinity
+</code></pre>
+<h3 id="7prototype">7.prototype</h3>
+<p>允许您可以向对象添加属性和方法。</p>
+
+<pre><code>&lt;p id="demo"&gt;单击按钮来调用新的myMet()方法,并显示55一半数量值,使用新的构造函数myProp（）。&lt;/p&gt;
+&lt;button onclick="myFunction()"&gt;点我&lt;/button&gt;
+&lt;script&gt;
+Number.prototype.myMet=function(){
+	this.myProp=this.valueOf()/2;
+}
+function myFunction(){
+	var d = new Number(55);
+	d.myMet();
+	var x=document.getElementById("demo");
+	x.innerHTML=d.myProp;
+}
+&lt;/script&gt;
+结果:27.5
+</code></pre>
+
+<h2 id="2number-对象方法">2.Number 对象方法</h2>
+<h3 id="1isfinite">1.isFinite</h3>
+<p>检测指定参数是否为无穷大。</p>
+<h3 id="2toexponentialx">2.toExponential(x)</h3>
+<p>把对象的值转换为指数计数法。</p>
+<pre><code>var num = 5.56789;
+var n=num.toExponential(3)  5.568e+0  
+</code></pre>
+<h3 id="3tofixedx">3.toFixed(x)</h3>
+<p>把数字转换为字符串，结果的小数点后有指定位数的数字。</p>
+<pre><code>var num = 5.56789;
+var n=num.toFixed(2);     5.57
+</code></pre>
+<h3 id="4toprecisionx">4.toPrecision(x)</h3>
+<p>把数字格式化为指定的长度。</p>
+<pre><code>var num = new Number(13.3714);
+var a = num.toPrecision();
+var b = num.toPrecision(2);
+var c = num.toPrecision(3);
+var d = num.toPrecision(10); 
+结果:
+13.3714
+13
+13.4
+13.37140000 
+</code></pre>
+<h3 id="5tostring">5.toString()</h3>
+<p>把数字转换为字符串，使用指定的基数。</p>
+<h3 id="6valueof">6.valueOf()</h3>
+<p>返回一个 Number 对象的基本数字值。</p>
+<pre><code>var num = 15;
+var n = num.valueOf();    15
+</code></pre>
+<h3 id="7es6新增属性">7.es6新增属性</h3>
+<p>EPSILON: 表示 1 和比最接近 1 且大于 1 的最小 Number 之间的差别
+MIN_SAFE_INTEGER: 表示在 JavaScript中最小的安全的 integer 型数字 (-(253 - 1))。
+MAX_SAFE_INTEGER: 表示在 JavaScript 中最大的安全整数（253 - 1）。</p>
+<pre><code>var x = Number.EPSILON;
+var y = Number.MIN_SAFE_INTEGER;
+var z = Number.MAX_SAFE_INTEGER;
+结果:
+2.220446049250313e-16
+-9007199254740991
+9007199254740991
+</code></pre>
+<h3 id="8es6新增number方法">8.ES6新增number方法</h3>
+<p>Number.isInteger(): 用来判断给定的参数是否为整数。
+Number.isSafeInteger(): 判断传入的参数值是否是一个”安全整数”,安全整数范围为 -(253 - 1)到 253 - 1 之间的整数，包含 -(253 - 1)和 253 - 1。</p>
+<pre><code>Number.isInteger(10);        // 返回 true
+Number.isInteger(10.5);      // 返回 false
+Number.isSafeInteger(10);    // 返回 true
+Number.isSafeInteger(12345678901234567890);  // 返回 false
+
+
+</code></pre>
+
+<h1 id="六string对象">六.string对象</h1>
+<h2 id="1string对象属性">1.string对象属性</h2>
+<h3 id="1constructor-4">1.constructor</h3>
+<p>对创建该对象的函数的引用</p>
+<pre><code>var txt = "Hello World!";
+document.write(txt.constructor);
+结果:function String() { [native code] } 
+</code></pre>
+<h3 id="2length">2.length</h3>
+<p>字符串的长度</p>
+<h3 id="3prototype">3.prototype</h3>
+<p>允许您向对象添加属性和方法</p>
+
+<pre><code>&lt;script&gt;
+function employee(name,jobtitle,born){
+	this.name=name;
+	this.jobtitle=jobtitle;
+	this.born=born;
+}
+var fred=new employee("Fred Flintstone","Caveman",1970);
+employee.prototype.salary=null;
+fred.salary=20000;
+document.write(fred.salary);
+&lt;/script&gt;
+结果:20000
+</code></pre>
+<h2 id="2string对象方法">2.string对象方法</h2>
+<h3 id="1charat">1.charAt()</h3>
+<p>返回在指定位置的字符。</p>
+<pre><code>var str = "HELLO WORLD";
+var n = str.charAt(2)    #L
+</code></pre>
+
+<h3 id="2charcodeat">2.charCodeAt()</h3>
+<p>返回在指定的位置的字符的 Unicode 编码。</p>
+<h3 id="3concat">3.concat()</h3>
+<p>连接两个或更多字符串，并返回新的字符串。</p>
+<pre><code>var str1="Hello ";
+var str2="world!";
+var str3=" Have a nice day!";
+var n = str1.concat(str2,str3); 
+Hello world! Have a nice day!
+</code></pre>
+
+<h3 id="4fromcharcode">4.fromCharCode()</h3>
+<p>将 Unicode 编码转为字符。</p>
+<pre><code>var n = String.fromCharCode(65); 
+var n = String.fromCharCode(72,69,76,76,79); 
+结果:HELLO 
+</code></pre>
+
+<h3 id="5indexof">5.indexOf()</h3>
+<p>返回某个指定的字符串值在字符串中首次出现的位置。</p>
+<pre><code>var str="Hello world, welcome to the universe.";
+var n=str.indexOf("welcome"); 
+13
+</code></pre>
+
+<h3 id="6includes">6.includes()</h3>
+<p>查找字符串中是否包含指定的子字符串。</p>
+<pre><code>
+var str = "Hello world, welcome to the Runoob。";
+var n = str.includes("world");
+true
+</code></pre>
+
+<h3 id="7lastindexof">7.lastIndexOf()</h3>
+<p>从后向前搜索字符串，并从起始位置（0）开始计算返回字符串最后出现的位置。</p>
+<pre><code>var str="I am from runoob，welcome to runoob site.";
+var n=str.lastIndexOf("runoob");
+28
+
+</code></pre>
+<h3 id="8match">8.match()</h3>
+<p>查找找到一个或多个正则表达式的匹配。
+ match() 方法将检索字符串 String Object，以找到一个或多个与 regexp 匹配的文本。这个方法的行为在很大程度上有赖于 regexp 是否具有标志 g。如果 regexp 没有标志 g，那么 match() 方法就只能在 stringObject 中执行一次匹配。如果没有找到任何匹配的文本， match() 将返回 null。否则，它将返回一个数组，其中存放了与它找到的匹配文本有关的信息。</p>
+<pre><code>
+var str="The rain in SPAIN stays mainly in the plain"; 
+var n=str.match(/ain/g);  #ain,ain,ain
+
+
+var str="The rain in SPAIN stays mainly in the plain"; 
+var n=str.match(/ain/gi);
+ain,AIN,ain,ain
+
+
+</code></pre>
+
+<h3 id="9repeat">9.repeat()</h3>
+<p>复制字符串指定次数，并将它们连接在一起返回。</p>
+<pre><code>
+var str = "Runoob";
+str.repeat(2);   #RunoobRunoob 
+
+</code></pre>
+<h3 id="10replace">10.replace()</h3>
+<p>在字符串中查找匹配的子串， 并替换与正则表达式匹配的子串。</p>
+<pre><code>
+var str="Visit Microsoft! Visit Microsoft!";
+var n=str.replace("Microsoft","Runoob");
+结果:Visit Runoob!Visit Microsoft! 
+
+
+var str="Mr Blue has a blue house and a blue car";
+var n=str.replace(/blue/g,"red");
+结果:Mr Blue has a red house and a red car 
+
+
+var str="Mr Blue has a blue house and a blue car";
+var n=str.replace(/blue/gi, "red");
+结果:忽略大小写,Mr red has a red house and a red car 
+</code></pre>
+<h3 id="11search">11.search()</h3>
+<p>查找与正则表达式相匹配的值,如果没有找到任何匹配的子串，则返回 -1。</p>
+<pre><code>
+var str="Visit Runoob!"; 
+var n=str.search("Runoob");     6
+
+var str="Mr. Blue has a blue house";
+document.write(str.search(/blue/i));   4
+
+</code></pre>
+<h3 id="12slice">12.slice()</h3>
+<p>提取字符串的片断，并在新的字符串中返回被提取的部分,slice(start, end) 方法可提取字符串的某个部分，并以新的字符串返回被提取的部分。使用 start（包含） 和 end（不包含） 参数来指定字符串提取的部分。如果是负数，则该参数规定的是从字符串的尾部开始算起的位置。也就是说，-1 指字符串的最后一个字符，-2 指倒数第二个字符，以此类推.</p>
+<pre><code>var str="Hello world!";
+var n=str.slice(1,5);    ello
+
+var str="Hello world!";
+var n=str.slice(-1);    !
+</code></pre>
+<h3 id="13split">13.split()</h3>
+<p>把字符串分割为字符串数组。
+语法:string.split(separator,limit)
+separator 	可选。字符串或正则表达式，从该参数指定的地方分割 string Object。
+limit 	可选。该参数可指定返回的数组的最大长度。如果设置了该参数，返回的子串不会多于这个参数指定的数组。如果没有设置该参数，整个字符串都会被分割，不考虑它的长度。</p>
+<pre><code>var str="How are you doing today?";
+var n=str.split(" ");
+How,are,you,doing,today? 
+
+var str="How are you doing today?";
+var n=str.split();  #How are you doing today? 
+
+var str="How are you doing today?";
+var n=str.split(""); 
+H,o,w, ,a,r,e, ,y,o,u, ,d,o,i,n,g, ,t,o,d,a,y,? 
+
+var str="How are you doing today?";
+var n=str.split(" ",3);   #How,are,you 
+
+var str="How are you doing today?";
+var n=str.split("o");    #H,w are y,u d,ing t,day? 
+</code></pre>
+<h3 id="14startswith">14.startsWith()</h3>
+<p>查看字符串是否以指定的子字符串开头。如果是以指定的子字符串开头返回 true，否则 false。startsWith() 方法对大小写敏感。
+语法:string.startsWith(searchvalue, start)
+searchvalue 	必需，要查找的字符串。
+start 	可选，查找的开始位置，默认为 0。</p>
+<pre><code>
+var str = "Hello world, welcome to the Runoob.";
+var n = str.startsWith("world", 6);
+结果:true
+</code></pre>
+
+<h3 id="15substr">15.substr()</h3>
+<p>从起始索引号提取字符串中指定数目的字符.
+语法:string.substr(start,length)
+start 	必需。要抽取的子串的起始下标。必须是数值。如果是负数，那么该参数声明从字符串的尾部开始算起的位置。也就是说，-1 指字符串中最后一个字符，-2 指倒数第二个字符，以此类推。
+length 	可选。子串中的字符数。必须是数值。如果省略了该参数，那么返回从 stringObject 的开始位置到结尾的字串。</p>
+<pre><code>var str="Hello world!";
+var n=str.substr(2,3)    llo
+</code></pre>
+<h3 id="16substring">16.substring()</h3>
+<p>提取字符串中两个指定的索引号之间的字符。
+语法:string.substring(from, to)
+from 	必需。一个非负的整数，规定要提取的子串的第一个字符在 string Object 中的位置。
+to 	可选。一个非负的整数，比要提取的子串的最后一个字符在 string Object 中的位置多 1。
+如果省略该参数，那么返回的子串会一直到字符串的结尾。</p>
+<pre><code>var str="Hello world!";
+document.write(str.substring(3)+"&lt;br&gt;");
+document.write(str.substring(3,7));
+结果:lo world!
+    lo w   
+
+</code></pre>
+<h3 id="17tolowercase">17.toLowerCase()</h3>
+<p>把字符串转换为小写。</p>
+<pre><code>var txt="Runoob";
+document.write(txt.toLowerCase() + "&lt;br&gt;");
+document.write(txt.toUpperCase());
+结果:runoob
+    RUNOOB 
+</code></pre>
+<h3 id="18touppercase">18.toUpperCase()</h3>
+<p>把字符串转换为大写。</p>
+<h3 id="19trim">19.trim()</h3>
+<p>去除字符串两边的空白</p>
+<pre><code>var str = "       Runoob        ";
+alert(str.trim());
+</code></pre>
+<h3 id="20tolocalelowercase">20.toLocaleLowerCase()</h3>
+<p>根据本地主机的语言环境把字符串转换为小写。</p>
+<pre><code>
+var str = "Runoob";
+var res = str.toLocaleLowerCase();
+
+</code></pre>
+<h3 id="21tolocaleuppercase">21.toLocaleUpperCase()</h3>
+<p>根据本地主机的语言环境把字符串转换为大写。</p>
+<h3 id="22valueof">22.valueOf()</h3>
+<p>返回某个字符串对象的原始值。</p>
+<pre><code>var str="Hello world!";
+document.write(str.valueOf());
+结果:Hello world!
+</code></pre>
+<h3 id="23tostring">23.toString()</h3>
+<p>返回一个字符串。</p>
+
+<h2 id="3string-html包装方法">3.string HTML包装方法</h2>
+<h3 id="1anchor">1.anchor()</h3>
+<p>创建 HTML 锚,该方法返回加了 <a> 标签的字符串, 如下所示:
+<code>&lt;a name="anchorname"&gt;string&lt;/a&gt;</code>
+语法:string.anchor(name)  name:Required. The name of the anchor</a></p>
+<pre><code>var txt = "Chapter 10";
+txt.anchor("chap10");
+alert(txt.anchor("chap10"));
+结果:&lt;a name="chap10"&gt;Chapter 10&lt;/a&gt;
+</code></pre>
+<h3 id="2big">2.big()</h3>
+<p>用大号字体显示字符串。</p>
+<pre><code>var txt = "Hello World!";
+document.write("&lt;p&gt;字体变大: " + txt.big() + "&lt;/p&gt;");
+document.write("&lt;p&gt;字体缩小: " + txt.small() + "&lt;/p&gt;");
+document.write("&lt;p&gt;字体加粗: " + txt.bold() + "&lt;/p&gt;");
+document.write("&lt;p&gt;斜体: " + txt.italics() + "&lt;/p&gt;");
+document.write("&lt;p&gt;固定定位: " + txt.fixed() + "&lt;/p&gt;");
+document.write("&lt;p&gt;加删除线: " + txt.strike() + "&lt;/p&gt;");
+document.write("&lt;p&gt;字体颜色: " + txt.fontcolor("green") + "&lt;/p&gt;");
+document.write("&lt;p&gt;字体大小: " + txt.fontsize(6) + "&lt;/p&gt;");
+document.write("&lt;p&gt;下标: " + txt.sub() + "&lt;/p&gt;");
+document.write("&lt;p&gt;上标: " + txt.sup() + "&lt;/p&gt;");
+document.write("&lt;p&gt;链接: " + txt.link("http://www.w3cschool.cc") + "&lt;/p&gt;");
+document.write("&lt;p&gt;闪动文本: " + txt.blink() + " (不能用于IE,Chrome,或者Safari)&lt;/p&gt;");
+</code></pre>
+<h3 id="3blink">3.blink()</h3>
+<p>显示闪动字符串。目前只有 Firefox 和 Opera 浏览器支持 blink() 方法. Internet Explorer, Chrome, 以及 Safari 不支持 blink() 方法</p>
+<h3 id="4bold">4.bold()</h3>
+<p>使用粗体显示字符串。</p>
+<h3 id="5fixed">5.fixed()</h3>
+<p>以打字机文本显示字符串,该方法返回加了 <tt> 标签的字符串, 如下所示:
+<code>&lt;tt&gt;string&lt;/tt&gt;</code></tt></p>
+<h3 id="6fontcolor">6.fontcolor()</h3>
+<p>使用指定的颜色来显示字符串。</p>
+<pre><code>var str = "Hello world!";
+document.write(str.fontcolor("green"));
+</code></pre>
+<h3 id="7fontsize">7.fontsize()</h3>
+<p>使用指定的尺寸来显示字符串。</p>
+<h3 id="8italics">8.italics()</h3>
+<p>使用斜体显示字符串。</p>
+<h3 id="9link">9.link()</h3>
+<p>将字符串显示为链接。</p>
+<h3 id="10small">10.small()</h3>
+<p>使用小字号来显示字符串。</p>
+<h3 id="11strike">11.strike()</h3>
+<p>用于显示加删除线的字符串。</p>
+<h3 id="12sub">12.sub()</h3>
+<p>把字符串显示为下标。</p>
+<h3 id="13sup">13.sup()</h3>
+<p>把字符串显示为上标。</p>
+
+<h1 id="bworse对象">Bworse对象</h1>
+<h2 id="navigator对象">Navigator对象</h2>
+<p>主要是包含有关浏览器的信息</p>
+<h3 id="navigator-对象属性">Navigator 对象属性</h3>
+<p>1.appCodeName 	     一个只读字符串, 返回浏览器的代码名
+navigator.appCodeName   显示浏览器的代码名</p>
+
+<p>2.appName         	返回浏览器的名称
+语法:navigator.appName    <br />
+3.appVersion 	    返回浏览器的平台和版本信息
+语法:navigator.appVersion
+4.cookieEnabled 	返回指明浏览器中是否启用 cookie 的布尔值,如果浏览器启用了 cookie，该属性值为 true。如果禁用了 cookie，则值为 false。
+语法:navigator.cookieEnabled
+5.platform 	只读的字符串,返回运行浏览器的操作系统平台
+语法:navigator.platform
+6.userAgent 	声明了浏览器用于 HTTP 请求的用户代理头的值。返回由客户机发送服务器的user-agent 头部的值
+语法:navigator.userAgent</p>
+
+<h3 id="navigator对象方法">Navigator对象方法</h3>
+<p>1.javaEnabled() 	指定是否在浏览器中启用Java,如果是，则返回 true，否则返回 false。
+语法:navigator.javaEnabled()</p>
+
+<p>2.taintEnabled() 	规定浏览器是否启用数据污点(data tainting),目前只有 Internet Explorer 和 Opera 浏览器支持 taintEnabled() 方法。
+语法:navigator.taintEnabled()</p>
+
+<h2 id="screen对象">Screen对象</h2>
+<h3 id="screen对象属性">Screen对象属性</h3>
+<p>包含有关客户端显示屏幕的信息
+1.availHeight 	返回屏幕的高度（不包括Windows任务栏）
+语法:screen.availHeight
+2.availWidth 	返回屏幕的宽度（不包括Windows任务栏）
+语法:screen.availWidth
+3.colorDepth 	返回目标设备或缓冲器上的调色板的比特深度
+语法:screen.colorDepth
+4.height 	返回屏幕的总高度
+语法:screen.height
+5.pixelDepth 	返回屏幕的颜色分辨率（每象素的位数）
+语法:screen.pixelDepth
+6.width 	返回屏幕的总宽度</p>
+
+<h2 id="history对象">History对象</h2>
+<h3 id="history对象属性">History对象属性</h3>
+<p>1.length  返回历史列表中的网址数
+语法:history.length</p>
+<h3 id="history对象方法">History对象方法</h3>
+<p>1.back() 	  加载 history 列表中的前一个 URL
+语法:history.back()
+2.forward() 	加载 history 列表中的下一个 URL
+3.go() 	   加载 history 列表中的某个具体页面,该参数可以是数字，使用的是要访问的 URL 在 History 的 URL 列表中的相对位置。（-1上一个页面，1前进一个页面)。或一个字符串，字符串必须是局部或完整的URL，该函数会去匹配字符串的第一个URL。
+语法:history.go(number|URL)</p>
+
+<h2 id="location-对象">Location 对象</h2>
+<h3 id="location-对象属性">Location 对象属性</h3>
+<p>1.hash        	返回一个URL的锚部分,算上#
+语法:location.hash
+2.host      	返回一个URL的主机名和端口
+3.hostname    	返回URL的主机名
+4.href 	        返回完整的URL
+5.pathname   	返回的URL路径名。
+https://www.runoob.com/try/try.php?filename=tryjsref_loc_pathname
+显示的是/try/try.php 
+6.port 	返回一个URL服务器使用的端口号
+如果端口号是80(这是默认端口号),没有将返回!
+7.protocol   	返回一个URL协议,http
+8.search 	    返回一个URL的查询部分,（问号 ? 之后的部分）。</p>
+<h3 id="location对象方法">Location对象方法</h3>
+<p>1.assign() 	     载入一个新的文档
+语法:location.assign(URL)
+2.reload() 	     重新载入当前文档
+语法:location.reload(forceGet)
+可选。如果把该方法的参数设置为 true，那么无论文档的最后修改日期是什么，它都会绕过缓存，从服务器上重新下载该文档。
+3.replace() 	 用新的文档替换当前文档
+语法:location.replace(newURL)</p>
+:ET

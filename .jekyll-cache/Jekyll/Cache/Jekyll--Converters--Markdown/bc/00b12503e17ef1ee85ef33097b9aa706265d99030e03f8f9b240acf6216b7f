@@ -1,0 +1,1093 @@
+I"�<h1 id="js第二部分">js第二部分</h1>
+<h2 id="函数-定义">函数-定义</h2>
+<ol>
+  <li>函数的4种定义方式
+函数声明
+函数表达式
+构造器
+箭头函数</li>
+</ol>
+
+<p><strong>函数声明:</strong>
+function 函数名( 参数 ){
+代码块
+}
+<strong>函数表达式 (匿名函数):</strong>
+变量 = function ( 参数 ){
+代码块
+}
+<strong>构造器</strong>
+变量 = new Function(‘参数1’, ‘参数2’, …  , ‘代码块’)
+<strong>箭头函数</strong>  ES6新增,  有简化, 有隐式返回等功能
+变量 = (参数1, 参数2, …) =&gt; { 代码块 }
+变量 = (参数1, 参数2, …) =&gt; 结果
+等同于 变量 = (参数1, 参数2, …) =&gt; { return 结果 }
+<strong>注意</strong>: 
+函数声明后, 是需要调用才会执行
+函数表达式不需要再取一个有意义的函数
+构造器的参数和代码块 必须是 string类型出现(使用较少)
+箭头函数 ES6新增, 简化格式+隐式返回</p>
+<pre><code> // 函数表达式
+        var x = function (n1, n2){
+            console.log(n1+n2);
+        }
+
+        console.log(x, typeof x);
+        x(1,2);
+ // 构造器
+        var x = new Function('n1', 'n2', 'console.log(n1+n2)')
+        console.log(x, typeof x);
+        x(1,2);
+ // 箭头函数
+        var x = (n1, n2) =&gt; { console.log(n1+n2) }
+        var x1 = x(1,2);
+        console.log(x1);
+
+        var y = (n1, n2) =&gt; { return n1+n2; }
+        var y1 = y(1,2);
+        console.log(y1);
+ // 隐式返回: 省略{} 和 return
+        var z = (n1, n2) =&gt; n1+n2 
+        var z1 = z(1,2);
+        console.log(z1);     
+</code></pre>
+<h2 id="函数-使用">函数-使用</h2>
+<ol>
+  <li>使用函数
+函数在声明之后, 默认不会自动执行, 需要调用才能执行.
+调用函数: 函数名() 
+引用函数: 函数名</li>
+  <li>window 对象
+window 代表浏览器. 使用全局所有可用的变量, 函数
+```
+function demo2(){
+console.log(‘这是 Demo2函数’);
+}
+demo2();
+window.demo2();</li>
+</ol>
+
+<p>// console.dir(window);
+// console.log(this);相同的意思</p>
+<pre><code>3. this 对象
+this 是关键字, 代表当前对象
+注:
+普通函数内的this, 代表window对象
+事件函数内的this, 代表当前触发事件的对象
+</code></pre>
+<p>var obj = {
+            ‘姓名’: ‘董水兵’,
+            ‘老婆’: ‘潘金莲’,
+            desc: function (){
+                console.log(this.姓名+’的梦想是自己做老板, 认识大官, 老婆漂亮’);
+            }
+        }
+        obj.desc();//董水兵的梦想是自己做老板, 认识大官, 老婆漂亮</p>
+<pre><code>
+</code></pre>
+<ul>
+        <li>李白</li>
+        <li>阿珂</li>
+        <li>兰陵</li>
+        <li>悟空</li>
+        <li>韩信</li>
+    </ul>
+
+<pre><code>&lt;script&gt;
+    // 效果: 点击哪个li, 哪个li 就变红色
+    var liList = document.getElementsByTagName('li');
+    for(var i = 0; i &lt; liList.length; i++){
+
+        // 点击某一个li, 触发红色字体
+        liList[i].onclick = function (){
+            this.style.color = 'red';
+        }
+    }
+&lt;/script&gt; ``` ```
+</code></pre>
+<div id="box">
+        <img src="./resource/1.jpg" width="200" />
+        <img src="./resource/2.jpg" width="200" />
+        <img src="./resource/3.jpg" width="200" />
+        <img src="./resource/4.jpg" width="200" />
+    </div>
+<pre><code>&lt;div id="box2"&gt;
+    &lt;img src="./resource/1.jpg" width="200"&gt;
+    &lt;img src="./resource/2.jpg" width="200"&gt;
+    &lt;img src="./resource/3.jpg" width="200"&gt;
+    &lt;img src="./resource/4.jpg" width="200"&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    // 仅获取 box下的所有img
+    var imgList = document.getElementById('box').getElementsByTagName('img');
+    for(var i = 0; i &lt; imgList.length; i++){
+        imgList[i].onclick = function(){
+            // 将所有图片的边框色 = 透明色
+            for(var j = 0; j &lt; imgList.length; j++){
+            imgList[j].style.borderColor = 'transparent';
+            }
+            // 将当前点击的img 的边框色 = 红色
+            this.style.borderColor = 'red';
+            // 注: 在事件函数中, 谁触发了事件, this就代表谁
+        }
+    }
+&lt;/script&gt; ``` ## 函数-返回值 1. 关键字 return 作用1: 将数据返回到 调用函数的地方 作用2: 立马结束函数 2. 返回类型 可以返回意类型 注: 函数没有return时, 默认返回undefined 3. 如何一次性返回多个值 将多个值 封装到数组, 对象中, 一次性进行返回 ``` function demo5(){
+        var x = 10;
+        var y = 'abc';
+        // return x,y;      // 只能return 最后一个数据
+        // return (x,y);    // 只能return 最后一个数据
+        // return x;  
+        // return y; // 当执行到上面一行时, 就已经结束了, 该行根本没执行
+        return [x,y];
+        // return {x, y};   
+        // return {'num':x, 'str':y};
+    }
+    console.log( demo5() ); ``` ``` function demo2(){
+        function demo3(){ return 999; }
+
+        // return demo3;   // function   返回 demo3函数
+        // return demo3(); // 999 ,返回 demo3函数的返回值
+        return {'a':1}; //{'a':1}
+        // return [1,2,3]; //[1,2,3]
+        // return undefined;  
+        // return null;
+        // return true;
+        return '10';
+        return 10;
+    }
+    var x = demo2();
+    console.log(x, typeof x); ``` ## 函数-参数 1. 参数分类 形式参数: 俗称"形参", 定义函数给的参数 实际参数: 俗称"实参", 调用函数给的参数 2. 默认参数 形参没有默认值, 传递实参时, 却没有给实参, 那么形参默认为undefined 形参有默认值, 传递实参时, 却没有给实参, 那么形参采用 默认值 ``` // n1 = undefined
+    // n2 = 50
+    function demo(n1, n2=50){
+        console.log(n1+n2);
+    }
+    demo();
+    // n1 = 10
+    // n2 = 50
+    demo(10);
+    // n1 = 10
+    // n2 = 20
+    demo(10,20); ``` 3. 参数规则  不限制参数的数据类型 不检查参数的数据类型 不限制参数的个数 实参个数 = 形参个数 : 完美  实参个数 &gt; 形参个数 : 先来后到, 抛弃多余的实参 实参个数 &lt; 形参个数 : 先来后到, 多余的形参采用默认值 or undefined 实参个数不确定:  使用 arguments 对象形参一个都不需要设置 ``` // 累计 n个参数的总和
+    function sum(){
+        // 接收所有的实参
+        var arg = arguments;
+        // 累加器
+        var sum = 0;
+        // 原始值
+        // sum += arg[0];
+        // sum += arg[1];
+        // sum += arg[2];
+        // sum += arg[3];
+        // 优化
+        for(var i = 0; i &lt; arg.length; i++){
+            sum += arg[i];
+        }
+        return sum;
+    }
+    console.log( 								sum(10,20,30,40,50,60,70,80)  ); ``` ## 函数-作用域 1. 作用域 全局变量: 在函数外定义的变量 局部变量: 在函数内定义的变量 2. 作用域链 当前作用域 -&gt; 其他作用域 注: 可由内而外, 不能由外而内,从局部变量找,找不到再找全局变量,前提是变量名一样 ``` var x = 10;  // window的全局变量x
+    function big3(){ 
+        var x = 20;
+        // console.log(this.x);  // 相当于window.x = 10
+
+        function small3(){
+            console.log(this.x); // 10
+            console.log(x);       // 20
+        }
+
+        small3();
+    }
+
+    big3(); ```  3. 块级作用域  ES6 格式: { 代码块 } 在块级作用域中, 用 let声明变量, 那么只能在块级作用域中使用, 脱离块级作用域则无法使用. 用 var声明变量, 不受块级作用域的影响, 依旧属于全局变量 在块级作用域外, 用 let声明变量和用 var声明变量 没有区别(底层的归属有点区别) var 归属window,let 不归属window  4. 有var 和 没var 声明的区别 在局部环境中, 没有var声明的变量, 即为全局变量 在全局环境中, 建议用var声明变量. 在严格模式下, 不用var delete 可以删除不用var声明的变量 delete 不可以删除用var, let声明的变量 ``` function demo999(){
+        var m = 10;
+        n = 20;  // 在局部环境中, 没有用var声明的变量可当认为是 全局变量
+    }
+    demo999();
+    // console.log(m); // 报错
+    console.log(n);   //20
+    console.log(window.n);
+    
+     var p = 10;
+    delete p;
+    console.log(p); // 删除失败
+
+    // q = 20;
+    // delete q;
+    // console.log(q); // 删除成功 ``` ## 自执行函数 格式: ()() 第一个() 里面是写: 匿名函数 第二个() 代表: 调用当前匿名函数, 可写实参 定义完函数时, 就立马自我调用 无需取名,自成一域 (独自创建一个局部作用域, 将形参与实参设为同名变量, 局部环境则无法使用外部重名变量, 从而避免变量污染 ) 变量污染: 函数内部使用函数外部的变量, 但是并不需要外部变量, 此行为称之为"变量污染" ``` // 无参
+    (function(){
+        console.log('自己跑起来了');
+    })();
+
+
+    // 传参
+    (function(n1, n2){
+        console.log(n1+n2);
+    })(10,20); ``` ``` // 获取所有的 li标签对象
+    var liList = document.getElementsByTagName('li');
+    for(var i = 0; i &lt; liList.length; i++){
+
+        liList[i].onclick = function(){
+            // 在循环中, 使用事件函数, 并使用循环变量, 那么只能得到最后一次的循环变量
+            console.log(i);  // 使用的是 循环变量i
+        }
+    }
+    // Bug: 事件中得到的i 总是最后一个i
+    // 原因: 这里的变量i 作用是整个全局作用域 
+    // 解决方案: 将 onclick 对应的函数封装在自执行函数里面, 形成独立作用域
+    for(var i = 0; i &lt; liList.length; i++){
+        (function(i){
+            liList[i].onclick = function(){
+                // 局部环境
+                // console.log(i);  // 使用的是匿名函数的i 
+                liList[i].style.color = 'red';
+            }
+        })(i);
+    } ``` ## 闭包 ``` function run3(){ var count = 0; function demo(){ count++; console.log(count); } return demo; // 返回的是demo函数本身, 而不是运行demo } var x = run3(); // x 接收的是 demo函数 // 相当于  // x = demo函数本身 console.log(x, typeof x); ``` 正常情况下, run3()函数运行完成后, 局部变量本因从内存中消失(垃圾回收) run3()函数中, 定义子函数demo, demo函数使用了run3的局部变量, 正是因为demo使用了run3的局部变量, 当run3函数运行完成后, 局部变量就不会消失, 就形成了 局部变量的生命周期得到了延长. 结论:  在函数A中定义函数B, 函数B使用了函数A的变量, 并返回函数B, 即可形成闭包 优势: 可使得函数A的变量的生命周期得到延长 劣势: 由于生命周期延长了, 内存不能及时释放函数A的变量, 导致内存消耗过大.
+</code></pre>
+
+<h2 id="call和apply">call和apply</h2>
+<ol>
+  <li>call() 
+作用: 对象A 通过call借用对象B, 那么对象A里的this就不再代表A, 而是代表B
+    <pre><code> var A = {
+         'name': '大哥',
+         method: function (){
+             console.log('我是'+this.name);
+         },
+         method2: function(age, job){
+             console.log('我是'+this.name+', 今年'+age+'岁, 做'+job+'的');
+         }
+     }
+     var B = {
+         'name': '二哥',
+         method: function(){
+             console.log('我是'+this.name);
+         }
+     }
+
+     A.method.call(B);  // A的method方法被B 使用了, this 指向B
+     A.method2.call(B, 18, '软件开发');
+</code></pre>
+  </li>
+  <li>apply()<br />
+作用: 对象A 通过call借用对象B, 那么对象A里的this就不再代表A, 而是代表B
+    <pre><code> var C = {
+         'name': '大哥',
+         method: function (){
+             console.log('我是'+this.name);
+         },
+         method2: function(age, job){
+             console.log('我是'+this.name+', 今年'+age+'岁, 做'+job+'的');
+         }
+     }
+     var D = {
+         'name': '二哥',
+         method: function(){
+             console.log('我是'+this.name);
+         }
+     }
+     C.method();
+     D.method();
+     C.method.apply(D);
+     C.method2.apply(D, [18, '软件开发']);
+</code></pre>
+  </li>
+  <li>call 和 apply 的区别
+call 和 apply 作用一模一样
+call 是分别接收参数
+apply 是接收数组参数</li>
+</ol>
+
+<h2 id="对象-定义">对象-定义</h2>
+<p>对象
+ 由属性和方法组成
+ 属性: 对象有什么
+ 方法: 对象会什么</p>
+<ol>
+  <li>对象定义
+Json创建(店长推荐)
+var 变量 = {
+属性名: 属性值,
+属性名: 属性值,
+…
+方法名: function(){},
+方法名: function(){},
+…
+}
+注: 在Json中, 属性名:属性值 也被称之为:  键:值,  俗称”键值对”</li>
+</ol>
+
+<p>对象构造器:
+对象变量 = new Object();
+对象变量.属性名 = 属性值;
+对象变量.属性名 = 属性值;
+…</p>
+
+<p>对象变量.方法名 = function(){}
+对象变量.方法名 = function(){}</p>
+
+<p>自定义构造器:
+function 自定义对象名(){
+this.属性名 = 属性值;
+this.属性名 = 属性值;
+…
+this.方法名 = function(){}
+this.方法名 = function(){}
+…
+}</p>
+
+<p>对象变量 = new 自定义对象名()
+匿名构造器
+对象变量 = new function(){
+this.属性名 = 属性值;
+this.属性名 = 属性值;
+…
+this.方法名 = function(){}
+this.方法名 = function(){}
+…
+}</p>
+<pre><code>// 对象构造器
+        var Dog = new Object();
+        Dog.name = '旺财';
+        Dog.run = function(){ console.log('10s跑1公里');}
+        console.log(Dog);
+        // 自定义构造器
+        function Cat(){
+            this.name = '加菲猫';
+            this.eat = function(){ return '吃鱼'; }
+        }
+        var x = new Cat();
+        console.log(x.name);
+        console.log(x.eat() );
+        // 匿名构造器
+        var Person = new function(){
+            this.name = '赵云鹏';
+            this.age = 18;
+            this.skill = function(){
+                console.log('专业吹牛逼');
+            }
+        }
+        console.log( Person.name );
+        console.log( Person.age );
+        Person.skill();
+
+</code></pre>
+<h2 id="对象-使用">对象-使用</h2>
+<ol>
+  <li>使用属性
+对象.属性名
+对象[属性名]</li>
+  <li>使用方法
+对象.方法名()
+对象.方法名(参数)
+注: 
+使用任意属性or方法, 必须先有一个对象才行
+奇葩属性使用 [] 读取
+    <pre><code>var obj = {
+         'name':'狗子',
+         '职业': '天狗',
+         'x2': 'x2',
+         2: '纯数字2',
+         '2B': '以数字开头的字符串',
+         '☆': '五角星',
+         '.*': '标点符号',
+     }
+     // console.log(obj.2 );
+     console.log(obj[2] );
+     // console.log(obj.2B );
+     console.log(obj['2B'] );
+     // console.log(obj.☆ );
+     console.log(obj['☆'] );
+     console.log(obj['.*'] );
+</code></pre>
+    <h2 id="对象-原型链">对象-原型链</h2>
+  </li>
+  <li>原型 prototype  能在原型对象上进行添加属性or方法
+    <pre><code>unction Dog(){
+         this.type = '泰迪';
+         this.skill = function(){
+             console.log('日天日地日空气');
+         }
+     }
+
+     var d1 = new Dog();
+     var d2 = new Dog();
+
+
+     // 给d1 单独添加新方法 
+     d1.skill2 = function(){
+         console.log('PHP');
+     }
+
+     // 给d2 单独添加新方法
+     d2.skill3 = function(){
+         console.log('区块链');
+     }
+     // 需求: 希望所有的泰迪 都掌握第二个公共技能
+     // 给 Dog原对象添加新方法, 从而影响所有从 Dog实例化出去的对象
+     Dog.prototype.skill9 = function(){
+         console.log('修电脑');
+     }
+</code></pre>
+    <h2 id="数组">数组</h2>
+  </li>
+  <li>创建数组
+Json 方式  (推荐)
+构造器
+// 构造器
+var x = new Array();
+console.log(x);
+var x = new Array(‘a’,’b’,’c’);
+console.log(x);</li>
+  <li>多维数组
+将数组的值 指定为数组(数组嵌套数组)
+数组的值: 任意类型
+数组的值: 数组  (多维数组)
+    <pre><code> var list = [
+                     ['狄仁杰', '公孙离', '李元芳'],
+                     ['孙悟空', '兰陵王', '裴擒虎'],
+                     ['王昭君', '安其拉', '赵云鹏'],
+                 ];
+     console.log(list);
+
+     console.log(list[0]);
+     console.log(list[1]);
+     console.log(list[2]);
+     console.log(list[0][0]);
+     console.log(list[1][2]); 
+</code></pre>
+  </li>
+  <li>遍历数组
+    <pre><code> var list = ['迪丽热巴', '古力娜扎', '马尔扎哈', '娃哈哈哈'];
+     document.write('&lt;ul&gt;');
+         for(var i = 0; i &lt; 4; i++){
+             document.write('&lt;li&gt;'+list[i]+'&lt;/li&gt;');
+         }
+     document.write('&lt;/ul&gt;');
+</code></pre>
+    <p>```</p>
+  </li>
+</ol>
+<ol>
+        <li>李白</li>
+        <li>阿珂</li>
+        <li>兰陵</li>
+        <li>韩信</li>
+    </ol>
+<pre><code>&lt;script&gt;
+    // 1. 获取所有的 li标签对象  
+    var ol = document.getElementsByTagName('ol');
+    var liList = ol[0].getElementsByTagName('li');
+    console.log(liList);
+    // 2. 遍历 标签对象集合
+    for(var i = 0; i &lt; liList.length; i++){
+        // 赋予 css样式
+        liList[i].style.color = 'red';
+    } ``` 5. 字符串数组 ``` var x = 'abcdefg';
+    console.log(x[0]);
+    console.log(x[1]);
+    console.log(x[2]);
+    console.log(x[3]);
+    console.log(x[4]);
+    console.log(x[99]); ``` ## 计时器 1. 单次计时  setTimeout(功能, 时间)  setTimeout(demo, 3000);  意思: 多少时间之后, 执行一次功能, 例如: 延迟 2. 多次计时 setInterval(功能, 时间) 意思: 每个多少时间, 就执行一次功能, 例如: 定时 时间单位: 毫秒 3. 计时器ID,每个计时器都会返回一个 计时器id var x3 = setInterval(demo, 3000);  4. 清除计时器  通过 计时器id 来清除指定的计时器  clearTimeout(计时器id)   清除单次计时器  clearInterval(计时器id)  清除多次计时器 ``` // var s = 0;
+    // var x = setInterval(function(){
+    //     s++;
+    //     if(s == 5){
+    //         clearInterval(x);  // 下一次计时被取消, 但是当前功能还是正常执行, 并不会立马结束
+    //         return;  // 具有立马结束当前函数的效果, 并不能终止 多次计时
+    //     }
+        
+    //     console.log(s);
+
+    // }, 1000); ``` ## 事件  1. 事件绑定 事件属性
+</code></pre>
+<开始标签 事件属性名="js代码"> 
+对象属性
+对象.事件属性名 = 功能
+事件监听:
+老IE: 对象.attachEvent('on事件', 函数名)
+非IE: 对象.addEventListener('事件', 函数名)
+```
+<button id="btn2">点最后一下</button>
+    <script>
+        var btn2 = document.getElementById('btn2');
+        
+        btn2.addEventListener('click', demo);
+
+        function demo(){
+            alert('最近, 腾讯微信开发部门创始人奖2亿, 人均20万, 阳光普照将: iPhone11 Pro');
+        }
+```
+ 2. 解除绑定 
+ 对象.事件 = null
+ 对象.事件 = function(){}
+ 老IE: 对象.detachEvent('on事件', 函数名)
+ 非IE: 对象.removeEventListener('事件', 函数名)
+```
+<button id="btn3">解除绑定</button>
+    <script>
+        var btn3 = document.getElementById('btn3');
+        
+        btn3.onclick = function(){
+            // btn.onclick = null; // 解除方式1
+            btn.onclick = function(){} // 解除方式2
+        };
+    </script>
+
+
+    <button id="btn4">解除监听</button>
+    <script>
+        var btn4 = document.getElementById('btn4');
+        
+        btn4.onclick = function(){
+            btn2.removeEventListener('click', demo);
+        };
+    </script>
+```
+## 鼠标事件
+ 1. 鼠标事件
+ onclick     单击事件
+ ondblclick  双击事件
+ oncontextmenu 右击事件
+ onmouseover  划入
+ onmouseout   划出
+ onmousedown  按下
+ onmouseup    松开
+ onmousemove  移动
+
+2. event 事件对象
+位置: 事件函数的第一个参数
+取名: 一般为event, 可改为其他名字
+兼容写法: event || window.event
+event常用属性
+event.offsetX   鼠标相对于当前对象的横坐标
+event.offsetY   鼠标相对于当前对象的纵坐标
+event.clientX   鼠标相对于当前可视窗口的横坐标
+event.clientY   鼠标相对于当前可视窗口的纵坐标
+event.x        鼠标相对于当前可视窗口的横坐标 (IE)
+event.y        鼠标相对于当前可视窗口的纵坐标 (IE)
+event.screenX   鼠标相对于电脑屏幕的横坐标
+event.screenY   鼠标相对于电脑屏幕的纵坐标
+
+```
+box.onmouseup = function(){
+            this.innerHTML = '松开';
+        }
+
+
+box.onmousemove = function( event ){
+   var show =document.getElementById('show');
+ // 兼容写法var event = event || window.event;
+show.innerHTML = 'offsetX: '+event.offsetX+'  offsetY: '+event.offsetY+' <br />' +
+'clientX: '+event.clientX+'  clientY: '+event.clientY+' <br />' + 'x: '+event.x+'  y: '+event.y+' <br />' +'screenX: '+event.screenX+'  screenY: '+event.screenY+' <br />';
+        }
+```
+##  键盘事件
+1. onkeydown    (支持功能键, 输出键)
+2. onkeyup      (支持功能键, 输出键)
+3. onkeypress   (支持输出键)
+注: 
+功能键: F1, F2, Ctrl, Alt, Shift, ESC 等按键
+```
+		// 按下
+        // document.onkeydown = function(){
+        //     var r = parseInt( Math.random() * 255 );
+        //     var g = parseInt( Math.random() * 255 );
+        //     var b = parseInt( Math.random() * 255 );
+        //     document.body.style.background = `rgb(${r},${g},${b})`;
+        // }
+```
+2. event 事件对象
+event.keyCode       按键的ASCII码 (兼容IE)
+event.which         按键的ASCII码 (不兼容老IE)
+event.charCode      按键的ASCII码 (只有onkeypress可以触发)
+event.key           键盘上的真实符号
+```
+// document.onkeydown = function(event){
+        //     var event = event || window.event;
+
+        //     // console.log( event.keyCode );
+        //     // console.log( event.key );
+        //     // console.log( event.which );
+        //     // console.log( event.which || event.keyCode );
+        // }
+
+        // document.onkeypress = function(event){
+        //     var event = event || window.event;
+        //     console.log( event.charCode );
+        // }
+```
+## 框架事件
+ 1. onload   当页面或图片加载完成时触发
+ 2. onerror  当加载文档或图片失败时触发
+ 3. onresize 当页面大小发生改变时触发
+ 4. onscroll 当页面发生滚动时触发
+ 获取滚动条距离顶部的距离
+ IE: document.body.scrollTop
+ Safari: window.pageYOffset
+ 其余: document.documentElement.scrollTop
+```
+  var imgList = document.getElementsByTagName('img');
+
+        for(var i = 0; i &lt; imgList.length; i++){
+
+            imgList[i].onerror = function(){
+                this.src = './resource/5.jpg';
+            }
+        }
+```
+```
+ // window.onresize = function(){
+        //     var r = parseInt( Math.random() * 255 );
+        //     var g = parseInt( Math.random() * 255 );
+        //     var b = parseInt( Math.random() * 255 );
+        //     document.body.style.background = `rgb(${r},${g},${b})`;
+        // }
+```
+
+```
+window.onscroll = function(){
+var st = document.documentElement.scrollTop || window.pageYOffset ||document.body.scrollTop;
+var nav = document.getElementById('nav');
+       if( st &gt;= 200 ){
+       nav.style.margin = '0px';
+       nav.style.position = 'fixed';
+       nav.style.left = '0px';
+       nav.style.top = '0px';
+       }else{
+       nav.style.marginTop = '200px';
+       nav.style.position = 'static';
+       nav.style.left = '0px';
+       nav.style.top = '0px';
+       }
+
+}    
+```
+## 表单事件
+ 1. onfocus 获取焦点时
+ 2. onblur  失去焦点时
+ 3. onchange 内容发生改变时
+ 4. oninput  输入时
+ 5. onselect 选中(框中)内容时
+ 6. onsubmit 提交时
+ 7. 根据 name 获取表单对象
+ document.getElementsByName()
+ document.name名
+注: 
+若name 唯一:document.getElementsByName() 得到 节点列表
+document.name名   得到 一个表单对象
+若name 不唯一:
+document.getElementsByName() 得到节点列表
+document.name名                得到 html集合
+```
+userName.onfocus = function(){
+            this.style.borderColor = 'red';
+        }
+```
+```
+// 同步显示
+        userName.oninput = function(){
+            var show = document.getElementById('show');
+
+            show.innerHTML = this.value;
+        }
+```
+```
+ // 显示 选中内容时
+        userName.onselect = function(){
+            var show = document.getElementById('show');
+
+            show.innerHTML = window.getSelection().toString();
+            // console.log(window.getSelection().toString() );
+```
+```
+ // 禁止/允许提交
+        var form = document.form;
+        form.onsubmit = function(){
+            // return false; // 禁止提交
+            return true; // 允许提交
+        }
+```
+```
+ var pro = document.address.province;
+
+        pro.onchange = function(){
+            // console.dir(this);
+            // console.log(this[  this.selectedIndex  ]);
+
+
+            // 添加一个option
+            var opt = document.createElement('option');
+            opt.innerHTML = '云南';
+
+            this.add(opt, null);
+
+        }
+```
+
+## 事件冒泡
+1. 事件冒泡
+由内而外的传递事件 (后辈将事件传递给祖辈)
+注: 
+仅仅是传递事件, 而不是事件对应的函数
+2. 阻止冒泡
+不会将事件传递给祖辈
+非IE: event.stopPropagation()
+IE:   event.cancelBubble = true
+```
+  
+    <div id="big">
+        <div id="small"></div>
+    </div>
+
+    <script>
+        var big = document.getElementById('big');
+        var small = document.getElementById('small');
+
+        big.onclick = function(){
+            alert('big');
+        }
+
+        small.onclick = function(event){
+            alert('small');
+
+            // 阻止冒泡
+            var event = event || window.event;
+            event.stopPropagation();
+            event.cancelBubble = true;
+        }
+    </script>
+
+```
+3. 事件监听
+冒泡模式 false : 由内而外传递事件 (默认)
+捕获模式 true  : 由外而内传递事件
+```
+<div id="big1">
+        <div id="small1"></div>
+    </div>
+    <script>
+        var big1 = document.getElementById('big1');
+        var small1 = document.getElementById('small1');
+
+        // 冒泡模式
+        // big1.addEventListener('click', function(){
+        //     alert('big1');
+        // }, false );
+
+        // small1.addEventListener('click', function(){
+        //     alert('small1');
+        // }, false );
+        // 捕获模式
+        big1.addEventListener('click', function(){
+            alert('big1');
+        }, true );
+        small1.addEventListener('click', function(){
+            alert('small1');
+        }, true );
+    </script>
+```
+## 默认行为
+1. 默认行为
+指某些元素的默认效果
+例如: a链接的跳转页面
+submit 默认提交
+2. 取消默认行为
+非IE: event对象.preventDefault()
+IE:   event对象.returnValue = false;
+```
+    <a href="http://www.baidu.com" id="baidu">baidu</a>
+    <script>
+        var baidu = document.getElementById('baidu');
+        baidu.onclick = function(event){
+            var event = event || window.event;
+            event.preventDefault();
+        }
+    </script>
+    <form action="" name="form">
+        <input type="text" name="userName" />
+        <input type="submit" />
+    </form>
+    <script>
+        var form = document.form;
+        form.onsubmit = function( event ){
+            // return false;
+            var event = event || window.event;
+            event.preventDefault();
+        }
+    </script>
+```
+
+## 正则
+1. 正则表达式
+ 创建一个句法规则, 用以文本搜索 or 文本替换
+2. 格式
+/正则表达式/修饰符
+注: 
+修饰符不是必需品, 可写可不写
+正则严格区分大小写
+3. 正则匹配
+对象.search()     搜索指定字符的索引
+搜索成功: 对应的索引
+搜索失败: -1
+对象.replace()
+对象.match()      匹配并返回匹配结果.  
+匹配成功: 返回数组
+匹配失败: null
+```
+//                 012345678901
+        var str = 'abc98765defg';
+        var x = /7/;
+        var x = /def/;
+        var x = /deg/;
+        var x = /abc/;
+        var x = /ABC/;
+        var x = /ABC/i;   // 修饰符i : 不区分大小写进行匹配
+        console.log( str.match(x) );
+         var x = /abc/;
+        var x = /ABC/;
+        console.log( str.replace(x, '*')  );
+```
+ 4. 原子
+ 原子是正则的最小单位
+ 分类: 
+ 可见原子:    输出之后肉眼能看得见的字符. 例如: 数字, 字母, 标点, 汉字等
+ 不可见原子:  输出之后肉眼看不见的字符.   例如: 空格, 回车等
+5. 修饰符
+i   不区分大小写
+g   全部匹配
+m   多行匹配, 一般需要有 \n 的内容
+```
+var str = 'abc987abc';
+        var x = /b/;
+        console.log( str.match(x)  );  // 默认成功匹配到第一个就结束
+        var x = /b/g;
+        console.log( str.match(x) );   // 将所有符合要求的结果 全部进行匹配
+```
+6. 中括号
+意思: 多选一
+[abc]   匹配abc中的任意一个原子
+[^abc]  匹配除abc之外的任意一个原子
+[x-y]   匹配x~y之间的任意一个原子
+[0-9]   匹配0~9之间的任意一个数字
+[a-z]   匹配a~z之间的任意一个字母
+[A-Z]   匹配A~Z之间的任意一个字母
+
+[\u4e00-\u9fa5]     匹配所有的汉字
+注: 
+*  "-" 减号只有前后都有原子时, 才是范围匹配, 否则都只是普通 减号原子
+```
+var str = 'abc987aBc';
+        var x = /[9ac]/
+        console.log(  str.match(x)  );  //a
+// 该字符串至少要有一个数字, 一个小写, 一个大写
+        var str = 'qwe123BVC';
+        var str = '123456';
+        var str = '123abc';
+        var a = str.match(/[0123456789]/);  
+        var b = str.match(/[qwertyuiopasdfghjklzxcvbnm]/);
+        var c = str.match(/[QWERTYUIOPASDFGHJKLZXCVBNM]/);
+        if( (a &amp;&amp; b &amp;&amp; c) == null ){
+            console.log('您的密码格式不正确');
+        }else{
+            console.log('您的密码格式正确');
+        }
+var str = '0123456789';
+        var x = /[0-35-8]/g;
+        console.log( str.match(x));
+        // 数字, 小写字母, 大写字母之间不是连续的,  可以参考 ASCII码表
+        var str = 'ABCabc[]&gt;&lt;:";/';
+        var x = /[A-z]/g;
+        console.log( str.match(x) );
+        // 将所有的汉字 变成 * 
+        var str = '赵云鹏今天晚上搞了5个Old母鸡';
+        var x = /[\u4e00-\u9fa5]/g;  
+        console.log( str.replace(x, '*'));
+```
+7. 竖线
+意思: 多选一  (一: 整体)
+格式: 正则1|正2|正则3 ...
+```
+ var str = 'duang';
+        var x = /Duang|duang|com|cn|net|org/;
+        var x = /[Dd]uang/;
+        console.log( str.match(x));
+```
+8. 集合
+意思: 多选一
+\d      相当于[0-9]
+\D      相当于[^0-9]
+\s      相当于[ \n\t\r]     匹配任意一个不可见原子
+\S 		相当于[^ \n\t\r]    匹配任意一个可见原子
+\w 	 	相当于[0-9a-zA-Z_]
+\W 		相当于[^0-9a-zA-Z_]
+. 		除了 \n 不能匹配, 其余都能匹配
+```
+var str = 'abc987?.:老母鸡';
+
+        var x = /\d/g;
+        var x = /[0-9]/g;
+        console.log( str.match(x) );
+        var x = /\D/g;
+        console.log( str.match(x));
+        var str = 'abc 98\n7		';
+        console.log(str);
+        var x = /\s/g;
+        var x = /\S/g;
+        console.log( str.match(x));
+        var str = 'abcXYZ987_!@#$%^&amp;*';
+        var x = /\w/g;
+        console.log( str.match(x));
+        var str = 'abc987XYZ\n@#$%^&amp;*';
+        var x = /./g;
+        console.log( str.match(x));
+        var str = '123ABCxyz';
+        var x = /[\d-z]/g; //  [0-9-z]  ==&gt;	0~9 或 - 或 z
+        console.log( str.match(x));
+```
+9. 量词
+连续匹配多个原子
+a{n} 	匹配前面一个原子a连续出现n次
+a{n,}   匹配前面一个原子a至少出现n次
+a{n,m} 	匹配前面一个原子a至少出现n次, 至多出现m次
+a* 			匹配原子a至少出现0次
+a+ 			匹配原子a至少出现1次
+a? 			匹配原子a至少出现0次, 至多出现1次
+.* 			贪婪模式: 当匹配结果存在歧义时, 取其长
+.*? 		懒惰模式: 当匹配结果存在歧义时, 取其短
+```
+var str = '0';
+		var str = '05';
+		var str = '055';
+		var str = '055555555-0555';
+		var x = /05+/g;  // 05{1,}
+		console.log( str.match(x));
+		var str = '0';
+		var str = '05';
+		var str = '055';
+		var str = '0555055';
+		var x = /05?/g;  // 05{0,1}
+		console.log( str.match(x));
+		var str = '0';
+		var str = '05';
+		var str = '055';
+		var str = '055555555555555555';
+		var x = /05*/g;  // 05{0,}
+		console.log( str.match(x));
+		// .*  有多少匹配多少 (贪婪模式: 当匹配结果存在歧义时, 取其长)
+		var str = 'asfdasdf&amp;*((阿斯顿发送到发12124312';
+		var x = /.*/;
+		console.log( str.match(x));
+		// .*? 最多匹配1个, 最少匹配0个 (懒惰模式: 当匹配结果存在歧义时, 取其短)
+		var str = 'I love money_aaaaaaa123123123123123123123123123123';
+		var x = /money.*123/;
+		console.log( str.match(x));
+		var x = /money.*?123/;
+		console.log( str.match(x));
+```
+10. 小括号
+功能1: 将小括号的原子 当成一个整体, 可理解为是一个大原子
+功能2: 将小括号内匹配的结果存入 结果集(分组) (该行为称之为: 捕获)
+拒绝存入 结果集
+格式: (?:正则)
+```
+var str = '0505';
+		var x = /(05){2}/;
+		console.log( str.match(x));
+		var str = '1214';
+		var x = /(\d)(?:\d)\1\d/;
+		console.log( str.match(x));
+```
+11. 后向引用
+后面引用前面的结果
+格式: \索引
+例如: 
+\1 : \1 与 第一个() 匹配的结果 一模一样
+\2 : \2 与 第二个() 匹配的结果 一模一样
+注: 
+在正则内部, 通过 \索引 来引用
+在正则外部, 通过 $索引 来引用
+```
+// 匹配AABB型成语
+		var str = 'ABCD';
+		var str = 'AABC';
+		var str = 'AABB';
+		var x = /([A-Z])([A-Z])\2\1/;
+		console.log( str.match(x) );
+```
+12. 预查模式
+(?=正则) 	正向预查
+(?!正则) 	反向预查
+```
+var str = '123456781229';
+		// 千分位
+		var x = /(\d{3})(?=\d)/g;
+		console.log(  str.replace(x, '$1 ')  );
+		// 四位补一个空格
+		var x = /(\d{4})(?=\d)/g;
+		console.log(  str.replace(x, '$1 ')  );
+```
+```
+	银行卡号: <input type="text" id="bank" maxlength="23" />
+	<script>
+		var bank = document.getElementById('bank');
+		bank.oninput = function(){
+			var peg = /\D/g;
+			var reg = /(\d{4})(?=\d)/g;
+			bank.value = bank.value.replace(peg, '').replace(reg, '$1 '); 
+		}		
+```
+13. 边界
+^a : 以 a 开头
+a$ : 以 a 结尾
+注: 
+* ^ 和 $ 一起使用, 能限制总长度
+```
+var str = '11223123123';
+		var str = '21223123123';
+		var x = /^1\d{10}/;
+		console.log( str.match(x));
+		var str = '21223123123';
+		var str = '21223123125';
+		var x = /^\d{10}3$/;
+		console.log( str.match(x));
+		// 最粗略的手机正则
+		var str = '15000000000';
+		// var str = '15000000000123';
+		var str = '150000000001';
+		var str = '1500000000';
+		// var x = /^1\d{10}/;
+		var x = /^1\d{10}$/;
+		console.log( str.match(x));
+```
+ 14. 正则对象
+ new RegExp(正则表达式, 修饰符)
+注: 
+使用RegExp 主要目的为了识别变量, 如果不需要识别变量,  推荐用 /正则/ 写法
+/正则/             无法识别变量
+new RegExp()      可以识别变量
+```
+// 基本用法
+        var str = 'abc987';
+        // var reg = new RegExp(/[a-z]/);   // /正则/ 写法
+        var reg = new RegExp("[a-z]");      // 字符串写法
+        console.log( str.match(reg) );
+        // 转义符
+        var str = 'abc987';
+        var reg = new RegExp("[0-9]");  // 
+        var reg = new RegExp("\d");     // 字符串中的\d的\ 是转义符
+        var reg = new RegExp("\\d");    // 正确写法
+        console.log( str.match(reg) );   
+        // 识别变量
+        var str = 'abc987';
+        var x = 9;
+        var reg = new RegExp("[a-z]x"); // x
+        var reg = new RegExp(/[a-z]x/); // x
+        var reg = new RegExp("[a-z]"+x);// √
+        console.log( str.match(reg) );
+        // 修饰符
+        var str = 'abc987';
+        var reg = new RegExp("[A-Z]", 'gi'); 
+        console.log( str.match(reg));
+```
+</script></开始标签>
+:ET

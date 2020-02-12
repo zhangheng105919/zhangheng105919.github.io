@@ -611,7 +611,7 @@ page:
       background: #6a9fb5;
     }
     .wrap {
-      background-image: url(https://cdn.jsdelivr.net/gh/wu-kan/wu-kan.github.io@0dea9ba84fd9529e6635ec4c6604525470852730/assets/image/76122909_p0.webp);
+      background-image: url(https://oss.suning.com/snsis/channel_content/qTxXzSzbxxQcloPY9MkhmJO7k2x3HFa-yRj1D_ITviAKF24af1QVguh8SjA02s9g.jpg?imgW=640&imgH=358);
       background-size: auto 100vh;
       background-position: center top;
       background-repeat: no-repeat;

@@ -1,0 +1,639 @@
+I"�U<h1 id="html基础">html基础</h1>
+<h2 id="web技术基础">web技术基础</h2>
+<h3 id="软件结构">软件结构</h3>
+<blockquote>
+  <p>B/S 结构 Browser/Server
+C/S 结构 Client/Server</p>
+</blockquote>
+
+<h3 id="web-开发所需的相关构件">Web 开发所需的相关构件</h3>
+<ul>
+  <li>前端 （客户端浏览器）
+    <ul>
+      <li>HTML(XML)     数据展示，负责内容</li>
+      <li>CSS           页面美化，负责样式</li>
+      <li>JavaScript    页面特效，与用户交互，负责行为</li>
+    </ul>
+  </li>
+  <li>后端 （Web 服务器）
+    <ul>
+      <li>PHP</li>
+      <li>Python</li>
+      <li>JAVA</li>
+      <li>asp.net</li>
+      <li>Ruby</li>
+      <li>node.js</li>
+      <li>Go</li>
+      <li>。。。。。。</li>
+    </ul>
+  </li>
+  <li>数据库管理系统
+    <ul>
+      <li>Oracle</li>
+      <li>MYSQL</li>
+      <li>SQL Server</li>
+      <li>MongoDB</li>
+      <li>DB2
+        <h3 id="web-开发平台">Web 开发平台</h3>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>常用开发平台有三种:</p>
+
+<ul>
+  <li><strong><a href="https://dotnet.microsoft.com/apps/aspnet">ASP.NET</a></strong></li>
+</ul>
+
+<p>前身也叫ASP：是一项微软公司的技术，是一种使嵌入网页中的脚本可由因特网服务器执行的服务器端脚本技术.指 Active Server Pages(动态服务器页面)，运行于IIS之中的程序.</p>
+
+<ul>
+  <li><strong><a href="https://www.oracle.com/java/technologies/java-ee-glance.html">JavaEE</a></strong></li>
+</ul>
+
+<p>是J2EE的一个新的名称，其中EE为Enterprise Edition(企业版)，用于开发企业级的应用(新浪百度腾讯)</p>
+
+<ul>
+  <li><strong><a href="https://baike.baidu.com/item/lamp/66952">LAMP</a></strong>
+    <ul>
+      <li>L Linux 开源系统</li>
+      <li>A Apache 最通用的网络服务器</li>
+      <li>M MySQL 免费且开源的关系型数据库</li>
+      <li>P PHP(有时可用Perl或Python来代替)</li>
+      <li>网站技术的解决方案，约70%的网站流量，是LAMP提供的.如果在Windows操作系统下使用这些Linux环境里的工具称为使用WAMP</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="扩展名开启">扩展名开启</h3>
+
+<h4 id="win-10"><strong>WIN 10</strong></h4>
+
+<ol>
+  <li>打开<code>我的电脑</code></li>
+  <li>点击左上方的<code>查看</code>按钮</li>
+  <li>将<code>文件扩展名</code><strong>钩选</strong>上即可</li>
+</ol>
+
+<h4 id="win-7"><strong>WIN 7</strong></h4>
+
+<ol>
+  <li>打开<code>我的电脑</code></li>
+  <li>点击左上方的<code>组织</code>按钮</li>
+  <li>选择<code>文件夹和搜索选项</code></li>
+  <li>选择<code>查看</code>选项卡</li>
+  <li>在高级设置中：将<code>隐藏已知文件类型的扩展名</code>前面的勾 <strong>去掉</strong></li>
+</ol>
+
+<h3 id="手册文档">手册/文档</h3>
+
+<blockquote>
+  <p><strong><code>学会 [读手册/文档] 和 [使用手册]，是学好编程 最重要的 一步！</code></strong></p>
+
+  <p>常见的 Web 学习手册：</p>
+  <ul>
+    <li><a href="https://www.runoob.com/">菜鸟教程</a></li>
+    <li><a href="https://www.w3school.com.cn">W3C</a></li>
+    <li><a href="https://developer.mozilla.org/zh-CN/docs/Web">MDN Web 文档</a></li>
+  </ul>
+</blockquote>
+
+<h1 id="html语法">HTML语法</h1>
+<ul>
+  <li>HTML 标签 不区分大小写，推荐小写</li>
+  <li>属性不区分大小写，不区分单双引号，建议小写且双引号(W3C推荐)</li>
+  <li>多属性之间 使用空格隔开，多个属性值之间 也用空格隔开
+    <h2 id="1html注释">1.HTML注释</h2>
+    <!-- HTML 注释 -->
+    <p>html的注释为多行注释,不可以嵌套使用</p>
+  </li>
+</ul>
+
+<h2 id="2html标准架构">2.HTML标准架构</h2>
+<pre><code>&lt;!-- HTML 5 声明头 ,注意要大写--&gt;
+&lt;!DOCTYPE html&gt;
+&lt;!-- 声明HTML文档 --&gt;
+&lt;html&gt;
+    &lt;!-- 头信息 --&gt;
+    &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;TITLe&gt;网页标题&lt;/TITLe&gt;
+    &lt;/head&gt;
+    &lt;!-- 页面主体 --&gt;
+    &lt;body bgcolor="#0a0"&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="3标题-段落">3.标题-段落</h2>
+<p>总共有6个标题
+<code>&lt;h1 align="right"&gt;我是标题 H3&lt;/h1&gt;</code>
+h1只能有一个,标题默认加粗,不要利用标题标签来改变字体的大小</p>
+<ul>
+  <li>p标签代表的是段落
+<code>&lt;p&gt;lorem5&lt;/p&gt;</code>   生成5个词,随机的没有意义</li>
+  <li>br代表的是换行
+<code>&lt;br&gt;</code></li>
+  <li>hr代表的是分隔符
+<code>&lt;hr size="100" color="red" width="200" align="center"  color="#000000"  &gt;</code></li>
+  <li>颜色
+三基色: 红绿蓝  rgb(0,0,0)代表黑色</li>
+  <li>center 中间
+<code>&lt;center&gt;我在中间&lt;/center&gt;</code></li>
+  <li>pre 保留原格式</li>
+  <li>i  倾斜</li>
+  <li>b  加粗</li>
+  <li>u  下划线
+-strong  加强语气</li>
+  <li>em   加强文字</li>
+  <li>del  删除</li>
+  <li>ins  插入</li>
+  <li>sub  下面</li>
+  <li>sup  上面</li>
+  <li>font  字体
+<code>&lt;font face="monaco" size="6" color="#ff0000"&gt;(140字)&lt;/font&gt;</code>
+<code>&lt;big&gt;这个文本字体放大&lt;/big&gt;</code><br />
+<code>&lt;small&gt;这个文本是缩小的&lt;/small&gt;</code></li>
+</ul>
+
+<h2 id="4列表类标签">4.列表类标签</h2>
+<pre><code>    有序标签
+&lt;ol start="10" type="1" reversed &gt;
+        &lt;li&gt;奇异博士&lt;/li&gt;
+        &lt;li&gt;西部世界&lt;/li&gt;
+        &lt;li&gt;黑镜&lt;/li&gt;
+        &lt;li&gt;哥潭&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+<pre><code>无序标签
+&lt;ul type="square circle disc" style="list-style-type:disc" &gt;
+        &lt;li&gt;奇异博士&lt;/li&gt;
+        &lt;li&gt;西部世界&lt;/li&gt;
+        &lt;li&gt;黑镜&lt;/li&gt;
+        &lt;li&gt;哥潭&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<pre><code>&lt;dl 定义列表&gt;
+        &lt;dt 定义列表标题&gt;售后政策&lt;/dt&gt;
+        &lt;dt&gt;自助服务&lt;/dt&gt;
+        &lt;dt&gt;相关下载&lt;/dt&gt;
+
+        &lt;dt&gt;CHN&lt;/dt&gt;
+        &lt;dd&gt;中华人民共和国, 1949/10/1 成立&lt;/dd&gt;
+
+        &lt;dt&gt;USA&lt;/dt&gt;
+        &lt;dd 定义列表详情&gt;美利坚合众国, 1776/7/4 成立&lt;/dd&gt;
+
+        &lt;dt&gt;DDS&lt;/dt&gt;
+        &lt;dd&gt;Da Diao Si&lt;/dd&gt;
+    &lt;/dl&gt;
+   
+服务支持
+售后政策
+自助服务
+相关下载
+CHN
+中华人民共和国, 1949/10/1 成立
+USA
+美利坚合众国, 1776/7/4 成立
+DDS
+Da Diao Si
+</code></pre>
+<h2 id="5a标签">5.a标签</h2>
+<pre><code>&lt;a href="#p1"&gt;段落一&lt;/a&gt;
+&lt;a href="#top" name="p1"&gt;回顶部&lt;/a&gt;
+&lt;a href="" id="one"&gt;第一章: HTML&lt;/a&gt;
+</code></pre>
+
+<pre><code>[herf]  指定 所链接文件的 URL 路径
+    路径分为 2 种：
+    绝对路径:  （href 内禁止使用 绝对路径）
+        D:/wamp/www/demo
+    相对路径:  （会被转化成 URL）
+        ./   当前目录
+        ../  上级目录
+        /    根目录
+[target]      指定链接页面 在浏览器窗口中的 打开方式
+    _self     默认方式打开
+    _blank    新标签或窗口打开
+
+    _top      在顶层窗口中打开文件
+    _parent   在父级窗窗口中打开文件(常用于frameset frame)
+    framename 指定的窗口中打开
+[name] 属性指定页面的锚点名称
+    用于锚点跳转，可跳转到本页的锚点 或跳转到其他页的锚点
+</code></pre>
+
+<h2 id="6url-统一资源定位器">6.url 统一资源定位器</h2>
+<ul>
+  <li>组成<br />
+基础组成: 协议 + 域名
+完整组成: 协议 + 域名 + 端口 + 路径 + 参数 + 锚点
+案例:
+```
+http://www.baidu.com:80/image/A/B/C/yaohaojian.jpg?age=18&amp;address=gugong#xxoo</li>
+</ul>
+
+<p>协议: http
+域名: www.baidu.com    本质是 IP地址
+端口: :80               网页访问端口, 默认都是80, 可以省略
+路径: image/yaohaojian.jpg
+    文件夹: image/A/B/C/
+    文件: yaohaojian.jpg</p>
+
+<p>参数: ?age=18&amp;address=gugong
+    必然以 ?  开头
+    每一对参数之间用 &amp; 隔开</p>
+
+<pre><code>参数格式:   参数名=参数值
+</code></pre>
+
+<p>锚点: #xxoo
+   设置锚点: id=’锚点名’      html5写法
+   name=’锚点名’    html4写法
+   跳转锚点:
+   <a href="xxxxx#锚点名"></a></p>
+
+<pre><code>-  每个URL最终都会指向一个文件
+-  文件夹中若有 index文件, 那么在访问该文件夹时, 会自行执行index文件
+
+## 7.图片img
+属性: 
+src     图片来源地址   
+alt     当图片加载失败or延迟, 显示alt内容
+title   当鼠标悬停在图片上时, 显示title内容
+width   设置图片的宽度
+height  设置图片的高度
+`&lt;img  border="10" src="smiley.gif" title="张恒" alt="HTML 教程" width="32" height="32"&gt;`   border为0时,显示的是无框,越大越粗
+## 8.路径
+- 相对路径:
+.   当前目录
+..  上级目录
+../../ 上上级目录
+/   根目录
+- 相对路径
+
+## 9.音频 audio
+在HTML5中, 属性名与属性值是一样的, 则可以只写 属性名即可
+- 属性: 
+src         音频来源地址
+controls    控制器 (开始, 暂停, 进度条...)
+loop        循环播放
+autoplay    自动播放
+- 媒介标签
+标签: source
+属性: src         音频来源地址
+</code></pre>
+<!-- 普通写法 -->
+<pre><code>&lt;audio src="./resource/神话.m4a" controls loop autoplay&gt;&lt;/audio&gt; ``` ``` &lt;!-- 兼容写法 --&gt;
+&lt;!-- &lt;audio controls="controls"&gt; --&gt;
+&lt;!-- &lt;audio   loop  autoplay&gt;
+  &lt;source src="./resource/神话.m4a" &gt;
+  &lt;source src="./resource/神话.ogg" &gt;
+  &lt;source src="./resource/神话.mp3" &gt; ``` ## 10.视频 video 同上
+</code></pre>
+
+<h2 id="11表格">11.表格</h2>
+<ol>
+  <li>表格标签
+ table       表格声明
+ caption     表格标题
+ tr           表行
+ th           表头
+ td           单元格
+ col          列控制
+ colgroup     列组</li>
+  <li>相关属性
+ border      边框
+ rowspan     行合并
+ colspan     列合并
+cellspacing 外边距: 单元格与单元格之间的距离
+cellpadding 内边距: 单元格与内容之间的距离
+align       水平对齐方式: left center right
+valign      垂直对齐方式: top  middle bottom
+bgcolor     背景颜色
+```</li>
+</ol>
+<table border="1" cellspacing="0" cellpadding="10" align="center" bgcolor="skyblue">
+            
+        <colgroup>
+            <!-- 百分比 -->
+            <!-- <col width="50%"> -->
+            <!-- <col width="30%"> -->
+            <!-- <col width="20%"> -->
+
+            <!-- 像素 -->
+            <col width="300" />
+            <col width="200" />
+            <col width="100" />
+        </colgroup>
+
+
+        <caption>俊男美女</caption>
+
+        <tr>
+            <th colspan="2">姓</th>
+            <th>名</th>
+            <th>分数</th>
+        </tr>
+        <tr>
+            <td rowspan="4" valign="middle" align="center">陈</td>
+            <td>耀泽</td>
+            <td>99</td>
+        </tr>
+        <tr>
+            <td>姚</td>
+            <td>豪建</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>陈</td>
+            <td>泊行</td>
+            <td>98</td>
+        </tr>
+        <tr>
+            <td>张</td>
+            <td>恒</td>
+            <td>100</td>
+        </tr>
+    </table>
+<pre><code>多选光标: Ctrl + Alt + 上下方向键
+多选光标: Ctrl + 左键单击
+
+## 12.表单 form
+属性
+- action      将表单提交给指定的服务器
+- method      以什么方式提交个指定的服务器
+get 默认    
+明文传输( 能在url地址栏中看到参数 )
+安全性低速度快传输大小: 理论上: http协议上时没有大小限制实际上: 受限于浏览器, 大多数浏览器小于等于 2KB适用于: 查询
+post密文传输安全性高速度慢传输大小:理论上: http协议上时没有大小限制实际上: 受限于服务器的性能  (服务器的性能根据配置决定)适用于: 增删改, 敏感性数据(密码, 金额等)
+- enctype multipart/form-data     专门用于上传文件
+- autocomplete    自动填充
+on  开启自动填充
+off 关闭自动填充
+</code></pre>
+<!-- 百度搜索 -->
+<pre><code>&lt;form action="http://www.baidu.com/s"&gt;
+    &lt;input type="text" name="wd"&gt;
+    &lt;input type="submit" value="百度一下"&gt;
+&lt;/form&gt;
+
+
+&lt;!-- 搜狗搜索 --&gt;
+&lt;form action="https://www.sogou.com/web"&gt;
+    &lt;input type="text" name="query"&gt;
+    &lt;input type="submit" value="搜狗一下"&gt;
+&lt;/form&gt;
+
+
+&lt;!-- 谷歌翻译 --&gt;
+&lt;form action="https://translate.google.cn"&gt;
+    &lt;input type="text" name="text"&gt;
+    &lt;input type="submit" value="谷歌翻译"&gt;
+&lt;/form&gt; ``` 上传文件有3个必要条件: 
+1.form的method = post
+2.form的enctype = multipart/form-data
+3.file表单的name 必须要有值
+</code></pre>
+
+<pre><code>&lt;form action="./shiyan" method="post" enctype="multipart/form-data"&gt;
+        &lt;input type="file" name="photo"&gt;
+        &lt;input type="submit" value="头像上传"&gt;
+    &lt;/form&gt;
+</code></pre>
+
+<p><strong><em>input 最常用的表单</em></strong>
+属性</p>
+<ul>
+  <li>name <br />
+给该标签取个名字 (如果没有name, 那么服务器不会接收该数据)</li>
+  <li>value<br />
+给该标签赋予默认值
+可手动输入的表单: value可写可不写     (例如: 文本域, 密码域)
+不可手动输入的表单: value必须写       (例如: 单选, 多选)</li>
+  <li>type  <br />
+指定表单的类型,不指定type时, 默认为text
+  text       文本域, 可输入数字,字母,标点,汉字等任意字符
+  password   密码域
+  radio      单选   (同一类型的单选, name值必须一样)
+  checkbox   多选   (1. 同一类型的多选, name值必须一样) (2. 给name值补上[], 才能实现真正的多选)
+  file       文件<br />
+多选文件:1.file表单添加 multiple  2.file表单的name值 补上[], 才能实现真正的多选文件
+  hidden     隐藏域 (一般用于重要性信息, 必须手写name,value)
+  submit     提交按钮  (可通过value 改变按钮文字)
+H5新增表单<br />
+  email         邮箱
+  number      数字
+  url          网址
+  date           日期
+  search        搜索</li>
+</ul>
+
+<pre><code>性别: 
+            &lt;input type="radio" name="sex" value="1"&gt; 男
+            &lt;input type="radio" name="sex" value="2"&gt; 女
+            &lt;input type="radio" name="sex" value="3"&gt; 人妖
+            &lt;input type="radio" name="sex" value="4"&gt; 兽人
+            &lt;br&gt;
+爱好: 
+            &lt;input type="checkbox" name="hobby[]" value="1"&gt;睡觉
+            &lt;input type="checkbox" name="hobby[]" value="2"&gt;电竞
+            &lt;input type="checkbox" name="hobby[]" value="3"&gt;学习
+            &lt;input type="checkbox" name="hobby[]" value="4"&gt;旅游
+            &lt;input type="checkbox" name="hobby[]" value="5"&gt;电影
+            &lt;input type="checkbox" name="hobby[]" value="6"&gt;撩妹
+            &lt;input type="checkbox" name="hobby[]" value="7"&gt;美食
+            &lt;br&gt;
+头像:  
+            &lt;input type="file" name="photo[]" multiple&gt;
+            &lt;br&gt;
+</code></pre>
+<pre><code>&lt;!-- 超链接也是一个  明文传输 --&gt;
+    &lt;a href="08-input.html?id=6666666"&gt;测试连接&lt;/a&gt;
+    &lt;hr&gt;
+</code></pre>
+<h2 id="13下拉框">13.下拉框</h2>
+<p>父标签: select   赋予name
+子标签: option   子下拉框选项 ,赋予value
+optgroup       子下拉框分组</p>
+<pre><code> &lt;select name=""&gt;
+        &lt;optgroup label="江苏"&gt;
+            &lt;option value=""&gt;南京&lt;/option&gt;
+            &lt;option value=""&gt;苏州&lt;/option&gt;
+            &lt;option value=""&gt;常州&lt;/option&gt;
+            &lt;option value=""&gt;徐州&lt;/option&gt;
+        &lt;/optgroup&gt;
+
+        &lt;optgroup label="安徽"&gt;
+            &lt;option value=""&gt;合肥&lt;/option&gt;
+            &lt;option value=""&gt;芜湖&lt;/option&gt;
+            &lt;option value=""&gt;蚌埠&lt;/option&gt;
+            &lt;option value=""&gt;黄山&lt;/option&gt;
+        &lt;/optgroup&gt; 
+
+        &lt;optgroup label="浙江"&gt;
+            &lt;option value=""&gt;杭州&lt;/option&gt;
+            &lt;option value=""&gt;宁波&lt;/option&gt;
+            &lt;option value=""&gt;温州&lt;/option&gt;
+            &lt;option value=""&gt;金华&lt;/option&gt;
+            &lt;option value=""&gt;台州&lt;/option&gt;
+        &lt;/optgroup&gt;
+    &lt;/select&gt;
+</code></pre>
+<h2 id="14多文本域">14.多文本域</h2>
+<p>属性rows    行数
+   cols    列数
+   name<br />
+   固定大小 style=”resize:none;”
+默认值是正文内容,不是 value属性</p>
+<pre><code>&lt;textarea name="comment"  rows="5"  cols="50" style="resize:none;"&gt;老母鸡 &lt;/textarea&gt;
+</code></pre>
+
+<h2 id="15button自定义按钮">15.button自定义按钮</h2>
+<p>submit  只是单纯的提交给服务器
+button  既具有提交给服务器的功能, 又有自定义功能(配合js)
+button 默认值是 正文内容</p>
+
+<pre><code> &lt;form action="" &gt;
+        账号: &lt;input type="text" name="userName"&gt;
+        &lt;input type="submit"&gt;
+        &lt;button&gt;提交&lt;/button&gt;
+        &lt;button&gt;保存&lt;/button&gt;
+        &lt;!-- onclick 单击事件 --&gt;
+        &lt;button onclick="run()"&gt;啦啦啦&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;script&gt;
+        // Js 相关代码,  由  onclick = "run()"
+        function run(){
+            alert('今天中午给每个人都加一个鸡腿');
+        }
+    &lt;/script&gt;
+</code></pre>
+<h2 id="16常用属性">16.常用属性</h2>
+<p>以下属性能够提高用户体验感:</p>
+<ol>
+  <li>placeholder      背景字</li>
+  <li>maxlength        最大长度</li>
+  <li>minlength        最小长度</li>
+  <li>checked          默认选中(单选, 多选)</li>
+  <li>selected         默认选中(下拉框)</li>
+  <li>readonly         只读</li>
+  <li>disabled         禁用</li>
+  <li>autofocus        自动获取光标</li>
+  <li>autocomplete     自动填充  on  off</li>
+  <li>multiple        多选 (文件,  下拉框)</li>
+  <li>required        不能为空
+注: 
+readonly 和 disabled 都是只能看不能改
+readonly 可以提交给服务器
+disabled 不能提交给服务器
+    <h2 id="17关联标签-label">17.关联标签 label</h2>
+    <p>将表单与文本进行关联, 选择文本如同选择表单
+for     绑定对应id  (一般用于 文本 与 表单分开时)</p>
+    <pre><code>&lt;!-- 用法1 --&gt;
+&lt;form action=""&gt;
+    性别: 
+        &lt;label&gt;&lt;input type="radio" name="sex" value="1"&gt; 男 &lt;/label&gt;
+        &lt;label&gt;&lt;input type="radio" name="sex" value="2"&gt; 女 &lt;/label&gt;
+&lt;/form&gt;
+
+&lt;!-- 用法2 --&gt;
+&lt;form action=""&gt;
+        &lt;input type="radio" name="sex" value="1" id="one"&gt;  
+        &lt;input type="radio" name="sex" value="2" id="two"&gt;
+        &lt;br&gt;
+
+        &lt;label for="one"&gt; 男 &lt;/label&gt;
+        &lt;label for="two"&gt; 女 &lt;/label&gt;
+&lt;/form&gt;
+</code></pre>
+  </li>
+</ol>
+
+<h2 id="18head头">18.head头</h2>
+<p>1.重定向
+	<meta http-equiv="refresh" content="秒数; url=地址" /> 
+2.关键字
+	<meta name="keywords" content="小米, 红米, MIX, 小米商城, Redmi" />
+3.描述
+    <meta name="description" content="" />
+4.导入css
+	<link rel="stylesheet" href="./demo.css" />
+5.导入图标
+	<link rel="icon" href="./resource/favicon.ico" />
+    &lt;link rel=”shortcut icon” href=”./resource/favicon.ico”
+6.导入js
+	<script src="./demo.js"></script>
+目前能够优化SEO引擎有以下标签: 
+title h1  关键字  描述  strong  em</p>
+<h2 id="19实体符号">19.实体符号</h2>
+<p>       空格
+&lt;        小于
+&gt;        大于
+©      版权  copyright
+¥       货币</p>
+<h2 id="20框架">20.框架</h2>
+<p>frame  分帧/窗口
+框架设置标签: frameset
+属性: 
+rows = 像素/百分比/*    ( * 代表剩余的空间 )
+cols = 像素/百分比/*
+noresize  禁止拖动窗口
+frameborder = 0       隐藏窗口边框线
+frameborder = 非0     显示窗口边框线
+框架标签: frame
+属性: 
+src = 窗口内容的来源地址   (内容就是一个HTML)
+name = 自定义窗口名        (为了方便a链接的target)
+scrolling = yes         显示滚动条
+scrolling = no          隐藏滚动条
+<strong>frameset 不能与 body 共存</strong></p>
+<pre><code>&lt;frameset rows="10%,*" noresize   frameborder="0"&gt;
+        &lt;frame src="./resource/1.html" name="top"&gt;
+
+        &lt;frameset cols="15%, *"&gt;
+            &lt;frame src="./resource/2.html" name="left"&gt;
+
+            &lt;frame src="./resource/3.html" name="right"&gt;
+        &lt;/frameset&gt;
+    &lt;/frameset&gt;
+ 
+1.html
+&lt;a href="www.baidu.com"  target="right"&gt;退出&lt;/a&gt;
+2.html
+&lt;li&gt;&lt;a href="c.html" target="right"&gt;姚豪建&lt;/a&gt;&lt;/li&gt;
+</code></pre>
+<h2 id="21内联框架">21.内联框架</h2>
+<p>标签: iframe
+属性: 
+src     窗口内容的来源地址
+name    窗口名
+frameborder = 0 / 非0
+width   宽度
+height  高度
+scrolling = yes / no
+场景:  选项卡,广告</p>
+<pre><code> &lt;a href="http://www.qq.com" target="one"&gt;腾讯&lt;/a&gt;
+    &lt;hr&gt;
+
+    &lt;iframe src="http://www.baidu.com" frameborder="0" width="800" height="300" scrolling="no"  name="one"&gt;&lt;/iframe&gt;
+</code></pre>
+
+<h2 id="22shiv">22.shiv</h2>
+<p>国外shiv地址</p>
+<pre><code>&lt;!--[if lt IE 9]&gt;
+      &lt;script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"&gt;&lt;/script&gt;
+    &lt;![endif]--&gt;
+</code></pre>
+<p>菜鸟教程的 shiv地址</p>
+<pre><code>&lt;!--[if lt IE 9]&gt;
+      &lt;script src="http://cdn.static.runoob.com/libs/html5shiv/3.7/html5shiv.min.js"&gt;&lt;/script&gt;
+    &lt;![endif]--&gt;
+</code></pre>
+<p>shiv 教 老IE 识别HTML5 新技术
+hack  [if lt IE 9]   代表如果ie版本 &lt; 9
+这些写法被称之为: hack写法
+hack只有IE浏览器能认识,hack写在注释里面的</p>
+:ET

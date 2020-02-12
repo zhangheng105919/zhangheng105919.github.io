@@ -1,0 +1,672 @@
+I"�K<h1 id="关于学习技术与认知升级">关于学习技术与认知升级</h1>
+
+<blockquote>
+  <p>学习技术 不外乎以下两个方向</p>
+</blockquote>
+
+<p><strong>1. 广度</strong></p>
+
+<ul>
+  <li>整个使用链条由哪些环节构成？</li>
+  <li>每个环节的作用是什么？</li>
+  <li>都有哪些类似的可替代方案？</li>
+  <li>它们之间有什么区别？
+  各自优劣点是什么？</li>
+  <li>。。。</li>
+</ul>
+
+<p><strong>2. 深度</strong></p>
+
+<ul>
+  <li>这个「技术 / 产品」的本质是什么？</li>
+  <li>都能做什么？</li>
+  <li>运作原理是什么？</li>
+  <li>底层是如何实现的？</li>
+  <li>可以做怎样的改进？</li>
+  <li>。。。</li>
+</ul>
+
+<p>不管你在做什么工作，都应该先把，自己每天都要用的核心技术，做到一定深度，再去拓展广度。</p>
+
+<p><code>「什么都知道一点，但都不甚了解」是最可怕的，它会让你误以为自己已经很NB了。</code></p>
+
+<blockquote>
+  <p>学习，是一辈子的事。</p>
+</blockquote>
+
+<hr />
+
+<h3 id="认知状态">认知状态</h3>
+
+<p><img src="./imgs/16554949.png" alt="01" /></p>
+
+<p>这是一个人认知的四种状态，我将其简单翻译为：</p>
+
+<p>不知道自己不知道——以为自己什么都知道，<strong><code>自以为是的认知状态</code></strong></p>
+
+<p>知道自己不知道——有敬畏之心，开始空杯心态，<strong><code>准备丰富自己的认知</code></strong></p>
+
+<p>知道自己知道——抓住了事情的规律，<strong><code>提升了自己的认知</code></strong></p>
+
+<p>不知道自己知道——永远保持空杯心态，<strong><code>认知的最高境界</code></strong></p>
+
+<blockquote>
+  <p><strong>人和人根本的区别，就在于这四种状态！</strong></p>
+</blockquote>
+
+<p>更可怕的是，95%的人都处在第一个状态，甚至更多。</p>
+
+<p>这也就是为什么碌碌无为的人是大多数的。视而不见，只会失去升级的可能性。只有自我否定，保持空杯心态，一个人才有可能真正成长，实现跨越。</p>
+
+<hr />
+
+<h1 id="操作系统">操作系统</h1>
+
+<p>不同的操作系统有着不同的用户群体，对于绝大多数用户来说，普通的系统就基本可以胜任绝大多数的使用需求了。</p>
+
+<p>但是，我们要从事的是专业的编程开发，对于系统的要求会比普通用户高许多，我们不仅要使用系统，还要会维护系统。</p>
+
+<p>在工作中还需要对系统进行相关的配置和管理，用来达到开发软件的要求。</p>
+
+<p>除此之外，还需要对计算机的原理有一定的理解，不仅仅是构造上的，更多的是设计理念上的。</p>
+
+<h3 id="常见的操作系统">常见的操作系统</h3>
+
+<ul>
+  <li>windows xp</li>
+  <li>windows 7</li>
+  <li>windows 10</li>
+  <li>windows server 2008</li>
+  <li>windows server 2012</li>
+  <li>windows server 2016</li>
+  <li>Linux</li>
+  <li>Ubuntu</li>
+  <li>Red Hat</li>
+  <li>CentOS</li>
+  <li>Unix</li>
+  <li>Mac OS</li>
+</ul>
+
+<blockquote>
+  <p>更多操作系统的相关资料，可查阅此处： <a href="https://zh.wikipedia.org/wiki/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">操作系统</a></p>
+</blockquote>
+
+<hr />
+
+<h3 id="windows">Windows</h3>
+
+<p>下面以 Windows 为例，毕竟大家大多数都在使用它。</p>
+
+<p>不过专业开发的话，个人觉得 MacOS / Ubuntu 会更加合适一些。</p>
+
+<h4 id="版本的选择">版本的选择</h4>
+
+<p>常见版本有：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>系统</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Windows 7 Home Basic</td>
+      <td>家庭版</td>
+    </tr>
+    <tr>
+      <td>Windows 7 Home Premium</td>
+      <td>高级家庭版</td>
+    </tr>
+    <tr>
+      <td>Windows 7 Professional</td>
+      <td>专业版</td>
+    </tr>
+    <tr>
+      <td>Windows 7 Professional VL</td>
+      <td>专业版 批量授权版</td>
+    </tr>
+    <tr>
+      <td>Windows 7 Ultimate</td>
+      <td>旗舰版</td>
+    </tr>
+    <tr>
+      <td>Windows 10 (Multiple Editions)</td>
+      <td>多版本系统</td>
+    </tr>
+    <tr>
+      <td>Windows 10 Education</td>
+      <td>教育版</td>
+    </tr>
+    <tr>
+      <td>Windows 10 Enterprise</td>
+      <td>企业版</td>
+    </tr>
+    <tr>
+      <td>Windows 10 Enterprise 2015 LTSB</td>
+      <td>企业版 长期支持更新</td>
+    </tr>
+    <tr>
+      <td>Windows 10 Insider Preview</td>
+      <td>预览版</td>
+    </tr>
+    <tr>
+      <td>Windows 10 business editions</td>
+      <td>商业版</td>
+    </tr>
+    <tr>
+      <td>Windows 10 (business edition)</td>
+      <td>教育/企业/专业版</td>
+    </tr>
+    <tr>
+      <td>Windows 10 (consumer edition)</td>
+      <td>教育/家庭/专业版</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>多版本，意味着在安装系统时，有多种版本可以选择。
+非多版本，只有一个版本可以安装，没得选。</p>
+
+<p>x86 : 32 位操作系统， 如果内存在 4G 以下， 推荐 32 位
+x64 : 64 位操作系统， 如果内存在 4G 以上， 推荐 64 位</p>
+
+<hr />
+
+<h4 id="下载-windows-系统">下载 Windows 系统</h4>
+
+<blockquote>
+  <p>推荐下载地址： https://msdn.itellyou.cn/</p>
+</blockquote>
+
+<p><img src="./imgs/1550673664747.png" alt="正版系统资源" /></p>
+
+<p>如何下载？点开以上任一版本 的详情信息，如下图：</p>
+
+<p><img src="./imgs/1550674918640.png" alt="1550674918640" /></p>
+
+<p>复制以上 ed2k 之后，打开迅雷软件，自动进行下载。
+如果没有下载，那么先打开迅雷，选择新建任务，粘贴 ed2k，再进行下载。
+下载完成之后，注意要下载的是一个  <code>*****.iso</code> 格式的文件。 如下图</p>
+
+<p><img src="./imgs/1550675032033.png" alt="1550675032033" /></p>
+
+<p>重要的事情说3遍： 是 iso 格式的文件
+重要的事情说3遍： 是 iso 格式的文件
+重要的事情说3遍： 是 iso 格式的文件
+iso 文件 常见称呼： 镜像, 系统镜像</p>
+
+<hr />
+
+<h4 id="刻录系统">刻录系统</h4>
+
+<p>系统镜像下载下来之后，就要想办法安装到电脑中.</p>
+
+<p>方法很多，例如 U盘安装、光盘安装、内部安装等</p>
+
+<p>这里给大家介绍的是 <strong>U盘安装系统</strong>.</p>
+
+<p>首先，大家需要准备一个U盘，容量至少4G，别超过8个G，会浪费的 (原因以后再说)</p>
+
+<p>然后，准备刻录软件，这里给大家推荐 “软碟通”，一款老牌的刻录软件(靠谱，稳定，强大)</p>
+
+<p>准备工作一共三个： <strong>镜像, U盘, 刻录软件</strong></p>
+
+<ol>
+  <li>步骤1： 打开刻录软件(软碟通)</li>
+</ol>
+
+<p><img src="./imgs/1550707461697.png" alt="1550707461697" /></p>
+
+<ol>
+  <li>步骤2： 打开镜像</li>
+</ol>
+
+<ul>
+  <li><strong>打开前</strong>：</li>
+</ul>
+
+<p><img src="./imgs/1550707556781.png" alt="1550707556781" /></p>
+
+<ul>
+  <li><strong>打开后</strong>：</li>
+</ul>
+
+<p><img src="./imgs/1550707580600.png" alt="1550707580600" /></p>
+
+<ol>
+  <li>步骤3： 准备刻录</li>
+</ol>
+
+<p><img src="./imgs/1550707601053.png" alt="1550707601053" /></p>
+
+<ol>
+  <li>步骤4： 刻录选项</li>
+</ol>
+
+<ul>
+  <li>硬盘驱动器：
+    <ul>
+      <li>(G: 8GB) 选择你的U盘</li>
+      <li>最前面的 () 就说明的该硬盘的 容量大小， 选择U盘的那个大小</li>
+    </ul>
+  </li>
+  <li>写入方式：
+    <ul>
+      <li>windows 系统 USB-HDD+</li>
+      <li>兼容多种系统 USB-ZIP+</li>
+    </ul>
+  </li>
+  <li>点击写入：
+    <blockquote>
+      <p>重要的事情说3遍：
+一旦写入， 会将U盘的资料清空， 请先备份U盘资料， 否则后果自负！
+一旦写入， 会将U盘的资料清空， 请先备份U盘资料， 否则后果自负！
+一旦写入， 会将U盘的资料清空， 请先备份U盘资料， 否则后果自负！</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>最后等待刻录完成</p>
+
+    <ul>
+      <li>注意： 刻录好之后， U盘可以正常存储资料， 只要别乱删文件就行</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="安装系统-windows">安装系统 Windows</h3>
+
+<h4 id="步骤1">步骤1</h4>
+
+<blockquote>
+  <p>重启计算机</p>
+</blockquote>
+
+<p>在计算机重启后，当看到标志画面 Logo 时，疯狂按下快捷键。
+不同品牌的 BIOS 快捷键，如下图：</p>
+
+<p><img src="./imgs/1550712214718.jpg" alt="1550712214718" /></p>
+
+<h4 id="步骤2">步骤2</h4>
+
+<blockquote>
+  <p>windows 7 的安装步骤，详见 [windows10.安装截图] 目录</p>
+</blockquote>
+
+<blockquote>
+  <p>安装系统第一个界面，默认下一步</p>
+</blockquote>
+
+<p><img src="./imgs/1550712700805.png" alt="1550712700805" /></p>
+
+<h4 id="步骤3">步骤3</h4>
+
+<blockquote>
+  <p>点击 “现在安装”</p>
+</blockquote>
+
+<p><img src="./imgs/1550712772030.png" alt="1550712772030" /></p>
+
+<h4 id="步骤4">步骤4</h4>
+
+<blockquote>
+  <p>选择要安装的版本</p>
+</blockquote>
+
+<p><img src="./imgs/1550712852288.png" alt="1550712852288" /></p>
+
+<h4 id="步骤5">步骤5</h4>
+
+<blockquote>
+  <p>接受 许可条款</p>
+</blockquote>
+
+<p><img src="./imgs/1550712937426.png" alt="1550712937426" /></p>
+
+<h4 id="步骤6">步骤6</h4>
+
+<blockquote>
+  <p>步骤6: 选择自定义(高级)</p>
+</blockquote>
+
+<p><img src="./imgs/1550713071618.png" alt="1550713071618" /></p>
+
+<h4 id="步骤7">步骤7</h4>
+
+<blockquote>
+  <p>选择 “新建”</p>
+</blockquote>
+
+<p><img src="./imgs/1550713125034.png" alt="1550713125034" /></p>
+
+<blockquote>
+  <p>划分磁盘</p>
+</blockquote>
+
+<p><img src="./imgs/1550713188194.png" alt="1550713188194" /></p>
+
+<blockquote>
+  <p>构建分区</p>
+</blockquote>
+
+<p><img src="./imgs/1550713222800.png" alt="1550713222800" /></p>
+
+<blockquote>
+  <p>选择系统的安装盘符</p>
+</blockquote>
+
+<p><img src="./imgs/1550713287487.png" alt="1550713287487" /></p>
+
+<blockquote>
+  <p>执行安装</p>
+</blockquote>
+
+<p><img src="./imgs/1550713355302.png" alt="1550713355302" /></p>
+
+<hr />
+
+<h3 id="驱动安装">驱动安装</h3>
+
+<p>所有的硬件设备，都必须要有相应的程序驱动，才能正常使用，而刚刚装好的系统，一般驱动都不全，需要自己安装完整。</p>
+
+<p>安装驱动方式主要分为三种：</p>
+
+<ol>
+  <li>离线万能驱动</li>
+  <li>官方驱动</li>
+  <li>第三方驱动</li>
+</ol>
+
+<hr />
+
+<h4 id="离线万能驱动">离线万能驱动</h4>
+
+<p>这个大家可以在 <a href="https://www.itsk.com">IT天空</a> 进行下载，这个已经有很多年的积累，老品牌了，相对靠谱些.
+好处就是不用联网就能打上驱动，但这里只会打上通用的一些驱动。特殊驱动还是要用第二种或第三种方式的。</p>
+
+<h4 id="官方驱动">官方驱动</h4>
+
+<p>每个笔记本都有相应的型号，在官网搜索相关的型号，就能找到对应的驱动了，相对比较靠谱稳定。</p>
+
+<blockquote>
+  <p>如何查看笔记本型号？</p>
+</blockquote>
+
+<ol>
+  <li>按住 win + R (win 就是开始菜单键，在键盘左下角)</li>
+  <li>输入 <code>dxdiag</code></li>
+  <li>查看 “系统” -&gt; “系统型号”</li>
+</ol>
+
+<p><img src="./imgs/1550715110460.png" alt="1550715110460" /></p>
+
+<blockquote>
+  <p>如何下载对应型号的驱动？</p>
+</blockquote>
+
+<p>那么以此型号为例，如何在官网下载驱动呢？</p>
+<ol>
+  <li>该型号是 华硕的产品，先进入该产品的官网</li>
+  <li>在官网找到类似于 “服务与支持” 的链接</li>
+  <li>找到类似于 “驱动程序” 的链接</li>
+  <li>搜索对应产品型号</li>
+</ol>
+
+<p><img src="./imgs/1550715324332.png" alt="1550715324332" /></p>
+
+<p><img src="./imgs/1550715405443.png" alt="1550715405443" /></p>
+
+<ol>
+  <li>选择型号</li>
+</ol>
+
+<p><img src="./imgs/1550715454964.png" alt="1550715454964" /></p>
+
+<ol>
+  <li>选择系统</li>
+</ol>
+
+<p><img src="./imgs/1550715501091.png" alt="1550715501091" /></p>
+
+<ol>
+  <li>选择要下载的驱动</li>
+</ol>
+
+<p><img src="./imgs/1550715563171.png" alt="1550715563171" /></p>
+
+<h4 id="第三方驱动">第三方驱动</h4>
+
+<p>第三方驱动比较多，例如 驱动精灵，驱动人生 等等，有很多软件都可以下载驱动。</p>
+<blockquote>
+  <p>第三方驱动 不一定就是最适合该型号的驱动，所以官方驱动 相对靠谱一些。
+选择驱动要注意，不是最新的就是最好的，是最合适的才是最好的！</p>
+</blockquote>
+
+<hr />
+
+<h3 id="it资源资讯">IT资源,资讯</h3>
+
+<p>就算以后不在兄弟连了, 那么也可以从这些地方汲取知识, 学习是一辈子的事情!</p>
+
+<ul>
+  <li>资源
+    <ul>
+      <li>慕课网</li>
+      <li>腾讯课堂</li>
+      <li>极客学院</li>
+      <li>网易云课堂 (公开课) 包含更多非IT 资源</li>
+    </ul>
+  </li>
+  <li>资讯
+    <ul>
+      <li>掘金</li>
+      <li>CSDN</li>
+      <li>GitHub</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="常用软件">常用软件</h3>
+
+<p>因每个人的使用需求不一样，所以常用的软件也各有所异。</p>
+
+<blockquote>
+  <p>提供几个软件下载网站：</p>
+</blockquote>
+
+<ol>
+  <li>有官网的软件，直接去官网下载，很少使用360或腾讯这类软件助手</li>
+  <li><a href="http://www.orsoon.com">未来软件园</a></li>
+  <li><a href="https://www.iplaysoft.com">异次元软件世界</a></li>
+  <li><a href="http://www.pc6.com">PC6下载站</a></li>
+</ol>
+
+<hr />
+
+<blockquote>
+  <p>此处根据我个人习惯，列举以下几类：</p>
+</blockquote>
+
+<h4 id="浏览器">浏览器</h4>
+<ul>
+  <li>自主浏览器
+    <ul>
+      <li><a href="https://www.google.cn/intl/zh-CN/chrome/">Google Chrome</a></li>
+      <li><a href="http://www.firefox.com.cn/">Mozilla Firefox</a></li>
+      <li>Safari (mac 自带)</li>
+      <li><a href="https://www.opera.com/zh-cn">Opera</a></li>
+      <li><a href="https://www.microsoft.com/zh-cn/windows/microsoft-edge">Microsoft Edge (Win10自带)</a></li>
+    </ul>
+  </li>
+  <li>国产浏览器
+    <ul>
+      <li><a href="https://browser.360.cn/ee/">360极速浏览器</a></li>
+      <li><a href="https://browser.360.cn/">360安全浏览器</a></li>
+      <li><a href="https://www.liebao.cn/">猎豹浏览器</a></li>
+      <li><a href="https://browser.qq.com/">QQ浏览器</a></li>
+      <li><a href="https://ie.sogou.com/">搜狗浏览器</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="通讯类">通讯类</h4>
+<ul>
+  <li><a href="https://office.qq.com/">TIM</a></li>
+  <li><a href="https://im.qq.com/">QQ</a></li>
+  <li><a href="https://weixin.qq.com/">微信</a></li>
+  <li><a href="https://www.dingtalk.com/">钉钉</a></li>
+</ul>
+
+<h4 id="文字处理">文字处理</h4>
+<ul>
+  <li>输入法
+    <ul>
+      <li><a href="https://pinyin.sogou.com/">搜狗输入法</a></li>
+      <li><a href="http://qq.pinyin.cn/">QQ 输入法</a></li>
+      <li><a href="https://srf.xunfei.cn/">讯飞输入法</a></li>
+    </ul>
+  </li>
+  <li>文档处理
+    <ul>
+      <li><a href="http://www.pc6.com/softview/SoftView_143565.html">Office2016</a></li>
+      <li><a href="https://www.sumatrapdfreader.org/download-free-pdf-viewer.html">SumatraPDF （PDF 阅读器）</a></li>
+      <li><a href="https://www.xmind.cn/">XMind</a></li>
+      <li><a href="http://note.youdao.com/">有道云笔记</a></li>
+      <li><a href="https://www.dida365.com/">滴答清单</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="图像">图像</h4>
+<ul>
+  <li>查看器
+    <ul>
+      <li><a href="http://pic.2345.cc/">2345看图王</a></li>
+      <li><a href="image.qq.com/">QQ影像</a></li>
+    </ul>
+  </li>
+  <li>图像编辑
+    <ul>
+      <li>Adobe Photoshop</li>
+      <li>Adobe illustrator</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="音视频">音/视频</h4>
+<ul>
+  <li>播放器
+    <ul>
+      <li><a href="http://jm.wmzhe.com/">完美解码</a></li>
+      <li><a href="https://music.163.com/">网易云音乐</a></li>
+      <li><a href="https://y.qq.com/">QQ音乐</a></li>
+    </ul>
+  </li>
+  <li>编辑器
+    <ul>
+      <li><a href="https://mkvtoolnix.download/downloads.html">mkvtoolnix</a></li>
+      <li><a href="https://maruko.appinn.me/">小丸工具箱</a></li>
+      <li><a href="http://www.ijianji.com/">爱剪辑</a></li>
+    </ul>
+  </li>
+  <li>录屏
+    <ul>
+      <li><a href="http://www.bandicam.cn/">Bandicam</a></li>
+      <li><a href="">FSCapture</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="编码">编码</h4>
+<ul>
+  <li>文本类
+    <ul>
+      <li><a href="http://www.sublimetext.com/3">sublime 3</a></li>
+      <li><a href="https://notepad-plus-plus.org/">notepad++</a></li>
+      <li><a href="https://atom.io/">Atom</a></li>
+      <li><a href="https://code.visualstudio.com/">Visual Studio Code</a></li>
+    </ul>
+  </li>
+  <li>IDE
+    <ul>
+      <li><a href="https://www.jetbrains.com/">jetbrains 全家桶(PyCharm/PhpStorm 等等)</a></li>
+      <li><a href="http://www.eclipse.org/pdt/">eclipse</a></li>
+    </ul>
+  </li>
+  <li>Markdown
+    <ul>
+      <li><a href="https://typora.io/">Typora</a></li>
+      <li><a href="https://marktext.github.io/website/">Mark Text</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="运行库">运行库</h4>
+<ul>
+  <li><a href="http://www.pc6.com/softview/SoftView_104246.html">微软常用运行库合集(VC++系列)</a></li>
+  <li><a href="http://www.pc6.com/softview/SoftView_57945.html">DirectX修复工具</a></li>
+  <li><a href="http://www.pc6.com/softview/SoftView_7987.html">Registry Workshop(注册表编辑器)</a></li>
+  <li><a href="http://www.pc6.com/pc/netframework/">.NET 系列运行库</a></li>
+  <li><a href="https://www.adobe.com/go/getflashplayer/">flash</a></li>
+</ul>
+
+<h4 id="工具类">工具类</h4>
+<ul>
+  <li>下载
+    <ul>
+      <li><a href="https://pan.baidu.com/">百度网盘</a></li>
+      <li><a href="https://dl.xunlei.com/">迅雷</a></li>
+      <li><a href="https://www.utorrent.com/intl/zh_cn/utweb-index">utorrent BT 种子下载</a></li>
+    </ul>
+  </li>
+  <li>系统
+    <ul>
+      <li><a href="http://www.pc6.com/softview/SoftView_614521.html">noMeiryoUI (Windows 字体修改工具)</a></li>
+      <li><a href="http://www.chuyu.me/zh-Hans/index.html">Dism++ 实用工具</a></li>
+      <li><a href="https://www.ccleaner.com/ccleaner">CCleaner 清理工具</a></li>
+      <li><a href="https://www.netsetman.com/en/contact">NetSetMan 网络管理</a></li>
+      <li><a href="https://getlantern.org/zh_CN/index.html">Lantern 蓝灯</a></li>
+      <li><a href="https://cmder.net/">Cmder 命令行工具</a></li>
+    </ul>
+  </li>
+  <li>翻译
+    <ul>
+      <li><a href="http://cidian.youdao.com/">有道词典</a></li>
+      <li><a href="http://cp.iciba.com/">金山词霸</a></li>
+    </ul>
+  </li>
+  <li>截图
+    <ul>
+      <li><a href="http://www.pc6.com/softview/SoftView_14254.html">FastStone Capture</a></li>
+      <li><a href="http://zh.snipaste.com/">Snipaste</a></li>
+    </ul>
+  </li>
+  <li>压缩工具
+    <ul>
+      <li><a href="https://www.7-zip.org">7-zip</a></li>
+      <li><a href="http://www.winrar.com.cn/">RAR</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="模拟器">模拟器</h4>
+<ul>
+  <li>手机
+    <ul>
+      <li><a href="http://mumu.163.com/">网易 MuMu模拟器</a></li>
+      <li><a href="https://www.yeshen.com/">夜神安卓模拟器</a></li>
+    </ul>
+  </li>
+  <li>电脑
+    <ul>
+      <li><a href="https://www.vmware.com/cn.html">VMware</a></li>
+    </ul>
+  </li>
+</ul>
+
+:ET
