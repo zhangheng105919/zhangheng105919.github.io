@@ -246,7 +246,7 @@ page:
   sidebar:
     avatar: # 侧边栏显示的头像
       enable: true
-      img: https://gravatar.loli.net/avatar/a12c5fff23dde00df79af9aca4e7b6e4?s=300 # 头像的地址
+      img: https://img.iplaysoft.com/wp-content/uploads/2019/free-images/free_stock_photo.jpg # 头像的地址
       info: | # 头像背后的信息，<br/>代表换行
         <br/>张恒
         <br/>计科超算方向
