@@ -1,6 +1,6 @@
 ---
 layout: index
-title: 范存勇啥都吃
+title: 丁丁上哈佛
 ---
 
 ## 联系方式
