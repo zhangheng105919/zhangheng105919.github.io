@@ -90,7 +90,7 @@
 #}
 
 # 以下四个配置项为空时jekyll-github-metadata会帮你生成
-title: music
+title: welcome
 description: | # 不知道怎么写介绍，放个音乐吧
   <iframe
     src="https://music.163.com/outchain/player?type=0&id=155059595&auto=0&height=32"
@@ -130,12 +130,7 @@ index:
         enable: true
         href: /archive
         alert: posts in total ...
-    categories:
-      - 博客搭建
-    tags:
-      - 人生经验
-      - 资料
-      - 文档
+    
 
 page404:
   head: | # 腾讯公益
@@ -253,11 +248,11 @@ page:
       enable: true
       img: https://gravatar.loli.net/avatar/a12c5fff23dde00df79af9aca4e7b6e4?s=300 # 头像的地址
       info: | # 头像背后的信息，<br/>代表换行
-        <br/>SYSU17级在读
+        <br/>张恒
         <br/>计科超算方向
-        <br/>永远喜欢水野爱
-        <br/>田宫例四驱车
-        <br/>ASC
+        <br/>永远喜欢科比
+        <br/>致敬科比
+        <br/>敬上
     social:
       - title: rss
         href: /assets/jekyll-sitemaps/atom.xml

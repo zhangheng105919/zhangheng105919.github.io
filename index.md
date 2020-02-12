@@ -5,13 +5,11 @@ title: 张恒博客
 
 ## Contact
 
-- Address: **Sun Yat-sen University - 132 Waihuan East Rd. - Guangzhou, China**
+- Address: **shanghai, China**
 - Phone: **+86 15606276696**
-- E-mail:
-  - **1397186442@foxmail.com**
+- E-mail:**1397186442@qq.com**
 - WeChat: **z15606276696**
-- QQ: **1397186442
-- Site: **<zhangheng105919.github.io>**
+- QQ: 1397186442
 
 ## Education
 
@@ -31,8 +29,6 @@ School of Data and Computer Science, Sun Yat-sen University, Guangzhou, Sept. 20
 - **Third Scholarship**, Oct. 2018
 - **First Prize**, China Collegiate Programming Contest, Guangdong Division, May 2018
 
-## Project
-
 ## Skill
 
 - **C/C++**, Familiar
@@ -46,6 +42,6 @@ School of Data and Computer Science, Sun Yat-sen University, Guangzhou, Sept. 20
 - **Git**, Familiar
 - **VSCode**, Familiar
 
-## Leadership
+
 
 
