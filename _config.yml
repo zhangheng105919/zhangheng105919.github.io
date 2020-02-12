@@ -101,7 +101,7 @@ description: | # 不知道怎么写介绍，放个音乐吧
     marginwidth="0"
     marginheight="0"
   ></iframe>
-url: https://wu-kan.cn # https://wu-kan.github.io
+url: https://zhangheng105919.github.io # https://wu-kan.github.io
 baseurl: "" # 假如你的博客是建在某个目录下的，请在这里加上目录名，并且下面配置的所有链接里的`/assets`前也要加，即`/your_baseurl/assets`。这一项结尾不要有'/'。
 
 markdown: kramdown
@@ -112,8 +112,8 @@ kramdown: # 见https://kramdown.gettalong.org/options.html
 
 permalink: /_posts/:year-:month-:day-:title/ #生成文章的地址格式，我希望它和_posts目录下的格式一样
 author:
-  name: WuK
-  email: wu.kan@foxmail.com
+  name: 张恒
+  email: 1397186442@qq.com
 timezone: Asia/Shanghai # 解决githubpage显示时间不正确的问题，见https://www.iana.org/time-zones
 future: false # 不发布时间在未来的文章
 
@@ -134,8 +134,8 @@ index:
       - 博客搭建
     tags:
       - 人生经验
-      - ICPC模板
-      - 水野爱
+      - 资料
+      - 文档
 
 page404:
   head: | # 腾讯公益
