@@ -612,7 +612,7 @@ page:
     }
     .wrap {
       background-image: url(https://oss.suning.com/snsis/channel_content/qTxXzSzbxxQcloPY9MkhmJO7k2x3HFa-yRj1D_ITviAKF24af1QVguh8SjA02s9g.jpg?imgW=640&imgH=358);
-      background-size: auto 100vh;
+      background-size: 100% 100%;
       background-position: center top;
       background-repeat: no-repeat;
       background-attachment: fixed;
